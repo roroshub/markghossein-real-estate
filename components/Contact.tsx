@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useForm } from '@/lib/useForm'
 import { RevealWrapper } from './RevealWrapper'
-import { interestValues } from '@/lib/schemas'
+import { interestValues, type ContactForm } from '@/lib/schemas'
 
 const socialLinks = [
   { label: 'Instagram', abbr: 'IG', href: '#' },
@@ -16,7 +16,7 @@ export function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const { fields, errors, handleChange, handleSubmit, isSubmitting } = useForm()
 
-  const onSubmit = async (data: typeof fields) => {
+  const onSubmit = async (data: ContactForm) => {
     const res = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
