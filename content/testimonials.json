@@ -1,0 +1,26 @@
+[
+  {
+    "id": "sarah-raj",
+    "quote": "Mark didn't just find us a house — he built us a strategy. We sold $80K over asking and found our dream home within the same month. The Smooth Move System is no joke.",
+    "name": "Sarah & Raj K.",
+    "detail": "Upsized from Brampton to Oakville",
+    "initials": "SR",
+    "rating": 5
+  },
+  {
+    "id": "james-lauren",
+    "quote": "As first-time buyers, we were terrified. Mark walked us through everything, never made us feel rushed, and negotiated $45,000 off the asking price. He's the real deal.",
+    "name": "James & Lauren T.",
+    "detail": "First-time buyers, Mississauga",
+    "initials": "JL",
+    "rating": 5
+  },
+  {
+    "id": "david-m",
+    "quote": "I've worked with three agents over the years. Mark is in a completely different league. His market knowledge and no-nonsense approach got my condo sold in 4 days.",
+    "name": "David M.",
+    "detail": "Sold in Burlington",
+    "initials": "DM",
+    "rating": 5
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "homeworth",
+    "title": "HomeWorth",
+    "description": "Find out what your home is worth in today's market — a free, no-obligation valuation report delivered straight to your inbox.",
+    "cta": "Get My Valuation"
+  },
+  {
+    "id": "nosey-neighbour",
+    "title": "Nosey Neighbour",
+    "description": "Get instant alerts when homes sell in your neighbourhood. Stay ahead of local market trends before they make the news.",
+    "cta": "Set Up My Alerts"
+  },
+  {
+    "id": "buyer-checklist",
+    "title": "Buyer Checklist",
+    "description": "The complete step-by-step checklist every first-time and move-up buyer needs before making an offer. Free download.",
+    "cta": "Download Free"
+  }
+]

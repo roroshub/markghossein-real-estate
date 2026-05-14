@@ -1,0 +1,50 @@
+[
+  {
+    "id": "buyer",
+    "title": "Buyer Representation",
+    "description": "I guide you through every step — from pre-approval to closing day — so you can buy with confidence, clarity, and zero regrets.",
+    "bullets": [
+      "Personalized property search",
+      "Offer strategy & negotiation",
+      "Inspection coordination",
+      "Closing day support"
+    ],
+    "cta": { "label": "Start your search", "href": "#contact" }
+  },
+  {
+    "id": "seller",
+    "title": "Seller Representation",
+    "description": "Your property deserves top dollar — and a strategic plan to get it. I bring expert staging guidance, data-backed pricing, and maximum market exposure.",
+    "bullets": [
+      "Professional staging consultation",
+      "Targeted marketing campaign",
+      "Strategic pricing analysis",
+      "Offer review & negotiation"
+    ],
+    "cta": { "label": "List your home", "href": "#contact" }
+  },
+  {
+    "id": "upsizing",
+    "title": "Upsizing Consultation",
+    "description": "Selling and buying simultaneously is complex. My Smooth Move System ensures your transition is seamless, stress-free, and financially optimized.",
+    "bullets": [
+      "Timeline synchronization",
+      "Budget planning beyond pre-approval",
+      "Bridge financing guidance",
+      "Dual negotiation strategy"
+    ],
+    "cta": { "label": "Learn the system", "href": "#system" }
+  },
+  {
+    "id": "investment",
+    "title": "Investment Strategy",
+    "description": "Real estate is one of the most powerful wealth-building tools available. I help investors identify opportunities, analyze returns, and grow their portfolios.",
+    "bullets": [
+      "ROI & cap rate analysis",
+      "Market opportunity spotting",
+      "Multi-property planning",
+      "Long-term equity roadmap"
+    ],
+    "cta": { "label": "Build your portfolio", "href": "#contact" }
+  }
+]

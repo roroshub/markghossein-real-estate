@@ -1,0 +1,35 @@
+[
+  {
+    "id": "oakridge",
+    "status": "for-sale",
+    "price": "$1,450,000",
+    "address": "42 Oakridge Crescent",
+    "city": "Oakville, Ontario",
+    "beds": 4,
+    "baths": 3,
+    "sqft": 2800,
+    "featured": false
+  },
+  {
+    "id": "lakeshore",
+    "status": "new",
+    "price": "$2,195,000",
+    "address": "18 Lakeshore Blvd West",
+    "city": "Mississauga, Ontario",
+    "beds": 5,
+    "baths": 4,
+    "sqft": 3600,
+    "featured": true
+  },
+  {
+    "id": "birchwood",
+    "status": "sold",
+    "price": "$989,000",
+    "address": "7 Birchwood Lane",
+    "city": "Burlington, Ontario",
+    "beds": 3,
+    "baths": 2,
+    "sqft": 1950,
+    "featured": false
+  }
+]

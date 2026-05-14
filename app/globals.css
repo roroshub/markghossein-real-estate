@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ──────────────────────────────────────────────────────── */
+@theme {
+  /* Ink / charcoal palette */
+  --color-ink-950: #090909;
+  --color-ink-900: #0f0f0f;
+  --color-ink-850: #141414;
+  --color-ink-800: #1a1a1a;
+  --color-ink-750: #202020;
+  --color-ink-700: #272727;
+  --color-ink-600: #333333;
+  --color-ink-500: #4a4a4a;
+  --color-ink-400: #686868;
+  --color-ink-300: #909090;
+  --color-ink-200: #bcbcbc;
+  --color-ink-150: #d4d4d4;
+  --color-ink-100: #e8e8e8;
+  --color-ink-50:  #f4f4f4;
+
+  /* Gold accent */
+  --color-gold-600: #a07838;
+  --color-gold-500: #c9a96e;
+  --color-gold-400: #d4b896;
+  --color-gold-300: #e8d5b0;
+  --color-gold-200: #f0e4ca;
+
+  /* Fonts */
+  --font-serif: var(--font-playfair), 'Georgia', serif;
+  --font-sans:  var(--font-dm-sans), system-ui, sans-serif;
+
+  /* Easing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:   cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: var(--color-ink-900);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-gold-500);
+  color: var(--color-ink-950);
+}
+
+/* ─── Marquee ────────────────────────────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 34s linear infinite; }
+
+/* ─── Scroll hint ────────────────────────────────────────────────────────── */
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 0.25; transform: scaleY(1); }
+  50%       { opacity: 0.7;  transform: scaleY(1.12); }
+}
+.scroll-pulse { animation: scroll-pulse 2.6s ease-in-out infinite; }
+
+/* ─── Form fields ────────────────────────────────────────────────────────── */
+.field-input {
+  background-color: var(--color-ink-800);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  padding: 0.875rem 1rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.field-input::placeholder { color: rgba(255, 255, 255, 0.18); }
+.field-input:focus { border-color: var(--color-gold-500); }
+.field-input option { background: var(--color-ink-800); color: #fff; }
+
+/* ─── Step hover ─────────────────────────────────────────────────────────── */
+.step-row { transition: padding-left 0.3s var(--ease-in-out); }
+.step-row:hover { padding-left: 0.5rem; }
+.step-row:hover .step-num { color: rgba(201, 169, 110, 0.5); }
