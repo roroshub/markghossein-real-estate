@@ -1,23 +1,47 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
+import { Magnetic } from './Magnetic'
 
-const stats = [
-  { num: '500+', label: 'Families Served' },
-  { num: '$2B+', label: 'In Transactions' },
-  { num: '15+',  label: 'Years Experience' },
-]
+function useCounter(target: number, duration = 1800, suffix = '') {
+  const [display, setDisplay] = useState('0' + suffix)
+  const [triggered, setTriggered] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry?.isIntersecting) { setTriggered(true); observer.disconnect() } },
+      { threshold: 0.6 },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!triggered) return
+    let start: number
+    const step = (ts: number) => {
+      if (!start) start = ts
+      const pct = Math.min((ts - start) / duration, 1)
+      const eased = 1 - Math.pow(1 - pct, 3)
+      setDisplay(String(Math.floor(eased * target)) + suffix)
+      if (pct < 1) requestAnimationFrame(step)
+    }
+    requestAnimationFrame(step)
+  }, [triggered, target, duration, suffix])
+
+  return { display, ref }
+}
 
 function WordReveal({ words, baseDelay = 0 }: { words: string[]; baseDelay?: number }) {
   return (
     <>
       {words.map((word, i) => (
         <span key={word} className="word-reveal-wrap mr-[0.22em]">
-          <span
-            className="word-reveal-inner"
-            style={{ animationDelay: `${baseDelay + i * 110}ms` }}
-          >
+          <span className="word-reveal-inner" style={{ animationDelay: `${baseDelay + i * 110}ms` }}>
             {word}
           </span>
         </span>
@@ -26,14 +50,23 @@ function WordReveal({ words, baseDelay = 0 }: { words: string[]; baseDelay?: num
   )
 }
 
+const statsConfig = [
+  { target: 500, suffix: '+', label: 'Families Served' },
+  { target: 2,   suffix: 'B+', label: 'In Transactions', prefix: '$' },
+  { target: 15,  suffix: '+', label: 'Years Experience' },
+]
+
 export function Hero() {
   const gridRef = useRef<HTMLDivElement>(null)
+  const s0 = useCounter(statsConfig[0]!.target, 1800, statsConfig[0]!.suffix)
+  const s1 = useCounter(statsConfig[1]!.target, 1400, statsConfig[1]!.suffix)
+  const s2 = useCounter(statsConfig[2]!.target, 1600, statsConfig[2]!.suffix)
+  const counters = [s0, s1, s2]
 
   useEffect(() => {
     const onScroll = () => {
-      if (gridRef.current) {
+      if (gridRef.current)
         gridRef.current.style.transform = `translateY(${window.scrollY * 0.18}px)`
-      }
     }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -41,8 +74,7 @@ export function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-ink-950">
-
-      {/* Subtle grid parallax */}
+      {/* Parallax grid */}
       <div ref={gridRef} className="absolute inset-0 will-change-transform">
         <div
           className="absolute inset-0"
@@ -56,12 +88,10 @@ export function Hero() {
         />
       </div>
 
-      {/* Radial vignette */}
+      {/* Vignette */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse 90% 80% at 50% 50%, transparent 30%, rgba(9,9,9,0.75) 100%)',
-        }}
+        style={{ background: 'radial-gradient(ellipse 90% 80% at 50% 50%, transparent 30%, rgba(9,9,9,0.75) 100%)' }}
       />
 
       <div className="relative z-10 w-full max-w-[1320px] mx-auto px-8 md:px-12 pt-44 pb-28">
@@ -77,7 +107,7 @@ export function Hero() {
           </p>
         </div>
 
-        {/* Headline — word-by-word reveal */}
+        {/* Headline */}
         <h1 className="font-serif text-[clamp(60px,9vw,122px)] font-normal leading-[0.93] text-white mb-8 tracking-tight">
           <span className="block">
             <WordReveal words={['Make', 'The']} baseDelay={200} />
@@ -101,34 +131,43 @@ export function Hero() {
           className="flex flex-wrap gap-4 mb-24"
           style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 820ms both' }}
         >
-          <Link
-            href="#contact"
-            className="inline-flex items-center px-8 py-4 bg-gold-500 text-ink-950 text-[11px] font-semibold tracking-[0.14em] uppercase hover:bg-gold-300 transition-all duration-300 hover:-translate-y-px"
-          >
-            Book a Consultation
-          </Link>
-          <Link
-            href="#services"
-            className="inline-flex items-center px-8 py-4 text-white text-[11px] font-semibold tracking-[0.14em] uppercase border border-white/20 hover:border-white/50 hover:bg-white/[0.04] transition-all duration-300"
-          >
-            Explore Services
-          </Link>
+          <Magnetic>
+            <Link
+              href="#contact"
+              className="inline-flex items-center px-8 py-4 bg-gold-500 text-ink-950 text-[11px] font-semibold tracking-[0.14em] uppercase hover:bg-gold-300 transition-colors duration-300"
+            >
+              Book a Consultation
+            </Link>
+          </Magnetic>
+          <Magnetic>
+            <Link
+              href="#services"
+              className="inline-flex items-center px-8 py-4 text-white text-[11px] font-semibold tracking-[0.14em] uppercase border border-white/20 hover:border-white/50 hover:bg-white/[0.04] transition-all duration-300"
+            >
+              Explore Services
+            </Link>
+          </Magnetic>
         </div>
 
-        {/* Stats */}
+        {/* Animated stats */}
         <div
           className="flex flex-wrap items-center gap-12"
           style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 940ms both' }}
         >
-          {stats.map(({ num, label }, i) => (
-            <div key={label} className="flex items-center gap-12">
-              {i > 0 && <div className="hidden sm:block w-px h-10 bg-white/10" />}
-              <div>
-                <p className="font-serif text-[36px] font-normal text-white leading-none mb-1.5">{num}</p>
-                <p className="text-[10px] font-medium tracking-[0.22em] uppercase text-white/30">{label}</p>
+          {statsConfig.map(({ label, prefix = '' }, i) => {
+            const { display, ref } = counters[i]!
+            return (
+              <div key={label} ref={ref} className="flex items-center gap-12">
+                {i > 0 && <div className="hidden sm:block w-px h-10 bg-white/10" />}
+                <div>
+                  <p className="font-serif text-[36px] font-normal text-white leading-none mb-1.5 tabular-nums">
+                    {prefix}{display}
+                  </p>
+                  <p className="text-[10px] font-medium tracking-[0.22em] uppercase text-white/30">{label}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
 

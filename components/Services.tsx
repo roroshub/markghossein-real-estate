@@ -31,7 +31,15 @@ const icons: Record<string, React.ReactNode> = {
 
 export function Services({ services }: { services: Service[] }) {
   return (
-    <section id="services" className="py-32 bg-ink-950">
+    <section id="services" className="relative py-32 bg-ink-950 overflow-hidden">
+      {/* Ghost label */}
+      <p
+        aria-hidden="true"
+        className="absolute -top-4 right-0 font-serif font-normal select-none pointer-events-none"
+        style={{ fontSize: 'clamp(80px,14vw,200px)', color: 'rgba(255,255,255,0.022)', lineHeight: 1, letterSpacing: '-0.02em' }}
+      >
+        Services
+      </p>
       <div className="mx-auto max-w-[1320px] px-8 md:px-12">
         <RevealWrapper className="mb-20">
           <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-gold-500 mb-5">

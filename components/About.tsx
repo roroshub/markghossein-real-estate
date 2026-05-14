@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { RevealWrapper } from './RevealWrapper'
+import { Magnetic } from './Magnetic'
 
 const pillars = [
   { title: 'Strategic Pricing',  body: 'Data over emotion — every single time.' },
@@ -80,12 +81,14 @@ export function About() {
               ))}
             </div>
 
-            <Link
-              href="#contact"
-              className="inline-flex items-center mt-10 px-8 py-4 bg-ink-900 text-white text-[11px] font-semibold tracking-[0.14em] uppercase hover:bg-ink-700 transition-all duration-300 hover:-translate-y-px"
-            >
-              Work With Mark
-            </Link>
+            <Magnetic>
+              <Link
+                href="#contact"
+                className="inline-flex items-center mt-10 px-8 py-4 bg-ink-900 text-white text-[11px] font-semibold tracking-[0.14em] uppercase hover:bg-ink-700 transition-colors duration-300"
+              >
+                Work With Mark
+              </Link>
+            </Magnetic>
           </RevealWrapper>
         </div>
       </div>
