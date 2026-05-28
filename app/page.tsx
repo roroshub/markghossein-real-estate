@@ -6,7 +6,8 @@ import { About } from '@/components/About'
 import { Manifesto } from '@/components/Manifesto'
 import { Services } from '@/components/Services'
 import { Listings } from '@/components/Listings'
-import { SmoothMoveSystem } from '@/components/SmoothMoveSystem'
+import { BrowseHomes } from '@/components/BrowseHomes'
+import { Probate } from '@/components/Probate'
 import { Tools } from '@/components/Tools'
 import { Testimonials } from '@/components/Testimonials'
 import { Contact } from '@/components/Contact'
@@ -16,7 +17,6 @@ import {
   getListings,
   getTestimonials,
   getTools,
-  getSteps,
 } from '@/lib/content'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://markghossein-next.vercel.app'
@@ -75,12 +75,11 @@ const jsonLd = {
 }
 
 export default async function HomePage() {
-  const [services, listings, testimonials, tools, steps] = await Promise.all([
+  const [services, listings, testimonials, tools] = await Promise.all([
     getServices(),
     getListings(),
     getTestimonials(),
     getTools(),
-    getSteps(),
   ])
 
   return (
@@ -97,7 +96,8 @@ export default async function HomePage() {
         <Manifesto />
         <Services services={services} />
         <Listings listings={listings} />
-        <SmoothMoveSystem steps={steps} />
+        <BrowseHomes />
+        <Probate />
         <Tools tools={tools} />
         <Testimonials testimonials={testimonials} />
         <Contact />

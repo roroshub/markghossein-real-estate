@@ -1,21 +1,21 @@
 import Link from 'next/link'
 
 const quickLinks = [
-  { label: 'About Mark',         href: '#about' },
-  { label: 'Services',           href: '#services' },
-  { label: 'Listings',           href: '#listings' },
-  { label: 'Smooth Move System', href: '#system' },
-  { label: 'Client Stories',     href: '#testimonials' },
-  { label: 'Contact',            href: '#contact' },
+  { label: 'About Mark',     href: '/#about' },
+  { label: 'Services',       href: '/#services' },
+  { label: 'Listings',       href: '/#listings' },
+  { label: 'Browse Homes',   href: '/#browse' },
+  { label: 'Client Stories', href: '/#testimonials' },
+  { label: 'Contact',        href: '/#contact' },
 ]
 
 const serviceLinks = [
-  { label: 'Buyer Representation',  href: '#services' },
-  { label: 'Seller Representation', href: '#services' },
-  { label: 'Upsizing',              href: '#services' },
-  { label: 'HomeWorth Valuation',   href: '#tools' },
-  { label: 'Nosey Neighbour',       href: '#tools' },
-  { label: 'Buyer Checklist',       href: '#tools' },
+  { label: "Buyer's Guide",        href: '/buyers' },
+  { label: 'Mortgage Calculator',  href: '/mortgage-calculator' },
+  { label: 'Probate & Estates',    href: '/probate' },
+  { label: 'Upsizing',             href: '/upsizing' },
+  { label: 'Downsizing',           href: '/downsizing' },
+  { label: 'HomeWorth Valuation',  href: '/#tools' },
 ]
 
 const socialLinks = [

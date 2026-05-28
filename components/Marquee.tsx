@@ -4,7 +4,7 @@ const items = [
   'Upsizing Consultation',
   'Home Valuation',
   'Investment Strategy',
-  'Smooth Move System™',
+  'Probate & Estate Sales',
   'Neighbourhood Alerts',
 ]
 

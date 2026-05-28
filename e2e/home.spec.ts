@@ -45,10 +45,11 @@ test.describe('Mark Ghossein Homepage', () => {
     await expect(cards).toHaveCount(3)
   })
 
-  test('smooth move system section renders all 5 steps', async ({ page }) => {
-    await page.locator('#system').scrollIntoViewIfNeeded()
-    const steps = page.locator('#system .step-row')
-    await expect(steps).toHaveCount(5)
+  test('browse homes section renders price ranges and neighbourhoods', async ({ page }) => {
+    await page.locator('#browse').scrollIntoViewIfNeeded()
+    await expect(page.locator('#browse')).toBeVisible()
+    await expect(page.getByText('By Price Range')).toBeVisible()
+    await expect(page.getByText('By Neighbourhood')).toBeVisible()
   })
 
   test('contact form renders all required fields', async ({ page }) => {

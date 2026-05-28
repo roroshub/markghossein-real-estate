@@ -26,14 +26,14 @@
   {
     "id": "upsizing",
     "title": "Upsizing Consultation",
-    "description": "Selling and buying simultaneously is complex. My Smooth Move System ensures your transition is seamless, stress-free, and financially optimized.",
+    "description": "Selling and buying simultaneously is complex. I make your transition seamless, stress-free, and financially optimized — whether you're upsizing or downsizing.",
     "bullets": [
       "Timeline synchronization",
       "Budget planning beyond pre-approval",
       "Bridge financing guidance",
       "Dual negotiation strategy"
     ],
-    "cta": { "label": "Learn the system", "href": "#system" }
+    "cta": { "label": "Explore My Move", "href": "/upsizing" }
   },
   {
     "id": "investment",
