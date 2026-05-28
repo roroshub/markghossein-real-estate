@@ -46,5 +46,17 @@
       "Long-term equity roadmap"
     ],
     "cta": { "label": "Build your portfolio", "href": "#contact" }
+  },
+  {
+    "id": "probate",
+    "title": "Probate & Estate Sales",
+    "description": "Selling an estate or inherited property carries legal deadlines and emotional weight. As a Certified Probate Specialist, I guide executors and families through every step.",
+    "bullets": [
+      "Certified Probate Specialist",
+      "Coordination with estate counsel",
+      "Property cleanout & staging",
+      "Compassionate, discreet process"
+    ],
+    "cta": { "label": "Learn about probate", "href": "/probate" }
   }
 ]

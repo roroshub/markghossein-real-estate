@@ -141,8 +141,8 @@ export default function ProbatePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.05]">
             {steps.map((step, i) => (
-              <RevealWrapper key={step.num} delay={i * 60}>
-                <div className="bg-ink-950 p-10 group hover:bg-ink-900 transition-colors duration-300">
+              <RevealWrapper key={step.num} delay={i * 60} className="h-full">
+                <div className="bg-ink-950 p-10 h-full group hover:bg-ink-900 transition-colors duration-300">
                   <p className="font-serif text-[42px] text-white/[0.06] leading-none mb-6 group-hover:text-gold-500/20 transition-colors duration-300">
                     {step.num}
                   </p>
@@ -173,8 +173,8 @@ export default function ProbatePage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-white/[0.05]">
             {faqs.map((faq, i) => (
-              <RevealWrapper key={faq.q} delay={i * 80}>
-                <div className="bg-ink-900 p-10">
+              <RevealWrapper key={faq.q} delay={i * 80} className="h-full">
+                <div className="bg-ink-900 p-10 h-full">
                   <p className="text-[13px] font-semibold text-white mb-3 leading-snug">{faq.q}</p>
                   <p className="text-[13px] text-white/40 leading-relaxed">{faq.a}</p>
                 </div>

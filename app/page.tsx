@@ -3,7 +3,6 @@ import { Navbar } from '@/components/Navbar'
 import { Hero } from '@/components/Hero'
 import { Marquee } from '@/components/Marquee'
 import { About } from '@/components/About'
-import { Manifesto } from '@/components/Manifesto'
 import { Services } from '@/components/Services'
 import { Listings } from '@/components/Listings'
 import { BrowseHomes } from '@/components/BrowseHomes'
@@ -93,7 +92,6 @@ export default async function HomePage() {
         <Hero />
         <Marquee />
         <About />
-        <Manifesto />
         <Services services={services} />
         <Listings listings={listings} />
         <BrowseHomes />

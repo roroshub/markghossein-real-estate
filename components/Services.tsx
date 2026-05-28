@@ -27,6 +27,13 @@ const icons: Record<string, React.ReactNode> = {
       <path d="M6 28c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
     </svg>
   ),
+  probate: (
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+      <path d="M8 4h11l5 5v19H8V4z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+      <path d="M19 4v5h5" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+      <path d="M12 15h8M12 19h8M12 23h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+    </svg>
+  ),
 }
 
 export function Services({ services }: { services: Service[] }) {
@@ -50,7 +57,7 @@ export function Services({ services }: { services: Service[] }) {
           </h2>
         </RevealWrapper>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 divide-x divide-y divide-white/[0.05] border border-white/[0.05]">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 divide-x divide-y divide-white/[0.05] border border-white/[0.05]">
           {services.map((svc, i) => (
             <RevealWrapper key={svc.id} delay={i * 60}>
               <div className="group p-10 flex flex-col h-full hover:bg-ink-900 transition-colors duration-300">
