@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: 'Upsizing Your Home',
   description:
     'Ready for more space? Mark Ghossein helps Ottawa families upsize smoothly — selling your current home and buying your next one without the stress.',
+  alternates: { canonical: '/upsizing' },
+  openGraph: {
+    title: 'Upsizing Your Home | Mark Ghossein',
+    description:
+      'Ready for more space? Mark Ghossein helps Ottawa families upsize smoothly — selling your current home and buying your next one without the stress.',
+    url: '/upsizing',
+  },
 }
 
 const points = [

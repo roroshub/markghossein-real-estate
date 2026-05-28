@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: 'Probate & Estate Real Estate',
   description:
     'Certified Probate Real Estate Specialist in Ottawa. Compassionate, expert guidance for executors and families selling probate and inherited properties.',
+  alternates: { canonical: '/probate' },
+  openGraph: {
+    title: 'Probate & Estate Real Estate | Mark Ghossein',
+    description:
+      'Certified Probate Real Estate Specialist in Ottawa — expert, compassionate guidance for executors and families selling estate or inherited property.',
+    url: '/probate',
+  },
 }
 
 const steps = [
@@ -62,9 +69,23 @@ const faqs = [
   },
 ]
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: { '@type': 'Answer', text: faq.a },
+  })),
+}
+
 export default function ProbatePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Navbar />
 
       {/* ── Hero ── */}

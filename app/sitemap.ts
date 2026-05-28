@@ -3,18 +3,20 @@ import type { MetadataRoute } from 'next'
 const base = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://markghossein-next.vercel.app'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: base,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${base}/buyers`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
+  const lastModified = new Date()
+  const routes: Array<{ path: string; priority: number; changeFrequency: 'weekly' | 'monthly' }> = [
+    { path: '', priority: 1, changeFrequency: 'weekly' },
+    { path: '/buyers', priority: 0.8, changeFrequency: 'monthly' },
+    { path: '/probate', priority: 0.8, changeFrequency: 'monthly' },
+    { path: '/upsizing', priority: 0.7, changeFrequency: 'monthly' },
+    { path: '/downsizing', priority: 0.7, changeFrequency: 'monthly' },
+    { path: '/mortgage-calculator', priority: 0.7, changeFrequency: 'monthly' },
   ]
+
+  return routes.map(({ path, priority, changeFrequency }) => ({
+    url: `${base}${path}`,
+    lastModified,
+    changeFrequency,
+    priority,
+  }))
 }

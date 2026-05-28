@@ -9,6 +9,13 @@ export const metadata: Metadata = {
   title: 'Mortgage Calculator',
   description:
     'Free Ottawa mortgage calculator with Canadian semi-annual compounding. Estimate your monthly payment, total interest, and CMHC insurance in seconds.',
+  alternates: { canonical: '/mortgage-calculator' },
+  openGraph: {
+    title: 'Mortgage Calculator | Mark Ghossein',
+    description:
+      'Free Ottawa mortgage calculator with Canadian semi-annual compounding. Estimate your monthly payment, total interest, and CMHC insurance in seconds.',
+    url: '/mortgage-calculator',
+  },
 }
 
 const tips = [

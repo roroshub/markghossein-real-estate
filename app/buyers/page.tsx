@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: "Buyer's Guide",
   description:
     'Everything Ottawa home buyers need — mortgage calculator, neighbourhood guides, and a proven process to find your perfect home.',
+  alternates: { canonical: '/buyers' },
+  openGraph: {
+    title: "Buyer's Guide | Mark Ghossein",
+    description:
+      'Everything Ottawa home buyers need — mortgage calculator, neighbourhood guides, and a proven process to find your perfect home.',
+    url: '/buyers',
+  },
 }
 
 const steps = [

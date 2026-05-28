@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: 'Downsizing Your Home',
   description:
     'Ready for less house and more freedom? Mark Ghossein helps Ottawa empty-nesters and retirees downsize with care — unlocking equity and simplifying life.',
+  alternates: { canonical: '/downsizing' },
+  openGraph: {
+    title: 'Downsizing Your Home | Mark Ghossein',
+    description:
+      'Ready for less house and more freedom? Mark Ghossein helps Ottawa empty-nesters and retirees downsize with care — unlocking equity and simplifying life.',
+    url: '/downsizing',
+  },
 }
 
 const points = [
