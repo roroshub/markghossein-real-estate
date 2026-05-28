@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const navLinks = [
   { label: 'About',       href: '#about' },
@@ -9,11 +10,18 @@ const navLinks = [
   { label: 'Listings',    href: '#listings' },
   { label: 'Smooth Move', href: '#system' },
   { label: 'Reviews',     href: '#testimonials' },
+  { label: 'Buyers',      href: '/buyers' },
 ]
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const isHome = pathname === '/'
+
+  // Prefix anchor-only hrefs with '/' when not on the home page
+  const resolveHref = (href: string) =>
+    href.startsWith('#') && !isHome ? `/${href}` : href
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -33,7 +41,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-[1320px] items-center justify-between px-8 md:px-12 h-[76px]">
         {/* Logo */}
-        <Link href="#hero" onClick={closeMenu} className="flex items-center gap-4">
+        <Link href="/" onClick={closeMenu} className="flex items-center gap-4">
           <div className="w-10 h-10 bg-gold-500 flex items-center justify-center shrink-0">
             <span className="font-serif text-ink-950 text-base font-semibold tracking-wider">MG</span>
           </div>
@@ -48,8 +56,12 @@ export function Navbar() {
           {navLinks.map(({ label, href }) => (
             <li key={href}>
               <Link
-                href={href}
-                className="text-[11px] font-medium tracking-[0.14em] uppercase text-white/55 hover:text-white transition-colors duration-200"
+                href={resolveHref(href)}
+                className={`text-[11px] font-medium tracking-[0.14em] uppercase transition-colors duration-200 ${
+                  href === '/buyers' && pathname === '/buyers'
+                    ? 'text-gold-500'
+                    : 'text-white/55 hover:text-white'
+                }`}
               >
                 {label}
               </Link>
@@ -57,7 +69,7 @@ export function Navbar() {
           ))}
           <li>
             <Link
-              href="#contact"
+              href={resolveHref('#contact')}
               className="text-[11px] font-medium tracking-[0.14em] uppercase text-gold-500 border border-gold-500/60 px-5 py-2.5 hover:bg-gold-500 hover:text-ink-950 transition-all duration-200"
             >
               Let's Talk
@@ -86,7 +98,7 @@ export function Navbar() {
         {[...navLinks, { label: "Let's Talk", href: '#contact' }].map(({ label, href }) => (
           <Link
             key={href}
-            href={href}
+            href={resolveHref(href)}
             onClick={closeMenu}
             className="block px-8 py-4 text-[11px] font-medium tracking-[0.14em] uppercase text-white/50 hover:text-gold-500 border-b border-white/[0.04] transition-colors duration-200"
           >

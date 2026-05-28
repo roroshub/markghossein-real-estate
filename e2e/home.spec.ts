@@ -84,7 +84,7 @@ test.describe('Mark Ghossein Homepage', () => {
 
   test('footer displays brokerage info and email', async ({ page }) => {
     await page.locator('footer').scrollIntoViewIfNeeded()
-    await expect(page.getByText(/Century 21/i)).toBeVisible()
-    await expect(page.getByText(/mark.ghossein@c21.ca/i)).toBeVisible()
+    await expect(page.getByText(/eXp Realty/i)).toBeVisible()
+    await expect(page.getByText(/mark@markghossein\.com/i)).toBeVisible()
   })
 })

@@ -44,7 +44,7 @@ export function Footer() {
             </div>
             <p className="font-serif text-[20px] italic text-white/30 mb-3">Make the right move.</p>
             <p className="text-[11px] font-light text-white/20 leading-relaxed">
-              Affiliated with Century 21<br />Ontario, Canada
+              Affiliated with eXp Realty<br />Ottawa, Ontario, Canada
             </p>
           </div>
 
@@ -75,8 +75,8 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-[9px] font-semibold tracking-[0.24em] uppercase text-white/25 mb-6">Contact</h4>
-            <a href="mailto:mark.ghossein@c21.ca" className="block text-[13px] font-light text-white/45 hover:text-gold-500 transition-colors duration-200 mb-2">
-              mark.ghossein@c21.ca
+            <a href="mailto:mark@markghossein.com" className="block text-[13px] font-light text-white/45 hover:text-gold-500 transition-colors duration-200 mb-2">
+              mark@markghossein.com
             </a>
             <p className="text-[13px] font-light text-white/45 mb-7">Ontario, Canada</p>
             <div className="flex gap-2.5 flex-wrap">

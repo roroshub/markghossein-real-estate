@@ -1,8 +1,9 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import Link from 'next/link'
 import { Magnetic } from './Magnetic'
+import { PropertySearch } from './PropertySearch'
 
 function useCounter(target: number, duration = 1800, suffix = '') {
   const [display, setDisplay] = useState('0' + suffix)
@@ -51,64 +52,96 @@ function WordReveal({ words, baseDelay = 0 }: { words: string[]; baseDelay?: num
 }
 
 const statsConfig = [
-  { target: 500, suffix: '+', label: 'Families Served' },
-  { target: 2,   suffix: 'B+', label: 'In Transactions', prefix: '$' },
-  { target: 15,  suffix: '+', label: 'Years Experience' },
+  { target: 500, suffix: '+',  label: 'Families Served',   prefix: ''  },
+  { target: 2,   suffix: 'B+', label: 'In Transactions',   prefix: '$' },
+  { target: 15,  suffix: '+',  label: 'Years Experience',  prefix: ''  },
 ]
 
 export function Hero() {
-  const gridRef = useRef<HTMLDivElement>(null)
-  const s0 = useCounter(statsConfig[0]!.target, 1800, statsConfig[0]!.suffix)
-  const s1 = useCounter(statsConfig[1]!.target, 1400, statsConfig[1]!.suffix)
-  const s2 = useCounter(statsConfig[2]!.target, 1600, statsConfig[2]!.suffix)
+  const s0 = useCounter(500, 1800, '+')
+  const s1 = useCounter(2,   1400, 'B+')
+  const s2 = useCounter(15,  1600, '+')
   const counters = [s0, s1, s2]
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  // Mobile browsers require a programmatic .play() call even when
+  // autoPlay + muted + playsInline are all set — the declarative
+  // attribute is often ignored by mobile Safari / Android Chrome.
+  const tryPlay = useCallback(() => {
+    const v = videoRef.current
+    if (!v) return
+    v.muted = true          // must be set in JS too for iOS
+    v.play().catch(() => {  // silently swallow autoplay-policy rejections
+      // Video stays hidden behind the dark overlay — no visible impact
+    })
+  }, [])
 
   useEffect(() => {
-    const onScroll = () => {
-      if (gridRef.current)
-        gridRef.current.style.transform = `translateY(${window.scrollY * 0.18}px)`
+    tryPlay()
+    // Also retry on any user gesture in case the first attempt was blocked
+    document.addEventListener('touchstart', tryPlay, { once: true })
+    document.addEventListener('click',      tryPlay, { once: true })
+    return () => {
+      document.removeEventListener('touchstart', tryPlay)
+      document.removeEventListener('click',      tryPlay)
     }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [tryPlay])
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-ink-950">
-      {/* Parallax grid */}
-      <div ref={gridRef} className="absolute inset-0 will-change-transform">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px)
-            `,
-            backgroundSize: '64px 64px',
-          }}
-        />
-      </div>
 
-      {/* Vignette */}
+      {/* ── Video background ── */}
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        disablePictureInPicture
+        className="absolute inset-0 w-full h-full object-cover opacity-40"
+      >
+        <source src="/videos/hero.mp4" type="video/mp4" />
+      </video>
+
+      {/* Gradient overlay — ensures text legibility over any video */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: `
+            linear-gradient(to right, rgba(9,9,9,0.92) 0%, rgba(9,9,9,0.55) 60%, rgba(9,9,9,0.3) 100%),
+            linear-gradient(to top,   rgba(9,9,9,0.8)  0%, transparent 50%)
+          `,
+        }}
+      />
+
+      {/* Subtle grid on top */}
       <div
         className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 90% 80% at 50% 50%, transparent 30%, rgba(9,9,9,0.75) 100%)' }}
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)
+          `,
+          backgroundSize: '64px 64px',
+        }}
       />
 
       <div className="relative z-10 w-full max-w-[1320px] mx-auto px-8 md:px-12 pt-44 pb-28">
 
         {/* Eyebrow */}
         <div
-          className="flex items-center gap-4 mb-8 overflow-hidden"
+          className="flex items-center gap-4 mb-8"
           style={{ animation: 'word-up 0.8s cubic-bezier(0.16,1,0.3,1) 100ms both' }}
         >
           <span className="block w-8 h-px bg-gold-500 shrink-0" />
           <p className="text-[10px] font-medium tracking-[0.3em] uppercase text-gold-500">
-            Ontario's Premier Real Estate Advisor
+            Ottawa Real Estate · Make the Right Move
           </p>
         </div>
 
         {/* Headline */}
-        <h1 className="font-serif text-[clamp(60px,9vw,122px)] font-normal leading-[0.93] text-white mb-8 tracking-tight">
+        <h1 className="font-serif text-[clamp(56px,8.5vw,115px)] font-normal leading-[0.93] text-white mb-8 tracking-tight">
           <span className="block">
             <WordReveal words={['Make', 'The']} baseDelay={200} />
           </span>
@@ -119,17 +152,25 @@ export function Hero() {
 
         {/* Sub */}
         <p
-          className="text-[16px] font-light text-white/50 max-w-[440px] leading-[1.9] mb-14 tracking-wide"
-          style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 700ms both' }}
+          className="text-[16px] font-light text-white/50 max-w-[420px] leading-[1.9] mb-10 tracking-wide"
+          style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 680ms both' }}
         >
-          Whether you're buying, selling, or upsizing — I'm invested in helping
-          your family build generational wealth through real estate.
+          Whether you're buying, selling, or upsizing — I help Ottawa families
+          build generational wealth through real estate.
         </p>
+
+        {/* Property search bar */}
+        <div
+          className="mb-12"
+          style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 780ms both' }}
+        >
+          <PropertySearch />
+        </div>
 
         {/* CTAs */}
         <div
-          className="flex flex-wrap gap-4 mb-24"
-          style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 820ms both' }}
+          className="flex flex-wrap gap-4 mb-20"
+          style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 880ms both' }}
         >
           <Magnetic>
             <Link
@@ -141,20 +182,20 @@ export function Hero() {
           </Magnetic>
           <Magnetic>
             <Link
-              href="#services"
+              href="/buyers"
               className="inline-flex items-center px-8 py-4 text-white text-[11px] font-semibold tracking-[0.14em] uppercase border border-white/20 hover:border-white/50 hover:bg-white/[0.04] transition-all duration-300"
             >
-              Explore Services
+              Buyer's Guide →
             </Link>
           </Magnetic>
         </div>
 
-        {/* Animated stats */}
+        {/* Stats */}
         <div
           className="flex flex-wrap items-center gap-12"
-          style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 940ms both' }}
+          style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 960ms both' }}
         >
-          {statsConfig.map(({ label, prefix = '' }, i) => {
+          {statsConfig.map(({ label, prefix }, i) => {
             const { display, ref } = counters[i]!
             return (
               <div key={label} ref={ref} className="flex items-center gap-12">

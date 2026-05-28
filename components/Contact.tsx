@@ -44,11 +44,11 @@ export function Contact() {
             </p>
 
             <div className="flex flex-col gap-5 mb-12">
-              <a href="mailto:mark.ghossein@c21.ca" className="flex items-center gap-5 group">
+              <a href="mailto:mark@markghossein.com" className="flex items-center gap-5 group">
                 <div className="w-10 h-10 border border-ink-200 flex items-center justify-center text-ink-300 text-sm group-hover:border-gold-500 group-hover:text-gold-500 transition-all duration-200">
                   ✉
                 </div>
-                <span className="text-[14px] text-ink-600 group-hover:text-ink-900 transition-colors duration-200">mark.ghossein@c21.ca</span>
+                <span className="text-[14px] text-ink-600 group-hover:text-ink-900 transition-colors duration-200">mark@markghossein.com</span>
               </a>
               <a href="#contact" className="flex items-center gap-5 group">
                 <div className="w-10 h-10 border border-ink-200 flex items-center justify-center text-ink-300 text-sm group-hover:border-gold-500 group-hover:text-gold-500 transition-all duration-200">
