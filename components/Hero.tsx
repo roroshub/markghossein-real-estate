@@ -115,23 +115,20 @@ export function Hero() {
         }}
       />
 
-      {/* Subtle grid on top */}
+      {/* Soft gold glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)
-          `,
-          backgroundSize: '64px 64px',
+          background:
+            'radial-gradient(60% 55% at 50% 10%, rgba(201,169,110,0.14) 0%, transparent 68%)',
         }}
       />
 
-      <div className="relative z-10 w-full max-w-[1320px] mx-auto px-8 md:px-12 pt-44 pb-28">
+      <div className="relative z-10 w-full max-w-[1320px] mx-auto px-8 md:px-12 pt-44 pb-28 flex flex-col items-center text-center">
 
         {/* Eyebrow */}
         <div
-          className="flex items-center gap-4 mb-8"
+          className="flex items-center justify-center gap-4 mb-8"
           style={{ animation: 'word-up 0.8s cubic-bezier(0.16,1,0.3,1) 100ms both' }}
         >
           <span className="block w-8 h-px bg-gold-500 shrink-0" />
@@ -152,7 +149,7 @@ export function Hero() {
 
         {/* Sub */}
         <p
-          className="text-[16px] font-light text-white/50 max-w-[420px] leading-[1.9] mb-10 tracking-wide"
+          className="text-[16px] font-light text-white/50 max-w-[460px] mx-auto leading-[1.9] mb-10 tracking-wide"
           style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 680ms both' }}
         >
           Whether you're buying, selling, or upsizing — I help Ottawa families
@@ -161,7 +158,7 @@ export function Hero() {
 
         {/* Property search bar */}
         <div
-          className="mb-12"
+          className="mb-12 w-full flex justify-center"
           style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 780ms both' }}
         >
           <PropertySearch />
@@ -169,7 +166,7 @@ export function Hero() {
 
         {/* CTAs */}
         <div
-          className="flex flex-wrap gap-4 mb-20"
+          className="flex flex-wrap justify-center gap-4 mb-20"
           style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 880ms both' }}
         >
           <Magnetic>
@@ -192,7 +189,7 @@ export function Hero() {
 
         {/* Stats */}
         <div
-          className="flex flex-wrap items-center gap-12"
+          className="flex flex-wrap items-center justify-center gap-12"
           style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 960ms both' }}
         >
           {statsConfig.map(({ label, prefix }, i) => {

@@ -79,11 +79,8 @@ export default function BuyersPage() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px)
-            `,
-            backgroundSize: '64px 64px',
+            background:
+              'radial-gradient(70% 90% at 70% 0%, rgba(201,169,110,0.12) 0%, transparent 62%)',
           }}
         />
         <div className="relative z-10 max-w-[1320px] mx-auto px-8 md:px-12">

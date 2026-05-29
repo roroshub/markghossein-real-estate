@@ -81,7 +81,7 @@ export function PropertySearch() {
       </form>
 
       {/* Neighbourhood tags */}
-      <div className="flex flex-wrap gap-2 mt-3">
+      <div className="flex flex-wrap justify-center gap-2 mt-3">
         {neighbourhoods.map((n) => (
           <button
             key={n}
