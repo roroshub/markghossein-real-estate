@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Probate & Estate Real Estate | Mark Ghossein',
     description:
-      'Certified Probate Real Estate Specialist in Ottawa — expert, compassionate guidance for executors and families selling estate or inherited property.',
+      'Certified Probate Real Estate Specialist in Ottawa, expert, compassionate guidance for executors and families selling estate or inherited property.',
     url: '/probate',
   },
 }
@@ -21,7 +21,7 @@ const steps = [
   {
     num: '01',
     title: 'Initial Consultation',
-    body: "We meet to understand the estate, the property, and your family's wishes — no pressure, no obligation. I explain the probate process in plain language.",
+    body: "We meet to understand the estate, the property, and your family's wishes, no pressure, no obligation. I explain the probate process in plain language.",
   },
   {
     num: '02',
@@ -31,17 +31,17 @@ const steps = [
   {
     num: '03',
     title: 'Prepare the Property',
-    body: 'Cleanouts, repairs, staging, and valuation — I manage trusted vendors to present the home at its best while respecting the estate’s budget.',
+    body: 'Cleanouts, repairs, staging, and valuation, I manage trusted vendors to present the home at its best while respecting the estate’s budget.',
   },
   {
     num: '04',
     title: 'Strategic Pricing',
-    body: 'A data-driven market valuation ensures the property sells for its true worth — protecting the proceeds owed to every beneficiary.',
+    body: 'A data-driven market valuation ensures the property sells for its true worth, protecting the proceeds owed to every beneficiary.',
   },
   {
     num: '05',
     title: 'Market & Negotiate',
-    body: 'Full marketing exposure, qualified buyers, and assertive negotiation — with every offer reviewed against the estate’s best interest.',
+    body: 'Full marketing exposure, qualified buyers, and assertive negotiation, with every offer reviewed against the estate’s best interest.',
   },
   {
     num: '06',
@@ -61,7 +61,7 @@ const faqs = [
   },
   {
     q: 'What does “Certified Probate Specialist” mean?',
-    a: 'It means I’ve completed dedicated training in the legal, financial, and emotional aspects of estate sales — so I can guide executors and beneficiaries through a process most agents rarely handle.',
+    a: 'It means I’ve completed dedicated training in the legal, financial, and emotional aspects of estate sales, so I can guide executors and beneficiaries through a process most agents rarely handle.',
   },
   {
     q: 'How are the proceeds handled?',
@@ -109,7 +109,7 @@ export default function ProbatePage() {
           </h1>
           <p className="text-[16px] font-light text-white/50 max-w-[560px] leading-[1.9]">
             Compassionate, expert guidance for Ottawa executors and families selling probate or
-            inherited property — handled with patience, discretion, and a clear plan.
+            inherited property, handled with patience, discretion, and a clear plan.
           </p>
         </div>
       </section>
@@ -124,7 +124,7 @@ export default function ProbatePage() {
             <p className="text-[15px] font-light text-white/45 leading-[1.95] mb-5">
               Selling an estate property comes with legal deadlines, family dynamics, and emotional
               weight that an ordinary sale never carries. As a <span className="text-white/70">Certified
-              Probate Real Estate Specialist</span>, I&apos;ve been trained specifically to manage this —
+              Probate Real Estate Specialist</span>, I&apos;ve been trained specifically to manage this,
               working hand-in-hand with your estate lawyer every step of the way.
             </p>
             <p className="text-[15px] font-light text-white/45 leading-[1.95]">
@@ -137,7 +137,7 @@ export default function ProbatePage() {
               <p className="font-serif text-[20px] italic text-white/80 leading-relaxed mb-6">
                 &ldquo;My job is to make the hardest sale you&apos;ll ever make feel as light as possible.&rdquo;
               </p>
-              <p className="text-[11px] font-semibold tracking-[0.16em] uppercase text-gold-500">— Mark Ghossein</p>
+              <p className="text-[11px] font-semibold tracking-[0.16em] uppercase text-gold-500">Mark Ghossein</p>
             </div>
           </RevealWrapper>
         </div>

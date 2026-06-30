@@ -1,41 +1,9 @@
 'use client'
 
-import { useEffect, useRef, useState, useCallback } from 'react'
+import { useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import { Magnetic } from './Magnetic'
 import { PropertySearch } from './PropertySearch'
-
-function useCounter(target: number, duration = 1800, suffix = '') {
-  const [display, setDisplay] = useState('0' + suffix)
-  const [triggered, setTriggered] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry?.isIntersecting) { setTriggered(true); observer.disconnect() } },
-      { threshold: 0.6 },
-    )
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
-
-  useEffect(() => {
-    if (!triggered) return
-    let start: number
-    const step = (ts: number) => {
-      if (!start) start = ts
-      const pct = Math.min((ts - start) / duration, 1)
-      const eased = 1 - Math.pow(1 - pct, 3)
-      setDisplay(String(Math.floor(eased * target)) + suffix)
-      if (pct < 1) requestAnimationFrame(step)
-    }
-    requestAnimationFrame(step)
-  }, [triggered, target, duration, suffix])
-
-  return { display, ref }
-}
 
 function WordReveal({ words, baseDelay = 0 }: { words: string[]; baseDelay?: number }) {
   return (
@@ -51,34 +19,22 @@ function WordReveal({ words, baseDelay = 0 }: { words: string[]; baseDelay?: num
   )
 }
 
-const statsConfig = [
-  { target: 500, suffix: '+',  label: 'Families Served',   prefix: ''  },
-  { target: 2,   suffix: 'B+', label: 'In Transactions',   prefix: '$' },
-  { target: 15,  suffix: '+',  label: 'Years Experience',  prefix: ''  },
-]
+const trustSignals = ['5-Star Rated', 'eXp Realty', 'Ottawa & Area']
 
 export function Hero() {
-  const s0 = useCounter(500, 1800, '+')
-  const s1 = useCounter(2,   1400, 'B+')
-  const s2 = useCounter(15,  1600, '+')
-  const counters = [s0, s1, s2]
   const videoRef = useRef<HTMLVideoElement>(null)
 
   // Mobile browsers require a programmatic .play() call even when
-  // autoPlay + muted + playsInline are all set — the declarative
-  // attribute is often ignored by mobile Safari / Android Chrome.
+  // autoPlay + muted + playsInline are all set.
   const tryPlay = useCallback(() => {
     const v = videoRef.current
     if (!v) return
-    v.muted = true          // must be set in JS too for iOS
-    v.play().catch(() => {  // silently swallow autoplay-policy rejections
-      // Video stays hidden behind the dark overlay — no visible impact
-    })
+    v.muted = true
+    v.play().catch(() => {})
   }, [])
 
   useEffect(() => {
     tryPlay()
-    // Also retry on any user gesture in case the first attempt was blocked
     document.addEventListener('touchstart', tryPlay, { once: true })
     document.addEventListener('click',      tryPlay, { once: true })
     return () => {
@@ -104,7 +60,7 @@ export function Hero() {
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
 
-      {/* Gradient overlay — ensures text legibility over any video */}
+      {/* Gradient overlay */}
       <div
         className="absolute inset-0"
         style={{
@@ -152,8 +108,8 @@ export function Hero() {
           className="text-[16px] font-light text-white/50 max-w-[460px] mx-auto leading-[1.9] mb-10 tracking-wide"
           style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 680ms both' }}
         >
-          Whether you're buying, selling, or upsizing — I help Ottawa families
-          build generational wealth through real estate.
+          Whether you&apos;re buying, selling, upsizing, or downsizing, I help Ottawa
+          families make confident, well-advised moves in any market.
         </p>
 
         {/* Property search bar */}
@@ -179,33 +135,27 @@ export function Hero() {
           </Magnetic>
           <Magnetic>
             <Link
-              href="/buyers"
+              href="#services"
               className="inline-flex items-center px-8 py-4 text-white text-[11px] font-semibold tracking-[0.14em] uppercase border border-white/20 hover:border-white/50 hover:bg-white/[0.04] transition-all duration-300"
             >
-              Buyer's Guide →
+              View Services
             </Link>
           </Magnetic>
         </div>
 
-        {/* Stats */}
+        {/* Trust signals */}
         <div
-          className="flex flex-wrap items-center justify-center gap-12"
+          className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4"
           style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 960ms both' }}
         >
-          {statsConfig.map(({ label, prefix }, i) => {
-            const { display, ref } = counters[i]!
-            return (
-              <div key={label} ref={ref} className="flex items-center gap-12">
-                {i > 0 && <div className="hidden sm:block w-px h-10 bg-white/10" />}
-                <div>
-                  <p className="font-serif text-[36px] font-normal text-white leading-none mb-1.5 tabular-nums">
-                    {prefix}{display}
-                  </p>
-                  <p className="text-[10px] font-medium tracking-[0.22em] uppercase text-white/30">{label}</p>
-                </div>
-              </div>
-            )
-          })}
+          {trustSignals.map((signal, i) => (
+            <div key={signal} className="flex items-center gap-10">
+              {i > 0 && <div className="hidden sm:block w-px h-5 bg-white/10" />}
+              <p className="text-[11px] font-medium tracking-[0.22em] uppercase text-white/45">
+                {signal}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 

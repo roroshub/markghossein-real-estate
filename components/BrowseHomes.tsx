@@ -1,13 +1,15 @@
-import Link from 'next/link'
 import { RevealWrapper } from './RevealWrapper'
 
+const SEARCH_PORTAL    = 'https://search.markghossein.com'
+const COMMUNITIES_URL  = 'https://search.markghossein.com/communities'
+
 const priceRanges = [
-  { label: 'Under $500K',  range: 'Condos & starter homes', href: '#listings' },
-  { label: '$500K – $750K', range: 'Townhomes & semis',     href: '#listings' },
-  { label: '$750K – $1M',   range: 'Family detached',        href: '#listings' },
-  { label: '$1M – $1.5M',   range: 'Premium detached',       href: '#listings' },
-  { label: '$1.5M – $2M',   range: 'Executive homes',        href: '#listings' },
-  { label: '$2M+',          range: 'Luxury estates',         href: '#listings' },
+  { label: 'Under $500K',    range: 'Condos & starter homes', href: `${SEARCH_PORTAL}/?price=Under%20%24500K` },
+  { label: '$500K to $750K', range: 'Townhomes & semis',      href: `${SEARCH_PORTAL}/?price=%24500K%20to%20%24750K` },
+  { label: '$750K to $1M',   range: 'Family detached',        href: `${SEARCH_PORTAL}/?price=%24750K%20to%20%241M` },
+  { label: '$1M to $1.5M',   range: 'Premium detached',       href: `${SEARCH_PORTAL}/?price=%241M%20to%20%241.5M` },
+  { label: '$1.5M to $2M',   range: 'Executive homes',        href: `${SEARCH_PORTAL}/?price=%241.5M%20to%20%242M` },
+  { label: '$2M+',           range: 'Luxury estates',         href: `${SEARCH_PORTAL}/?price=%242M%2B` },
 ]
 
 const neighbourhoods = [
@@ -31,9 +33,19 @@ export function BrowseHomes() {
             <span className="block w-8 h-px bg-gold-500 shrink-0" />
             <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-gold-500">Find Your Home</p>
           </div>
-          <h2 className="font-serif text-[clamp(34px,3.5vw,52px)] font-normal leading-[1.1] text-white mb-16">
-            Browse by Price &amp; Neighbourhood
-          </h2>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+            <h2 className="font-serif text-[clamp(34px,3.5vw,52px)] font-normal leading-[1.1] text-white">
+              Browse by Price &amp; Neighbourhood
+            </h2>
+            <a
+              href={COMMUNITIES_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] font-semibold tracking-[0.18em] uppercase text-gold-500 hover:text-gold-300 transition-colors duration-200 shrink-0"
+            >
+              Explore all communities →
+            </a>
+          </div>
         </RevealWrapper>
 
         {/* ── Price ranges ── */}
@@ -43,15 +55,17 @@ export function BrowseHomes() {
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] mb-20">
           {priceRanges.map(({ label, range, href }, i) => (
             <RevealWrapper key={label} delay={i * 50}>
-              <Link
+              <a
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group block bg-ink-900 p-8 hover:bg-ink-850 transition-colors duration-300 h-full"
               >
                 <p className="font-serif text-[26px] font-normal text-white leading-none mb-2 group-hover:text-gold-500 transition-colors duration-300">
                   {label}
                 </p>
                 <p className="text-[12px] font-light text-white/35">{range}</p>
-              </Link>
+              </a>
             </RevealWrapper>
           ))}
         </div>
@@ -63,8 +77,10 @@ export function BrowseHomes() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.06]">
           {neighbourhoods.map(({ name, note }, i) => (
             <RevealWrapper key={name} delay={i * 40}>
-              <Link
-                href="#listings"
+              <a
+                href={`${COMMUNITIES_URL}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group block bg-ink-900 p-7 hover:bg-ink-850 transition-colors duration-300 h-full"
               >
                 <div className="flex items-center gap-2 mb-2">
@@ -77,7 +93,7 @@ export function BrowseHomes() {
                   </p>
                 </div>
                 <p className="text-[11px] font-light text-white/30 pl-[22px]">{note}</p>
-              </Link>
+              </a>
             </RevealWrapper>
           ))}
         </div>
@@ -87,12 +103,12 @@ export function BrowseHomes() {
             <p className="font-serif text-[20px] italic text-white/25">
               Don&apos;t see your area or budget?
             </p>
-            <Link
+            <a
               href="#contact"
               className="text-[10px] font-semibold tracking-[0.18em] uppercase text-white border border-white/15 px-7 py-3.5 hover:border-gold-500 hover:text-gold-500 transition-all duration-300"
             >
               Tell Me What You Need
-            </Link>
+            </a>
           </div>
         </RevealWrapper>
       </div>

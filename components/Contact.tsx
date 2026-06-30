@@ -40,7 +40,7 @@ export function Contact() {
             </h2>
             <p className="text-[15px] font-light text-ink-500 leading-[1.9] mb-12 max-w-sm">
               Whether you're ready to buy, thinking about selling, or just want to know what
-              your home is worth — let's talk. No pressure, no pitch.
+              your home is worth, let's talk. No pressure, no pitch.
             </p>
 
             <div className="flex flex-col gap-5 mb-12">

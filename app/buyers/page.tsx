@@ -7,12 +7,12 @@ import { RevealWrapper } from '@/components/RevealWrapper'
 export const metadata: Metadata = {
   title: "Buyer's Guide",
   description:
-    'Everything Ottawa home buyers need — mortgage calculator, neighbourhood guides, and a proven process to find your perfect home.',
+    'Everything Ottawa home buyers need, mortgage calculator, neighbourhood guides, and a proven process to find your perfect home.',
   alternates: { canonical: '/buyers' },
   openGraph: {
     title: "Buyer's Guide | Mark Ghossein",
     description:
-      'Everything Ottawa home buyers need — mortgage calculator, neighbourhood guides, and a proven process to find your perfect home.',
+      'Everything Ottawa home buyers need, mortgage calculator, neighbourhood guides, and a proven process to find your perfect home.',
     url: '/buyers',
   },
 }
@@ -26,7 +26,7 @@ const steps = [
   {
     num: '02',
     title: 'Define Your Vision',
-    body: "Location, layout, lifestyle — we'll map out your non-negotiables versus nice-to-haves so every showing is a valuable use of your time.",
+    body: "Location, layout, lifestyle, we'll map out your non-negotiables versus nice-to-haves so every showing is a valuable use of your time.",
   },
   {
     num: '03',
@@ -36,17 +36,17 @@ const steps = [
   {
     num: '04',
     title: 'Offer & Negotiate',
-    body: 'Data-driven pricing strategy, firm deadlines, and assertive negotiation — I protect your interests at every clause of the Agreement of Purchase and Sale.',
+    body: 'Data-driven pricing strategy, firm deadlines, and assertive negotiation, I protect your interests at every clause of the Agreement of Purchase and Sale.',
   },
   {
     num: '05',
     title: 'Due Diligence',
-    body: 'Home inspection, title search, status certificate (for condos), financing confirmation — every box checked before you waive a single condition.',
+    body: 'Home inspection, title search, status certificate (for condos), financing confirmation, every box checked before you waive a single condition.',
   },
   {
     num: '06',
     title: 'Close & Celebrate',
-    body: "Keys in hand. I coordinate with lawyers, lenders, and moving teams so your closing day feels effortless — and I'm still one call away after you're in.",
+    body: "Keys in hand. I coordinate with lawyers, lenders, and moving teams so your closing day feels effortless, and I'm still one call away after you're in.",
   },
 ]
 
@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: "What's the difference between a fixed and variable rate?",
-    a: 'Fixed rates lock your payment for the term (typically 5 years). Variable rates move with the Bank of Canada prime rate — historically lower on average but with payment risk if rates rise.',
+    a: 'Fixed rates lock your payment for the term (typically 5 years). Variable rates move with the Bank of Canada prime rate, historically lower on average but with payment risk if rates rise.',
   },
   {
     q: 'Who pays the realtor commission?',
@@ -65,7 +65,7 @@ const faqs = [
   },
   {
     q: 'How long does closing typically take?',
-    a: 'Most Ottawa purchases close in 30–90 days. We can negotiate the timeline that works for your situation — shorter for competitive offers, longer for renovation prep.',
+    a: 'Most Ottawa purchases close in 30 to 90 days. We can negotiate the timeline that works for your situation, shorter for competitive offers, longer for renovation prep.',
   },
 ]
 
@@ -95,7 +95,7 @@ export default function BuyersPage() {
             <em className="italic text-gold-500">Home Ownership</em>
           </h1>
           <p className="text-[16px] font-light text-white/50 max-w-[500px] leading-[1.9]">
-            From pre-approval to possession day — a proven process that puts Ottawa families in the right home at the right price.
+            From pre-approval to possession day, a proven process that puts Ottawa families in the right home at the right price.
           </p>
         </div>
       </section>
@@ -112,7 +112,7 @@ export default function BuyersPage() {
                 Know Your Numbers
               </h2>
               <p className="text-[14px] text-white/40 mt-3 max-w-[480px] leading-relaxed">
-                Canadian semi-annual compounding. Adjust the sliders to model any scenario — then let's talk strategy.
+                Canadian semi-annual compounding. Adjust the sliders to model any scenario, then let's talk strategy.
               </p>
             </div>
           </RevealWrapper>
@@ -189,7 +189,7 @@ export default function BuyersPage() {
               Ready to start your search?
             </h2>
             <p className="text-ink-950/60 text-[14px] mt-2">
-              Let's find you the right home in Ottawa — at the right price.
+              Let's find you the right home in Ottawa, at the right price.
             </p>
           </div>
           <div className="flex gap-4 shrink-0">

@@ -3,17 +3,16 @@
 import { useEffect, useRef } from 'react'
 
 export function CustomCursor() {
-  const dotRef  = useRef<HTMLDivElement>(null)
-  const ringRef = useRef<HTMLDivElement>(null)
+  const dotRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    // Only enable on non-touch devices
+    // Only enable on non-touch devices with a fine pointer
     if (window.matchMedia('(pointer: coarse)').matches) return
 
     let mouseX = window.innerWidth / 2
     let mouseY = window.innerHeight / 2
-    let ringX  = mouseX
-    let ringY  = mouseY
+    let x = mouseX
+    let y = mouseY
     let rafId: number
 
     const onMove = (e: MouseEvent) => {
@@ -22,25 +21,24 @@ export function CustomCursor() {
     }
 
     const animate = () => {
-      const dot  = dotRef.current
-      const ring = ringRef.current
-      if (dot)  dot.style.transform  = `translate(${mouseX}px,${mouseY}px)`
-      if (ring) {
-        ringX += (mouseX - ringX) * 0.12
-        ringY += (mouseY - ringY) * 0.12
-        ring.style.transform = `translate(${ringX}px,${ringY}px)`
+      const dot = dotRef.current
+      if (dot) {
+        // Light smoothing so the dot feels fluid without lagging behind
+        x += (mouseX - x) * 0.35
+        y += (mouseY - y) * 0.35
+        dot.style.transform = `translate(${x}px, ${y}px)`
       }
       rafId = requestAnimationFrame(animate)
     }
     rafId = requestAnimationFrame(animate)
     window.addEventListener('mousemove', onMove)
 
-    // Hover detection — re-query on mutations so dynamically added elements work
-    const setHover   = () => ringRef.current?.classList.add('is-hovering')
-    const unsetHover = () => ringRef.current?.classList.remove('is-hovering')
+    // Grow + soften the dot over interactive elements
+    const setHover   = () => dotRef.current?.classList.add('is-hovering')
+    const unsetHover = () => dotRef.current?.classList.remove('is-hovering')
 
     const bindHovers = () => {
-      document.querySelectorAll('a, button, [data-cursor-hover]').forEach((el) => {
+      document.querySelectorAll('a, button, input, select, textarea, [data-cursor-hover]').forEach((el) => {
         el.addEventListener('mouseenter', setHover)
         el.addEventListener('mouseleave', unsetHover)
       })
@@ -57,10 +55,5 @@ export function CustomCursor() {
     }
   }, [])
 
-  return (
-    <>
-      <div ref={dotRef}  className="cursor-dot"  aria-hidden="true" />
-      <div ref={ringRef} className="cursor-ring" aria-hidden="true" />
-    </>
-  )
+  return <div ref={dotRef} className="cursor-dot" aria-hidden="true" />
 }

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     template: '%s | Mark Ghossein Real Estate',
   },
   description:
-    'Mark Ghossein — Ottawa\'s trusted real estate advisor. Expert buyer representation, seller strategy, and upsizing guidance. eXp Realty agent serving Ottawa, Kanata, Barrhaven, Westboro & all of Ontario.',
+    'Mark Ghossein, Ottawa\'s trusted real estate advisor. Expert buyer representation, seller strategy, and upsizing guidance. eXp Realty agent serving Ottawa, Kanata, Barrhaven, Westboro & all of Ontario.',
   keywords: [
     'Ottawa real estate agent',
     'Ottawa realtor',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     locale: 'en_CA',
     title: 'Mark Ghossein | Ottawa Real Estate Advisor',
-    description: 'Make the right move. Expert real estate guidance for Ottawa families — buying, selling, and upsizing with eXp Realty.',
+    description: 'Make the right move. Expert real estate guidance for Ottawa families, buying, selling, and upsizing with eXp Realty.',
     siteName: 'Mark Ghossein Real Estate Advisors',
   },
   twitter: {

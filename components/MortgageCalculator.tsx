@@ -201,7 +201,7 @@ export function MortgageCalculator() {
             <div className="mt-8">
               {needsCMHC && (
                 <p className="text-[11px] text-gold-500/70 bg-gold-500/[0.06] border border-gold-500/15 px-4 py-3 leading-relaxed mb-4">
-                  ⚠ Down payment under 20% — CMHC mortgage insurance applies and will be added to your loan.
+                  ⚠ Down payment under 20%, CMHC mortgage insurance applies and will be added to your loan.
                 </p>
               )}
               <p className="text-[10px] text-white/20 leading-relaxed">

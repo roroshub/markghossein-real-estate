@@ -2,50 +2,62 @@
   {
     "id": "buyer",
     "title": "Buyer Representation",
-    "description": "I guide you through every step — from pre-approval to closing day — so you can buy with confidence, clarity, and zero regrets.",
+    "description": "I guide you through every step, from pre-approval to closing day, so you can buy with confidence, clarity, and zero regrets.",
     "bullets": [
       "Personalized property search",
       "Offer strategy & negotiation",
       "Inspection coordination",
       "Closing day support"
     ],
-    "cta": { "label": "Start your search", "href": "#contact" }
+    "cta": { "label": "For buyers", "href": "/buyers" }
   },
   {
     "id": "seller",
     "title": "Seller Representation",
-    "description": "Your property deserves top dollar — and a strategic plan to get it. I bring expert staging guidance, data-backed pricing, and maximum market exposure.",
+    "description": "Your property deserves top dollar and a strategic plan to get it. I bring expert staging guidance, data-backed pricing, and maximum market exposure.",
     "bullets": [
       "Professional staging consultation",
       "Targeted marketing campaign",
       "Strategic pricing analysis",
       "Offer review & negotiation"
     ],
-    "cta": { "label": "List your home", "href": "#contact" }
+    "cta": { "label": "For sellers", "href": "/sellers" }
   },
   {
     "id": "upsizing",
-    "title": "Upsizing Consultation",
-    "description": "Selling and buying simultaneously is complex. I make your transition seamless, stress-free, and financially optimized — whether you're upsizing or downsizing.",
+    "title": "Upsizing",
+    "description": "Making room for the life you've grown into. My Smooth Move System keeps selling and buying at once seamless, financially optimized, and stress-free.",
     "bullets": [
       "Timeline synchronization",
       "Budget planning beyond pre-approval",
       "Bridge financing guidance",
       "Dual negotiation strategy"
     ],
-    "cta": { "label": "Explore My Move", "href": "/upsizing" }
+    "cta": { "label": "Explore upsizing", "href": "/upsizing" }
+  },
+  {
+    "id": "downsizing",
+    "title": "Downsizing",
+    "description": "Less house, more life. I help you right-size into a home that fits your next chapter, unlock your equity, and simplify the move from start to finish.",
+    "bullets": [
+      "Equity & lifestyle planning",
+      "Decluttering & staging support",
+      "Condo & bungalow expertise",
+      "Coordinated buy and sell timing"
+    ],
+    "cta": { "label": "Explore downsizing", "href": "/downsizing" }
   },
   {
     "id": "investment",
     "title": "Investment Strategy",
-    "description": "Real estate is one of the most powerful wealth-building tools available. I help investors identify opportunities, analyze returns, and grow their portfolios.",
+    "description": "Real estate is one of the most powerful wealth-building tools available. I help investors spot opportunities, analyze returns, and grow their portfolios.",
     "bullets": [
       "ROI & cap rate analysis",
       "Market opportunity spotting",
       "Multi-property planning",
       "Long-term equity roadmap"
     ],
-    "cta": { "label": "Build your portfolio", "href": "#contact" }
+    "cta": { "label": "For investors", "href": "/investment" }
   },
   {
     "id": "probate",

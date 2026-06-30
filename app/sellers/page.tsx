@@ -8,12 +8,12 @@ import { RevealWrapper } from '@/components/RevealWrapper'
 export const metadata: Metadata = {
   title: "Seller's Guide",
   description:
-    'Everything Ottawa home sellers need — a free HomeWorth valuation, strategic pricing, professional staging, and a proven process to sell for top dollar.',
+    'Everything Ottawa home sellers need, a free HomeWorth valuation, strategic pricing, professional staging, and a proven process to sell for top dollar.',
   alternates: { canonical: '/sellers' },
   openGraph: {
     title: "Seller's Guide | Mark Ghossein",
     description:
-      'Everything Ottawa home sellers need — a free HomeWorth valuation, strategic pricing, professional staging, and a proven process to sell for top dollar.',
+      'Everything Ottawa home sellers need, a free HomeWorth valuation, strategic pricing, professional staging, and a proven process to sell for top dollar.',
     url: '/sellers',
   },
 }
@@ -22,7 +22,7 @@ const steps = [
   {
     num: '01',
     title: 'Strategic Pricing',
-    body: "Pricing wins or loses the sale. I build a data-driven comparative market analysis on your home and your block — not a guess — so we list at the number that attracts the most buyers and the strongest offers.",
+    body: "Pricing wins or loses the sale. I build a data-driven comparative market analysis on your home and your block, not a guess, so we list at the number that attracts the most buyers and the strongest offers.",
   },
   {
     num: '02',
@@ -32,7 +32,7 @@ const steps = [
   {
     num: '03',
     title: 'Professional Marketing',
-    body: 'Magazine-quality photography, video, floor plans, and a targeted digital campaign that puts your listing in front of qualified Ottawa buyers — not just whoever happens to drive by.',
+    body: 'Magazine-quality photography, video, floor plans, and a targeted digital campaign that puts your listing in front of qualified Ottawa buyers, not just whoever happens to drive by.',
   },
   {
     num: '04',
@@ -42,19 +42,19 @@ const steps = [
   {
     num: '05',
     title: 'Offers & Negotiation',
-    body: 'When offers arrive, I negotiate assertively on price, conditions, and closing terms — protecting your bottom line at every clause of the Agreement of Purchase and Sale.',
+    body: 'When offers arrive, I negotiate assertively on price, conditions, and closing terms, protecting your bottom line at every clause of the Agreement of Purchase and Sale.',
   },
   {
     num: '06',
     title: 'Close With Confidence',
-    body: "I coordinate with lawyers, lenders, and the buyer's agent so your closing is smooth and on time — and I'm still one call away after the sold sign goes up.",
+    body: "I coordinate with lawyers, lenders, and the buyer's agent so your closing is smooth and on time, and I'm still one call away after the sold sign goes up.",
   },
 ]
 
 const faqs = [
   {
     q: 'How long does it take to sell a home in Ottawa?',
-    a: 'Well-priced, well-prepared homes in Ottawa often sell within 1–3 weeks, though it varies by neighbourhood, price point, and season. Strategic pricing and presentation are the biggest levers on time-on-market.',
+    a: 'Well-priced, well-prepared homes in Ottawa often sell within 1 to 3 weeks, though it varies by neighbourhood, price point, and season. Strategic pricing and presentation are the biggest levers on time-on-market.',
   },
   {
     q: 'What does it cost to sell my home?',
@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     q: 'Should I sell or buy first?',
-    a: "It depends on your finances, the market, and your risk tolerance. We'll map out a strategy — including bridge financing options — so you're never caught carrying two homes or scrambling for one.",
+    a: "It depends on your finances, the market, and your risk tolerance. We'll map out a strategy, including bridge financing options, so you're never caught carrying two homes or scrambling for one.",
   },
 ]
 
@@ -96,7 +96,7 @@ export default function SellersPage() {
             <em className="italic text-gold-500">Top Dollar</em>
           </h1>
           <p className="text-[16px] font-light text-white/50 max-w-[500px] leading-[1.9]">
-            Strategic pricing, standout marketing, and assertive negotiation — a proven process that sells Ottawa homes faster and for more.
+            Strategic pricing, standout marketing, and assertive negotiation, a proven process that sells Ottawa homes faster and for more.
           </p>
         </div>
       </section>
@@ -136,7 +136,7 @@ export default function SellersPage() {
                 Run the Numbers
               </h2>
               <p className="text-[14px] text-white/40 mt-3 max-w-[480px] leading-relaxed">
-                Selling and buying next? Model the mortgage on your move-up home — Canadian semi-annual compounding, adjust any scenario.
+                Selling and buying next? Model the mortgage on your move-up home, Canadian semi-annual compounding, adjust any scenario.
               </p>
             </div>
           </RevealWrapper>
@@ -213,7 +213,7 @@ export default function SellersPage() {
               Thinking of selling?
             </h2>
             <p className="text-ink-950/60 text-[14px] mt-2">
-              Let&apos;s talk strategy — and what your Ottawa home could sell for.
+              Let&apos;s talk strategy, and what your Ottawa home could sell for.
             </p>
           </div>
           <div className="flex gap-4 shrink-0">

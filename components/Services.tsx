@@ -19,6 +19,15 @@ const icons: Record<string, React.ReactNode> = {
       <path d="M8 24V12l4-4h8l4 4v12" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
       <path d="M12 24v-6h8v6" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
       <path d="M4 24h24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M22 11l4-4m0 0h-3m3 0v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  downsizing: (
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+      <path d="M9 24V14l7-6 7 6v10" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+      <path d="M13 24v-5h6v5" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+      <path d="M5 24h22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      <path d="M10 9L6 13m0 0h3m-3 0v-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   ),
   investment: (
@@ -57,7 +66,7 @@ export function Services({ services }: { services: Service[] }) {
           </h2>
         </RevealWrapper>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 divide-x divide-y divide-white/[0.05] border border-white/[0.05]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-x divide-y divide-white/[0.05] border border-white/[0.05]">
           {services.map((svc, i) => (
             <RevealWrapper key={svc.id} delay={i * 60}>
               <div className="group p-10 flex flex-col h-full hover:bg-ink-900 transition-colors duration-300">
@@ -75,7 +84,7 @@ export function Services({ services }: { services: Service[] }) {
                 <ul className="flex flex-col gap-2.5 mb-9">
                   {svc.bullets.map((b) => (
                     <li key={b} className="text-[12px] font-light text-white/35 pl-4 relative">
-                      <span className="absolute left-0 text-gold-500/60 text-[9px] top-[2px]">—</span>
+                      <span className="absolute left-0 top-[9px] w-2 h-px bg-gold-500/60" />
                       {b}
                     </li>
                   ))}

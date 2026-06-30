@@ -68,7 +68,7 @@ export function Listings({ listings }: { listings: Listing[] }) {
         {/* Asymmetric editorial grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[1.45fr_1fr] gap-px bg-white/[0.06]">
 
-          {/* Featured card — tall left column */}
+          {/* Featured card, tall left column */}
           {featured && (
             <RevealWrapper>
               <article className="group relative bg-ink-900 flex flex-col h-full min-h-[580px]">
@@ -109,7 +109,7 @@ export function Listings({ listings }: { listings: Listing[] }) {
             </RevealWrapper>
           )}
 
-          {/* Right column — two stacked cards */}
+          {/* Right column, two stacked cards */}
           <div className="flex flex-col gap-px bg-white/[0.06]">
             {rest.map((listing, i) => (
               <RevealWrapper key={listing.id} delay={(i + 1) * 90}>

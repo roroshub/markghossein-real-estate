@@ -11,7 +11,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/probate', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/upsizing', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/downsizing', priority: 0.7, changeFrequency: 'monthly' },
+    { path: '/investment', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/mortgage-calculator', priority: 0.7, changeFrequency: 'monthly' },
+    { path: '/home-evaluation', priority: 0.7, changeFrequency: 'monthly' },
+    { path: '/nosey-neighbour', priority: 0.6, changeFrequency: 'monthly' },
+    { path: '/faq', priority: 0.6, changeFrequency: 'monthly' },
   ]
 
   return routes.map(({ path, priority, changeFrequency }) => ({

@@ -1,21 +1,20 @@
 import Link from 'next/link'
 
 const quickLinks = [
-  { label: 'About Mark',     href: '/#about' },
   { label: 'Services',       href: '/#services' },
-  { label: 'Listings',       href: '/#listings' },
   { label: 'Browse Homes',   href: '/#browse' },
+  { label: 'About Mark',     href: '/#about' },
   { label: 'Client Stories', href: '/#testimonials' },
   { label: 'Contact',        href: '/#contact' },
 ]
 
 const serviceLinks = [
   { label: "Buyer's Guide",        href: '/buyers' },
+  { label: "Seller's Guide",       href: '/sellers' },
   { label: 'Mortgage Calculator',  href: '/mortgage-calculator' },
+  { label: 'Home Evaluation',      href: '/home-evaluation' },
   { label: 'Probate & Estates',    href: '/probate' },
-  { label: 'Upsizing',             href: '/upsizing' },
-  { label: 'Downsizing',           href: '/downsizing' },
-  { label: 'HomeWorth Valuation',  href: '/#tools' },
+  { label: 'Real Estate FAQ',      href: '/faq' },
 ]
 
 const socialLinks = [

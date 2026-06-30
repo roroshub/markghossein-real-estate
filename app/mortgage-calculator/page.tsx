@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 }
 
 const tips = [
-  { t: '20% Down Avoids CMHC', d: 'Putting 20% or more down means no mortgage default insurance — saving thousands over your term.' },
+  { t: '20% Down Avoids CMHC', d: 'Putting 20% or more down means no mortgage default insurance, saving thousands over your term.' },
   { t: 'Stress Test', d: 'Lenders qualify you at the higher of your rate + 2% or 5.25%. Budget with a buffer in mind.' },
   { t: 'Accelerated Payments', d: 'Switching to accelerated bi-weekly payments can shave years off your amortization.' },
 ]

@@ -8,23 +8,29 @@ type NavChild = { label: string; href: string }
 type NavItem = { label: string; href?: string; children?: NavChild[] }
 
 const navLinks: NavItem[] = [
-  { label: 'About',    href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Listings', href: '#listings' },
+  { label: 'About', href: '#about' },
   {
-    label: 'My Move',
+    label: 'Services',
     children: [
-      { label: 'Upsizing',   href: '/upsizing' },
-      { label: 'Downsizing', href: '/downsizing' },
+      { label: 'Buyer Representation',  href: '/buyers' },
+      { label: 'Seller Representation', href: '/sellers' },
+      { label: 'Upsizing',              href: '/upsizing' },
+      { label: 'Downsizing',            href: '/downsizing' },
+      { label: 'Investment Strategy',   href: '/investment' },
+      { label: 'Probate & Estate Sales', href: '/probate' },
     ],
   },
   {
     label: 'Resources',
     children: [
-      { label: "Buyer's Guide",       href: '/buyers' },
-      { label: "Seller's Guide",      href: '/sellers' },
-      { label: 'Mortgage Calculator', href: '/mortgage-calculator' },
-      { label: 'Probate & Estates',   href: '/probate' },
+      { label: "Buyer's Guide",            href: '/buyers' },
+      { label: "Seller's Guide",           href: '/sellers' },
+      { label: 'Mortgage Calculator',      href: '/mortgage-calculator' },
+      { label: 'Probate Guide',            href: '/probate' },
+      { label: 'Smooth Move System',       href: '/upsizing' },
+      { label: 'Home Evaluation',          href: '/home-evaluation' },
+      { label: 'Nosey Neighbour',          href: '/nosey-neighbour' },
+      { label: 'Real Estate FAQ',          href: '/faq' },
     ],
   },
   { label: 'Reviews', href: '#testimonials' },
