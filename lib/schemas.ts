@@ -57,7 +57,7 @@ export const stepsArraySchema     = z.array(stepSchema)
 export const interestValues = [
   'Buying a Home',
   'Selling My Home',
-  'Upsizing / Smooth Move',
+  'Upsizing / Downsizing',
   'Home Valuation',
   'Investment Property',
   'Just Exploring',

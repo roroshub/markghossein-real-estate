@@ -22,6 +22,7 @@ const navLinks: NavItem[] = [
     label: 'Resources',
     children: [
       { label: "Buyer's Guide",       href: '/buyers' },
+      { label: "Seller's Guide",      href: '/sellers' },
       { label: 'Mortgage Calculator', href: '/mortgage-calculator' },
       { label: 'Probate & Estates',   href: '/probate' },
     ],
