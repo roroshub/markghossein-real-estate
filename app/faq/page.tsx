@@ -103,7 +103,7 @@ export default function FaqPage() {
           <h1 className="font-serif text-[clamp(44px,6.5vw,92px)] font-normal leading-[0.95] text-white tracking-tight mb-6">
             Real Estate <em className="italic text-gold-500">FAQ.</em>
           </h1>
-          <p className="text-[16px] font-light text-white/50 max-w-[560px] leading-[1.9]">
+          <p className="text-[16px] font-light text-white/55 max-w-[560px] leading-[1.9]">
             Straight answers to the questions Ottawa buyers and sellers ask most. Do not see yours?
             Reach out and I will walk you through it.
           </p>
@@ -123,7 +123,7 @@ export default function FaqPage() {
                 <RevealWrapper key={item.q} delay={i * 70}>
                   <div className={`${gi % 2 === 0 ? 'bg-ink-900' : 'bg-ink-950'} p-10 h-full`}>
                     <p className="text-[14px] font-semibold text-white mb-3 leading-snug">{item.q}</p>
-                    <p className="text-[13px] text-white/40 leading-relaxed">{item.a}</p>
+                    <p className="text-[13px] text-white/55 leading-relaxed">{item.a}</p>
                   </div>
                 </RevealWrapper>
               ))}

@@ -49,7 +49,7 @@ export default function UpsizingPage() {
           <h1 className="font-serif text-[clamp(44px,6.5vw,92px)] font-normal leading-[0.95] text-white tracking-tight mb-6">
             Room to <em className="italic text-gold-500">Grow.</em>
           </h1>
-          <p className="text-[16px] font-light text-white/50 max-w-[560px] leading-[1.9]">
+          <p className="text-[16px] font-light text-white/55 max-w-[560px] leading-[1.9]">
             Your family outgrew the house, and that is worth celebrating. Now let us make the move to
             something bigger feel effortless, both financially and logistically.
           </p>
@@ -65,7 +65,7 @@ export default function UpsizingPage() {
               <h2 className="font-serif text-[clamp(32px,4vw,52px)] font-normal text-white leading-tight">
                 The Smooth Move System
               </h2>
-              <p className="text-[14px] text-white/40 mt-3 max-w-[520px] leading-relaxed">
+              <p className="text-[14px] text-white/55 mt-3 max-w-[520px] leading-relaxed">
                 My proprietary process for selling and buying at the same time, so the transition
                 feels seamless instead of overwhelming.
               </p>
@@ -77,7 +77,7 @@ export default function UpsizingPage() {
                 <div className="bg-ink-900 p-10 h-full group hover:bg-ink-850 transition-colors duration-300">
                   <p className="font-serif text-[42px] text-white/[0.06] leading-none mb-6 group-hover:text-gold-500/20 transition-colors duration-300">{s.n}</p>
                   <h3 className="text-[13px] font-semibold tracking-[0.1em] uppercase text-white mb-3">{s.t}</h3>
-                  <p className="text-[13px] text-white/40 leading-relaxed">{s.d}</p>
+                  <p className="text-[13px] text-white/55 leading-relaxed">{s.d}</p>
                 </div>
               </RevealWrapper>
             ))}
@@ -101,7 +101,7 @@ export default function UpsizingPage() {
               <RevealWrapper key={p.t} delay={i * 70}>
                 <div className="bg-ink-950 p-10 h-full">
                   <h3 className="text-[13px] font-semibold tracking-[0.1em] uppercase text-white mb-3">{p.t}</h3>
-                  <p className="text-[13px] text-white/40 leading-relaxed">{p.d}</p>
+                  <p className="text-[13px] text-white/55 leading-relaxed">{p.d}</p>
                 </div>
               </RevealWrapper>
             ))}

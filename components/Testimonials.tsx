@@ -44,7 +44,7 @@ export function Testimonials({ testimonials }: { testimonials: Testimonial[] }) 
                   </div>
                   <div>
                     <p className="text-[13px] font-medium text-white">{t.name}</p>
-                    <p className="text-[11px] font-light text-white/30">{t.detail}</p>
+                    <p className="text-[11px] font-light text-white/55">{t.detail}</p>
                   </div>
                 </div>
               </article>
@@ -59,7 +59,7 @@ export function Testimonials({ testimonials }: { testimonials: Testimonial[] }) 
               <div key={source} className="flex flex-col items-center gap-2">
                 <span className="font-serif text-[42px] font-normal text-white leading-none">{score}</span>
                 <div className="text-gold-500 tracking-[3px] text-[11px]">★★★★★</div>
-                <span className="text-[9px] tracking-[0.2em] uppercase text-white/25">{source}</span>
+                <span className="text-[9px] tracking-[0.2em] uppercase text-white/55">{source}</span>
               </div>
             ))}
           </div>

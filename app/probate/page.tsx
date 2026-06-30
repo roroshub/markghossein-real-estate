@@ -107,7 +107,7 @@ export default function ProbatePage() {
           <h1 className="font-serif text-[clamp(44px,6.5vw,92px)] font-normal leading-[0.95] text-white tracking-tight mb-6">
             Probate &amp; <em className="italic text-gold-500">Estate Sales</em>
           </h1>
-          <p className="text-[16px] font-light text-white/50 max-w-[560px] leading-[1.9]">
+          <p className="text-[16px] font-light text-white/55 max-w-[560px] leading-[1.9]">
             Compassionate, expert guidance for Ottawa executors and families selling probate or
             inherited property, handled with patience, discretion, and a clear plan.
           </p>
@@ -121,13 +121,13 @@ export default function ProbatePage() {
             <h2 className="font-serif text-[clamp(28px,3.2vw,44px)] font-normal text-white leading-tight mb-6">
               You don&apos;t have to navigate this alone.
             </h2>
-            <p className="text-[15px] font-light text-white/45 leading-[1.95] mb-5">
+            <p className="text-[15px] font-light text-white/55 leading-[1.95] mb-5">
               Selling an estate property comes with legal deadlines, family dynamics, and emotional
               weight that an ordinary sale never carries. As a <span className="text-white/70">Certified
               Probate Real Estate Specialist</span>, I&apos;ve been trained specifically to manage this,
               working hand-in-hand with your estate lawyer every step of the way.
             </p>
-            <p className="text-[15px] font-light text-white/45 leading-[1.95]">
+            <p className="text-[15px] font-light text-white/55 leading-[1.95]">
               Whether the home needs a full cleanout and renovation or is ready to list tomorrow, I take
               the real estate burden off your shoulders so your family can focus on what matters.
             </p>
@@ -167,7 +167,7 @@ export default function ProbatePage() {
                   <h3 className="text-[13px] font-semibold tracking-[0.1em] uppercase text-white mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-[13px] text-white/40 leading-relaxed">{step.body}</p>
+                  <p className="text-[13px] text-white/55 leading-relaxed">{step.body}</p>
                 </div>
               </RevealWrapper>
             ))}
@@ -194,7 +194,7 @@ export default function ProbatePage() {
               <RevealWrapper key={faq.q} delay={i * 80} className="h-full">
                 <div className="bg-ink-900 p-10 h-full">
                   <p className="text-[13px] font-semibold text-white mb-3 leading-snug">{faq.q}</p>
-                  <p className="text-[13px] text-white/40 leading-relaxed">{faq.a}</p>
+                  <p className="text-[13px] text-white/55 leading-relaxed">{faq.a}</p>
                 </div>
               </RevealWrapper>
             ))}

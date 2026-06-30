@@ -32,7 +32,7 @@ export function Contact() {
 
           {/* Left */}
           <RevealWrapper>
-            <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-gold-500 mb-5">
+            <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-gold-700 mb-5">
               Get In Touch
             </p>
             <h2 className="font-serif text-[clamp(34px,3.5vw,52px)] font-normal leading-[1.1] text-ink-900 mb-6">
@@ -45,19 +45,19 @@ export function Contact() {
 
             <div className="flex flex-col gap-5 mb-12">
               <a href="mailto:mark@markghossein.com" className="flex items-center gap-5 group">
-                <div className="w-10 h-10 border border-ink-200 flex items-center justify-center text-ink-300 text-sm group-hover:border-gold-500 group-hover:text-gold-500 transition-all duration-200">
+                <div className="w-10 h-10 border border-ink-200 flex items-center justify-center text-ink-500 text-sm group-hover:border-gold-500 group-hover:text-gold-500 transition-all duration-200">
                   ✉
                 </div>
                 <span className="text-[14px] text-ink-600 group-hover:text-ink-900 transition-colors duration-200">mark@markghossein.com</span>
               </a>
               <a href="#contact" className="flex items-center gap-5 group">
-                <div className="w-10 h-10 border border-ink-200 flex items-center justify-center text-ink-300 text-sm group-hover:border-gold-500 group-hover:text-gold-500 transition-all duration-200">
+                <div className="w-10 h-10 border border-ink-200 flex items-center justify-center text-ink-500 text-sm group-hover:border-gold-500 group-hover:text-gold-500 transition-all duration-200">
                   ✆
                 </div>
                 <span className="text-[14px] text-ink-600 group-hover:text-ink-900 transition-colors duration-200">Book a Call</span>
               </a>
               <div className="flex items-center gap-5">
-                <div className="w-10 h-10 border border-ink-200 flex items-center justify-center text-ink-300 text-sm">◉</div>
+                <div className="w-10 h-10 border border-ink-200 flex items-center justify-center text-ink-500 text-sm">◉</div>
                 <span className="text-[14px] text-ink-600">Ontario, Canada</span>
               </div>
             </div>
@@ -83,32 +83,32 @@ export function Contact() {
                 <div className="flex flex-col items-center text-center gap-5 py-8">
                   <div className="w-14 h-14 border border-gold-500/60 flex items-center justify-center text-gold-500 text-xl">✓</div>
                   <h3 className="font-serif text-[26px] font-normal text-white">Message Received!</h3>
-                  <p className="text-[14px] font-light text-white/40">Mark will be in touch within 24 hours.</p>
+                  <p className="text-[14px] font-light text-white/60">Mark will be in touch within 24 hours.</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit(onSubmit)} noValidate>
                   <div className="grid grid-cols-2 gap-4 mb-4">
-                    <Field label="First Name" error={errors.firstName}>
-                      <input name="firstName" placeholder="Jane" value={fields.firstName} onChange={handleChange} className="field-input" required />
+                    <Field label="First Name" htmlFor="firstName" error={errors.firstName}>
+                      <input id="firstName" name="firstName" placeholder="Jane" value={fields.firstName} onChange={handleChange} className="field-input" required />
                     </Field>
-                    <Field label="Last Name" error={errors.lastName}>
-                      <input name="lastName" placeholder="Doe" value={fields.lastName} onChange={handleChange} className="field-input" required />
+                    <Field label="Last Name" htmlFor="lastName" error={errors.lastName}>
+                      <input id="lastName" name="lastName" placeholder="Doe" value={fields.lastName} onChange={handleChange} className="field-input" required />
                     </Field>
                   </div>
-                  <Field label="Email Address" error={errors.email} className="mb-4">
-                    <input type="email" name="email" placeholder="jane@example.com" value={fields.email} onChange={handleChange} className="field-input" required />
+                  <Field label="Email Address" htmlFor="email" error={errors.email} className="mb-4">
+                    <input id="email" type="email" name="email" placeholder="jane@example.com" value={fields.email} onChange={handleChange} className="field-input" required />
                   </Field>
-                  <Field label="Phone" error={errors.phone} className="mb-4">
-                    <input type="tel" name="phone" placeholder="+1 (416) 000-0000" value={fields.phone} onChange={handleChange} className="field-input" />
+                  <Field label="Phone" htmlFor="phone" error={errors.phone} className="mb-4">
+                    <input id="phone" type="tel" name="phone" placeholder="+1 (416) 000-0000" value={fields.phone} onChange={handleChange} className="field-input" />
                   </Field>
-                  <Field label="I'm interested in…" error={errors.interest} className="mb-4">
-                    <select name="interest" value={fields.interest} onChange={handleChange} className="field-input cursor-pointer">
+                  <Field label="I'm interested in…" htmlFor="interest" error={errors.interest} className="mb-4">
+                    <select id="interest" name="interest" value={fields.interest} onChange={handleChange} className="field-input cursor-pointer">
                       <option value="">Select one</option>
                       {interestValues.map((v) => <option key={v} value={v}>{v}</option>)}
                     </select>
                   </Field>
-                  <Field label="Message" error={errors.message} className="mb-8">
-                    <textarea name="message" rows={4} placeholder="Tell me a bit about what you're looking for…" value={fields.message} onChange={handleChange} className="field-input resize-y" />
+                  <Field label="Message" htmlFor="message" error={errors.message} className="mb-8">
+                    <textarea id="message" name="message" rows={4} placeholder="Tell me a bit about what you're looking for…" value={fields.message} onChange={handleChange} className="field-input resize-y" />
                   </Field>
 
                   <button
@@ -119,7 +119,7 @@ export function Contact() {
                     {isSubmitting ? 'Sending…' : 'Send Message'}
                   </button>
 
-                  <p className="text-[10px] font-light text-white/20 text-center leading-relaxed mt-5">
+                  <p className="text-[11px] font-light text-white/55 text-center leading-relaxed mt-5">
                     Your information is never shared. No spam, ever.
                   </p>
                 </form>
@@ -133,15 +133,15 @@ export function Contact() {
 }
 
 function Field({
-  label, error, children, className = '',
+  label, htmlFor, error, children, className = '',
 }: {
-  label: string; error?: string; children: React.ReactNode; className?: string
+  label: string; htmlFor: string; error?: string; children: React.ReactNode; className?: string
 }) {
   return (
     <div className={`flex flex-col gap-2 ${className}`}>
-      <label className="text-[9px] font-semibold tracking-[0.2em] uppercase text-white/35">{label}</label>
+      <label htmlFor={htmlFor} className="text-[9px] font-semibold tracking-[0.2em] uppercase text-white/55">{label}</label>
       {children}
-      {error && <p className="text-[11px] text-red-400">{error}</p>}
+      {error && <p className="text-[12px] text-red-400">{error}</p>}
     </div>
   )
 }

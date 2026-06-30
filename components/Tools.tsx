@@ -29,7 +29,7 @@ export function Tools({ tools }: { tools: Tool[] }) {
     <section id="tools" className="py-32 bg-white">
       <div className="mx-auto max-w-[1320px] px-8 md:px-12">
         <RevealWrapper className="mb-20">
-          <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-gold-500 mb-5">
+          <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-gold-700 mb-5">
             Free Resources
           </p>
           <h2 className="font-serif text-[clamp(34px,3.5vw,52px)] font-normal leading-[1.1] text-ink-900">

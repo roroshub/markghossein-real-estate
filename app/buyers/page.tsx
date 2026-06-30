@@ -94,7 +94,7 @@ export default function BuyersPage() {
             Your Path to{' '}
             <em className="italic text-gold-500">Home Ownership</em>
           </h1>
-          <p className="text-[16px] font-light text-white/50 max-w-[500px] leading-[1.9]">
+          <p className="text-[16px] font-light text-white/55 max-w-[500px] leading-[1.9]">
             From pre-approval to possession day, a proven process that puts Ottawa families in the right home at the right price.
           </p>
         </div>
@@ -111,7 +111,7 @@ export default function BuyersPage() {
               <h2 className="font-serif text-[clamp(32px,4vw,52px)] font-normal text-white leading-tight">
                 Know Your Numbers
               </h2>
-              <p className="text-[14px] text-white/40 mt-3 max-w-[480px] leading-relaxed">
+              <p className="text-[14px] text-white/55 mt-3 max-w-[480px] leading-relaxed">
                 Canadian semi-annual compounding. Adjust the sliders to model any scenario, then let's talk strategy.
               </p>
             </div>
@@ -146,7 +146,7 @@ export default function BuyersPage() {
                   <h3 className="text-[13px] font-semibold tracking-[0.1em] uppercase text-white mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-[13px] text-white/40 leading-relaxed">{step.body}</p>
+                  <p className="text-[13px] text-white/55 leading-relaxed">{step.body}</p>
                 </div>
               </RevealWrapper>
             ))}
@@ -173,7 +173,7 @@ export default function BuyersPage() {
               <RevealWrapper key={faq.q} delay={i * 80}>
                 <div className="bg-ink-900 p-10">
                   <p className="text-[13px] font-semibold text-white mb-3 leading-snug">{faq.q}</p>
-                  <p className="text-[13px] text-white/40 leading-relaxed">{faq.a}</p>
+                  <p className="text-[13px] text-white/55 leading-relaxed">{faq.a}</p>
                 </div>
               </RevealWrapper>
             ))}

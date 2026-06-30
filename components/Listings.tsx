@@ -3,7 +3,7 @@ import { RevealWrapper } from './RevealWrapper'
 import type { Listing } from '@/lib/schemas'
 
 const statusConfig = {
-  'for-sale': { label: 'For Sale',    cls: 'text-white/50    border-white/20' },
+  'for-sale': { label: 'For Sale',    cls: 'text-white/55    border-white/20' },
   'new':      { label: 'New Listing', cls: 'text-gold-500    border-gold-500/50' },
   'sold':     { label: 'Sold',        cls: 'text-ink-400     border-ink-400/40' },
 }
@@ -58,7 +58,7 @@ export function Listings({ listings }: { listings: Listing[] }) {
             </div>
             <Link
               href="#contact"
-              className="text-[10px] font-semibold tracking-[0.18em] uppercase text-white/25 hover:text-gold-500 transition-colors duration-200 shrink-0"
+              className="text-[10px] font-semibold tracking-[0.18em] uppercase text-white/55 hover:text-gold-500 transition-colors duration-200 shrink-0"
             >
               View All →
             </Link>
@@ -98,8 +98,8 @@ export function Listings({ listings }: { listings: Listing[] }) {
                     {featured.price}
                   </p>
                   <h3 className="text-[13px] font-medium text-white/60 mb-1 tracking-wide">{featured.address}</h3>
-                  <p className="text-[11px] text-white/25 mb-7">{featured.city}</p>
-                  <div className="flex items-center gap-6 text-[10px] font-medium tracking-[0.12em] uppercase text-white/20 border-t border-white/[0.06] pt-5">
+                  <p className="text-[11px] text-white/55 mb-7">{featured.city}</p>
+                  <div className="flex items-center gap-6 text-[10px] font-medium tracking-[0.12em] uppercase text-white/55 border-t border-white/[0.06] pt-5">
                     <span>{featured.beds} Beds</span>
                     <span>{featured.baths} Baths</span>
                     <span>{featured.sqft.toLocaleString()} sqft</span>
@@ -139,8 +139,8 @@ export function Listings({ listings }: { listings: Listing[] }) {
                       {listing.price}
                     </p>
                     <h3 className="text-[12px] font-medium text-white/55 mb-1 tracking-wide">{listing.address}</h3>
-                    <p className="text-[11px] text-white/22 mb-5">{listing.city}</p>
-                    <div className="flex items-center gap-5 text-[10px] font-medium tracking-[0.12em] uppercase text-white/18 border-t border-white/[0.06] pt-4">
+                    <p className="text-[11px] text-white/55 mb-5">{listing.city}</p>
+                    <div className="flex items-center gap-5 text-[10px] font-medium tracking-[0.12em] uppercase text-white/55 border-t border-white/[0.06] pt-4">
                       <span>{listing.beds} Beds</span>
                       <span>{listing.baths} Baths</span>
                       <span>{listing.sqft.toLocaleString()} sqft</span>
@@ -155,7 +155,7 @@ export function Listings({ listings }: { listings: Listing[] }) {
         {/* Bottom CTA strip */}
         <RevealWrapper>
           <div className="mt-14 pt-10 border-t border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            <p className="font-serif text-[20px] italic text-white/25">
+            <p className="font-serif text-[20px] italic text-white/55">
               Looking for something specific?
             </p>
             <Link

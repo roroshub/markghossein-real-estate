@@ -37,7 +37,7 @@ export default function HomeEvaluationPage() {
           <h1 className="font-serif text-[clamp(44px,6.5vw,92px)] font-normal leading-[0.95] text-white tracking-tight mb-6">
             What&apos;s Your Home <em className="italic text-gold-500">Worth?</em>
           </h1>
-          <p className="text-[16px] font-light text-white/50 max-w-[560px] leading-[1.9]">
+          <p className="text-[16px] font-light text-white/55 max-w-[560px] leading-[1.9]">
             Get a quick, instant ballpark on your Ottawa home, then request a free, accurate
             HomeWorth valuation built on real comparable sales.
           </p>

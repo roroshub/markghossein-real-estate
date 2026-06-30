@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useCallback } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import Link from 'next/link'
 import { Magnetic } from './Magnetic'
 import { PropertySearch } from './PropertySearch'
@@ -10,7 +10,7 @@ function WordReveal({ words, baseDelay = 0 }: { words: string[]; baseDelay?: num
     <>
       {words.map((word, i) => (
         <span key={word} className="word-reveal-wrap mr-[0.22em]">
-          <span className="word-reveal-inner" style={{ animationDelay: `${baseDelay + i * 110}ms` }}>
+          <span className="word-reveal-inner" style={{ animationDelay: `${baseDelay + i * 90}ms` }}>
             {word}
           </span>
         </span>
@@ -23,9 +23,16 @@ const trustSignals = ['5-Star Rated', 'eXp Realty', 'Ottawa & Area']
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null)
+  // The background video is decorative and heavy on mobile. Only load it on
+  // larger screens, after hydration, so it never blocks the mobile LCP / Speed Index.
+  const [showVideo, setShowVideo] = useState(false)
 
-  // Mobile browsers require a programmatic .play() call even when
-  // autoPlay + muted + playsInline are all set.
+  useEffect(() => {
+    const wideScreen = window.matchMedia('(min-width: 1024px)').matches
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (wideScreen && !reduceMotion) setShowVideo(true)
+  }, [])
+
   const tryPlay = useCallback(() => {
     const v = videoRef.current
     if (!v) return
@@ -34,6 +41,7 @@ export function Hero() {
   }, [])
 
   useEffect(() => {
+    if (!showVideo) return
     tryPlay()
     document.addEventListener('touchstart', tryPlay, { once: true })
     document.addEventListener('click',      tryPlay, { once: true })
@@ -41,26 +49,30 @@ export function Hero() {
       document.removeEventListener('touchstart', tryPlay)
       document.removeEventListener('click',      tryPlay)
     }
-  }, [tryPlay])
+  }, [showVideo, tryPlay])
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-ink-950">
 
-      {/* ── Video background ── */}
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        disablePictureInPicture
-        className="absolute inset-0 w-full h-full object-cover opacity-40"
-      >
-        <source src="/videos/hero.mp4" type="video/mp4" />
-      </video>
+      {/* ── Video background (desktop only, lazy) ── */}
+      {showVideo && (
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          disablePictureInPicture
+          aria-hidden="true"
+          tabIndex={-1}
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+        >
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
+      )}
 
-      {/* Gradient overlay */}
+      {/* Base + gradient backdrop (also the full mobile background) */}
       <div
         className="absolute inset-0"
         style={{
@@ -85,7 +97,7 @@ export function Hero() {
         {/* Eyebrow */}
         <div
           className="flex items-center justify-center gap-4 mb-8"
-          style={{ animation: 'word-up 0.8s cubic-bezier(0.16,1,0.3,1) 100ms both' }}
+          style={{ animation: 'word-up 0.7s cubic-bezier(0.16,1,0.3,1) 60ms both' }}
         >
           <span className="block w-8 h-px bg-gold-500 shrink-0" />
           <p className="text-[10px] font-medium tracking-[0.3em] uppercase text-gold-500">
@@ -96,17 +108,17 @@ export function Hero() {
         {/* Headline */}
         <h1 className="font-serif text-[clamp(56px,8.5vw,115px)] font-normal leading-[0.93] text-white mb-8 tracking-tight">
           <span className="block">
-            <WordReveal words={['Make', 'The']} baseDelay={200} />
+            <WordReveal words={['Make', 'The']} baseDelay={40} />
           </span>
           <em className="italic text-gold-500 block">
-            <WordReveal words={['Right', 'Move.']} baseDelay={420} />
+            <WordReveal words={['Right', 'Move.']} baseDelay={160} />
           </em>
         </h1>
 
         {/* Sub */}
         <p
-          className="text-[16px] font-light text-white/50 max-w-[460px] mx-auto leading-[1.9] mb-10 tracking-wide"
-          style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 680ms both' }}
+          className="text-[16px] font-light text-white/55 max-w-[460px] mx-auto leading-[1.9] mb-10 tracking-wide"
+          style={{ animation: 'word-up 0.7s cubic-bezier(0.16,1,0.3,1) 300ms both' }}
         >
           Whether you&apos;re buying, selling, upsizing, or downsizing, I help Ottawa
           families make confident, well-advised moves in any market.
@@ -115,7 +127,7 @@ export function Hero() {
         {/* Property search bar */}
         <div
           className="mb-12 w-full flex justify-center"
-          style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 780ms both' }}
+          style={{ animation: 'word-up 0.7s cubic-bezier(0.16,1,0.3,1) 360ms both' }}
         >
           <PropertySearch />
         </div>
@@ -123,7 +135,7 @@ export function Hero() {
         {/* CTAs */}
         <div
           className="flex flex-wrap justify-center gap-4 mb-20"
-          style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 880ms both' }}
+          style={{ animation: 'word-up 0.7s cubic-bezier(0.16,1,0.3,1) 420ms both' }}
         >
           <Magnetic>
             <Link
@@ -146,12 +158,12 @@ export function Hero() {
         {/* Trust signals */}
         <div
           className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4"
-          style={{ animation: 'word-up 0.9s cubic-bezier(0.16,1,0.3,1) 960ms both' }}
+          style={{ animation: 'word-up 0.7s cubic-bezier(0.16,1,0.3,1) 480ms both' }}
         >
           {trustSignals.map((signal, i) => (
             <div key={signal} className="flex items-center gap-10">
-              {i > 0 && <div className="hidden sm:block w-px h-5 bg-white/10" />}
-              <p className="text-[11px] font-medium tracking-[0.22em] uppercase text-white/45">
+              {i > 0 && <div className="hidden sm:block w-px h-5 bg-white/15" />}
+              <p className="text-[11px] font-medium tracking-[0.22em] uppercase text-white/65">
                 {signal}
               </p>
             </div>
@@ -160,9 +172,9 @@ export function Hero() {
       </div>
 
       {/* Scroll hint */}
-      <div className="hidden md:flex absolute bottom-10 right-12 flex-col items-center gap-3 text-white/25">
+      <div className="hidden md:flex absolute bottom-10 right-12 flex-col items-center gap-3 text-white/55">
         <span className="text-[8px] font-semibold tracking-[0.3em] uppercase">Scroll</span>
-        <div className="w-px h-14 bg-gradient-to-b from-white/25 to-transparent scroll-pulse" />
+        <div className="w-px h-14 bg-gradient-to-b from-white/40 to-transparent scroll-pulse" />
       </div>
     </section>
   )

@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Hedvig_Letters_Serif } from 'next/font/google'
 import { SmoothScroll } from '@/components/SmoothScroll'
 import { CustomCursor } from '@/components/CustomCursor'
-import { PageLoader } from '@/components/PageLoader'
 import { ScrollProgress } from '@/components/ScrollProgress'
 import './globals.css'
 
@@ -76,7 +75,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${inter.variable} ${hedvig.variable}`}>
       <body>
-        <PageLoader />
         <CustomCursor />
         <SmoothScroll />
         <ScrollProgress />

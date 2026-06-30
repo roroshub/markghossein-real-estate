@@ -17,13 +17,13 @@ export function Probate() {
               Selling an Estate or<br />
               <em className="italic text-gold-500">Inherited Property?</em>
             </h2>
-            <p className="text-[15px] font-light text-white/45 leading-[1.95] mb-5">
+            <p className="text-[15px] font-light text-white/55 leading-[1.95] mb-5">
               Settling a loved one&apos;s estate is one of the hardest things a family can go through.
               As a <span className="text-white/70">Certified Probate Real Estate Specialist</span>, I guide
               executors and beneficiaries through the sale of probate and inherited properties with
               patience, discretion, and a clear plan.
             </p>
-            <p className="text-[15px] font-light text-white/45 leading-[1.95] mb-10">
+            <p className="text-[15px] font-light text-white/55 leading-[1.95] mb-10">
               From coordinating with estate lawyers to preparing the home for market and maximizing its
               value, I handle the real estate side so you can focus on your family.
             </p>
@@ -46,7 +46,7 @@ export function Probate() {
               ].map(({ t, d }) => (
                 <div key={t} className="bg-ink-950 p-9">
                   <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-white mb-3">{t}</p>
-                  <p className="text-[13px] font-light text-white/40 leading-relaxed">{d}</p>
+                  <p className="text-[13px] font-light text-white/55 leading-relaxed">{d}</p>
                 </div>
               ))}
             </div>

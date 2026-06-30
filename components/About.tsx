@@ -39,13 +39,13 @@ export function About() {
               <em className="italic text-gold-500">Your Advisor.</em>
             </h2>
 
-            <p className="text-[15px] font-light text-white/50 leading-[1.95] mb-5">
+            <p className="text-[15px] font-light text-white/55 leading-[1.95] mb-5">
               Mark Ghossein is an Ottawa real estate advisor who brings a strategic, data-driven
               approach to every move. From first-time buyers to families upsizing or downsizing,
               he pairs deep local market knowledge with a genuine, client-first commitment to
               getting the details right.
             </p>
-            <p className="text-[15px] font-light text-white/50 leading-[1.95] mb-12">
+            <p className="text-[15px] font-light text-white/55 leading-[1.95] mb-12">
               He is also a <span className="text-white/80">Certified Probate Specialist</span>, guiding
               executors and families through the sale of estate and inherited properties with patience
               and discretion. Affiliated with eXp Realty, Mark has helped hundreds of Ottawa families
@@ -98,7 +98,7 @@ export function About() {
                     <span className="mt-1.5 block w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0" />
                     <div>
                       <p className="text-[13px] font-semibold text-white tracking-wide">{t}</p>
-                      <p className="text-[12px] font-light text-white/40 mt-1">{d}</p>
+                      <p className="text-[12px] font-light text-white/55 mt-1">{d}</p>
                     </div>
                   </div>
                 ))}

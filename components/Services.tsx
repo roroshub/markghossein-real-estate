@@ -77,13 +77,13 @@ export function Services({ services }: { services: Service[] }) {
                 <h3 className="font-serif text-[22px] font-normal text-white mb-3 leading-tight">
                   {svc.title}
                 </h3>
-                <p className="text-[13px] font-light text-white/40 leading-[1.85] mb-8 flex-1">
+                <p className="text-[13px] font-light text-white/55 leading-[1.85] mb-8 flex-1">
                   {svc.description}
                 </p>
 
                 <ul className="flex flex-col gap-2.5 mb-9">
                   {svc.bullets.map((b) => (
-                    <li key={b} className="text-[12px] font-light text-white/35 pl-4 relative">
+                    <li key={b} className="text-[12px] font-light text-white/55 pl-4 relative">
                       <span className="absolute left-0 top-[9px] w-2 h-px bg-gold-500/60" />
                       {b}
                     </li>

@@ -41,19 +41,19 @@ export function Footer() {
                 <p className="text-[9px] tracking-[0.2em] opacity-35 uppercase mt-1">Real Estate Advisors</p>
               </div>
             </div>
-            <p className="font-serif text-[20px] italic text-white/30 mb-3">Make the right move.</p>
-            <p className="text-[11px] font-light text-white/20 leading-relaxed">
+            <p className="font-serif text-[20px] italic text-white/55 mb-3">Make the right move.</p>
+            <p className="text-[11px] font-light text-white/55 leading-relaxed">
               Affiliated with eXp Realty<br />Ottawa, Ontario, Canada
             </p>
           </div>
 
           {/* Quick links */}
           <div>
-            <h4 className="text-[9px] font-semibold tracking-[0.24em] uppercase text-white/25 mb-6">Quick Links</h4>
+            <h4 className="text-[9px] font-semibold tracking-[0.24em] uppercase text-white/55 mb-6">Quick Links</h4>
             <ul className="flex flex-col gap-3.5">
               {quickLinks.map(({ label, href }) => (
                 <li key={href}>
-                  <Link href={href} className="text-[13px] font-light text-white/45 hover:text-gold-500 transition-colors duration-200">{label}</Link>
+                  <Link href={href} className="text-[13px] font-light text-white/55 hover:text-gold-500 transition-colors duration-200">{label}</Link>
                 </li>
               ))}
             </ul>
@@ -61,11 +61,11 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-[9px] font-semibold tracking-[0.24em] uppercase text-white/25 mb-6">Services</h4>
+            <h4 className="text-[9px] font-semibold tracking-[0.24em] uppercase text-white/55 mb-6">Services</h4>
             <ul className="flex flex-col gap-3.5">
               {serviceLinks.map(({ label, href }) => (
                 <li key={label}>
-                  <Link href={href} className="text-[13px] font-light text-white/45 hover:text-gold-500 transition-colors duration-200">{label}</Link>
+                  <Link href={href} className="text-[13px] font-light text-white/55 hover:text-gold-500 transition-colors duration-200">{label}</Link>
                 </li>
               ))}
             </ul>
@@ -73,18 +73,18 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-[9px] font-semibold tracking-[0.24em] uppercase text-white/25 mb-6">Contact</h4>
-            <a href="mailto:mark@markghossein.com" className="block text-[13px] font-light text-white/45 hover:text-gold-500 transition-colors duration-200 mb-2">
+            <h4 className="text-[9px] font-semibold tracking-[0.24em] uppercase text-white/55 mb-6">Contact</h4>
+            <a href="mailto:mark@markghossein.com" className="block text-[13px] font-light text-white/55 hover:text-gold-500 transition-colors duration-200 mb-2">
               mark@markghossein.com
             </a>
-            <p className="text-[13px] font-light text-white/45 mb-7">Ontario, Canada</p>
+            <p className="text-[13px] font-light text-white/55 mb-7">Ontario, Canada</p>
             <div className="flex gap-2.5 flex-wrap">
               {socialLinks.map(({ label, abbr, href }) => (
                 <a
                   key={abbr}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 border border-white/[0.07] text-[9px] font-bold tracking-wider text-white/30 flex items-center justify-center hover:border-gold-500/60 hover:text-gold-500 transition-all duration-200"
+                  className="w-9 h-9 border border-white/[0.07] text-[9px] font-bold tracking-wider text-white/55 flex items-center justify-center hover:border-gold-500/60 hover:text-gold-500 transition-all duration-200"
                 >
                   {abbr}
                 </a>
@@ -95,10 +95,10 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-white/[0.05] py-7 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-[11px] font-light text-white/20">
+          <p className="text-[11px] font-light text-white/55">
             © {new Date().getFullYear()} Mark Ghossein Real Estate Advisors. All rights reserved.
           </p>
-          <p className="text-[11px] font-light text-white/15">
+          <p className="text-[11px] font-light text-white/55">
             Not intended to solicit buyers or sellers currently under contract.
           </p>
         </div>

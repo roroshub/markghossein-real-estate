@@ -137,7 +137,7 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="w-7 h-7 border border-white/[0.1] text-[8px] font-bold tracking-wider text-white/40 flex items-center justify-center hover:border-gold-500/60 hover:text-gold-500 transition-all duration-200"
+                className="w-7 h-7 border border-white/[0.1] text-[8px] font-bold tracking-wider text-white/55 flex items-center justify-center hover:border-gold-500/60 hover:text-gold-500 transition-all duration-200"
               >
                 {abbr}
               </a>
@@ -180,7 +180,7 @@ export function Navbar() {
                   key={child.href}
                   href={resolveHref(child.href)}
                   onClick={closeMenu}
-                  className="block px-8 py-3 pl-12 text-[11px] font-medium tracking-[0.14em] uppercase text-white/50 hover:text-gold-500 transition-colors duration-200"
+                  className="block px-8 py-3 pl-12 text-[11px] font-medium tracking-[0.14em] uppercase text-white/55 hover:text-gold-500 transition-colors duration-200"
                 >
                   {child.label}
                 </Link>
@@ -191,7 +191,7 @@ export function Navbar() {
               key={item.href}
               href={resolveHref(item.href!)}
               onClick={closeMenu}
-              className="block px-8 py-4 text-[11px] font-medium tracking-[0.14em] uppercase text-white/50 hover:text-gold-500 border-b border-white/[0.04] transition-colors duration-200"
+              className="block px-8 py-4 text-[11px] font-medium tracking-[0.14em] uppercase text-white/55 hover:text-gold-500 border-b border-white/[0.04] transition-colors duration-200"
             >
               {item.label}
             </Link>
@@ -213,7 +213,7 @@ export function Navbar() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="w-9 h-9 border border-white/[0.1] text-[9px] font-bold tracking-wider text-white/40 flex items-center justify-center hover:border-gold-500/60 hover:text-gold-500 transition-all duration-200"
+              className="w-9 h-9 border border-white/[0.1] text-[9px] font-bold tracking-wider text-white/55 flex items-center justify-center hover:border-gold-500/60 hover:text-gold-500 transition-all duration-200"
             >
               {abbr}
             </a>

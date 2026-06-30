@@ -44,7 +44,7 @@ export default function InvestmentPage() {
           <h1 className="font-serif text-[clamp(44px,6.5vw,92px)] font-normal leading-[0.95] text-white tracking-tight mb-6">
             Build Real <em className="italic text-gold-500">Wealth.</em>
           </h1>
-          <p className="text-[16px] font-light text-white/50 max-w-[560px] leading-[1.9]">
+          <p className="text-[16px] font-light text-white/55 max-w-[560px] leading-[1.9]">
             Real estate is one of the most powerful wealth-building tools available. I help Ottawa
             investors find the right opportunities, analyze returns with clear eyes, and grow
             portfolios that perform.
@@ -67,7 +67,7 @@ export default function InvestmentPage() {
               <RevealWrapper key={p.t} delay={i * 70}>
                 <div className="bg-ink-900 p-10 h-full">
                   <h3 className="text-[13px] font-semibold tracking-[0.1em] uppercase text-white mb-3">{p.t}</h3>
-                  <p className="text-[13px] text-white/40 leading-relaxed">{p.d}</p>
+                  <p className="text-[13px] text-white/55 leading-relaxed">{p.d}</p>
                 </div>
               </RevealWrapper>
             ))}

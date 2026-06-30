@@ -48,7 +48,7 @@ export default function MortgageCalculatorPage() {
           <h1 className="font-serif text-[clamp(44px,6.5vw,92px)] font-normal leading-[0.95] text-white tracking-tight mb-6">
             Mortgage <em className="italic text-gold-500">Calculator</em>
           </h1>
-          <p className="text-[16px] font-light text-white/50 max-w-[540px] leading-[1.9]">
+          <p className="text-[16px] font-light text-white/55 max-w-[540px] leading-[1.9]">
             Model any scenario with accurate Canadian semi-annual compounding. Adjust the sliders to see
             your payment, total interest, and whether CMHC insurance applies.
           </p>
@@ -82,7 +82,7 @@ export default function MortgageCalculatorPage() {
               <RevealWrapper key={tip.t} delay={i * 70}>
                 <div className="bg-ink-950 p-10 h-full">
                   <h3 className="text-[13px] font-semibold tracking-[0.1em] uppercase text-white mb-3">{tip.t}</h3>
-                  <p className="text-[13px] text-white/40 leading-relaxed">{tip.d}</p>
+                  <p className="text-[13px] text-white/55 leading-relaxed">{tip.d}</p>
                 </div>
               </RevealWrapper>
             ))}

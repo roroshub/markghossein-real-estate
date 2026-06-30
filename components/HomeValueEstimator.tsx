@@ -53,7 +53,7 @@ export function HomeValueEstimator() {
   }, [area, type, cond, sqft, beds, baths])
 
   const fieldWrap = 'flex flex-col gap-2'
-  const labelCls  = 'text-[10px] font-semibold tracking-[0.18em] uppercase text-white/40'
+  const labelCls  = 'text-[10px] font-semibold tracking-[0.18em] uppercase text-white/55'
   const inputCls  = 'field-input'
 
   return (
@@ -63,13 +63,13 @@ export function HomeValueEstimator() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className={fieldWrap}>
             <label className={labelCls}>Neighbourhood</label>
-            <select value={area} onChange={(e) => setArea(e.target.value)} className={inputCls}>
+            <select value={area} onChange={(e) => setArea(e.target.value)} className={inputCls} aria-label="Neighbourhood">
               {Object.keys(areas).map((a) => <option key={a}>{a}</option>)}
             </select>
           </div>
           <div className={fieldWrap}>
             <label className={labelCls}>Property Type</label>
-            <select value={type} onChange={(e) => setType(e.target.value)} className={inputCls}>
+            <select value={type} onChange={(e) => setType(e.target.value)} className={inputCls} aria-label="Property type">
               {Object.keys(typeFactor).map((t) => <option key={t}>{t}</option>)}
             </select>
           </div>
@@ -80,11 +80,12 @@ export function HomeValueEstimator() {
               value={sqft}
               onChange={(e) => setSqft(Math.max(0, Number(e.target.value)))}
               className={inputCls}
+              aria-label="Square feet"
             />
           </div>
           <div className={fieldWrap}>
             <label className={labelCls}>Condition</label>
-            <select value={cond} onChange={(e) => setCond(e.target.value)} className={inputCls}>
+            <select value={cond} onChange={(e) => setCond(e.target.value)} className={inputCls} aria-label="Condition">
               {Object.keys(conditionFactor).map((c) => <option key={c}>{c}</option>)}
             </select>
           </div>
@@ -95,6 +96,7 @@ export function HomeValueEstimator() {
               value={beds}
               onChange={(e) => setBeds(Math.max(0, Number(e.target.value)))}
               className={inputCls}
+              aria-label="Bedrooms"
             />
           </div>
           <div className={fieldWrap}>
@@ -104,6 +106,7 @@ export function HomeValueEstimator() {
               value={baths}
               onChange={(e) => setBaths(Math.max(0, Number(e.target.value)))}
               className={inputCls}
+              aria-label="Bathrooms"
             />
           </div>
         </div>
@@ -115,13 +118,13 @@ export function HomeValueEstimator() {
           Estimated Value Range
         </p>
         <p className="font-serif text-[clamp(34px,4vw,52px)] font-normal text-white leading-none mb-2 tabular-nums">
-          {fmt(low)} <span className="text-white/30">to</span> {fmt(high)}
+          {fmt(low)} <span className="text-white/55">to</span> {fmt(high)}
         </p>
-        <p className="text-[13px] font-light text-white/40 mb-8">
+        <p className="text-[13px] font-light text-white/55 mb-8">
           Midpoint estimate <span className="text-white/70">{fmt(mid)}</span>
         </p>
 
-        <p className="text-[12px] font-light text-white/35 leading-relaxed mb-8">
+        <p className="text-[12px] font-light text-white/55 leading-relaxed mb-8">
           This is a quick ballpark based on neighbourhood averages, not an appraisal. For an
           accurate, no-obligation HomeWorth valuation tailored to your exact home, let&apos;s talk.
         </p>

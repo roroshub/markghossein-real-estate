@@ -95,7 +95,7 @@ export default function SellersPage() {
             Sell for{' '}
             <em className="italic text-gold-500">Top Dollar</em>
           </h1>
-          <p className="text-[16px] font-light text-white/50 max-w-[500px] leading-[1.9]">
+          <p className="text-[16px] font-light text-white/55 max-w-[500px] leading-[1.9]">
             Strategic pricing, standout marketing, and assertive negotiation, a proven process that sells Ottawa homes faster and for more.
           </p>
         </div>
@@ -135,7 +135,7 @@ export default function SellersPage() {
               <h2 className="font-serif text-[clamp(32px,4vw,52px)] font-normal text-white leading-tight">
                 Run the Numbers
               </h2>
-              <p className="text-[14px] text-white/40 mt-3 max-w-[480px] leading-relaxed">
+              <p className="text-[14px] text-white/55 mt-3 max-w-[480px] leading-relaxed">
                 Selling and buying next? Model the mortgage on your move-up home, Canadian semi-annual compounding, adjust any scenario.
               </p>
             </div>
@@ -170,7 +170,7 @@ export default function SellersPage() {
                   <h3 className="text-[13px] font-semibold tracking-[0.1em] uppercase text-white mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-[13px] text-white/40 leading-relaxed">{step.body}</p>
+                  <p className="text-[13px] text-white/55 leading-relaxed">{step.body}</p>
                 </div>
               </RevealWrapper>
             ))}
@@ -197,7 +197,7 @@ export default function SellersPage() {
               <RevealWrapper key={faq.q} delay={i * 80}>
                 <div className="bg-ink-900 p-10">
                   <p className="text-[13px] font-semibold text-white mb-3 leading-snug">{faq.q}</p>
-                  <p className="text-[13px] text-white/40 leading-relaxed">{faq.a}</p>
+                  <p className="text-[13px] text-white/55 leading-relaxed">{faq.a}</p>
                 </div>
               </RevealWrapper>
             ))}

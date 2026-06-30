@@ -50,7 +50,7 @@ export function BrowseHomes() {
 
         {/* ── Price ranges ── */}
         <RevealWrapper>
-          <p className="text-[10px] font-semibold tracking-[0.24em] uppercase text-white/30 mb-6">By Price Range</p>
+          <p className="text-[10px] font-semibold tracking-[0.24em] uppercase text-white/55 mb-6">By Price Range</p>
         </RevealWrapper>
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06] mb-20">
           {priceRanges.map(({ label, range, href }, i) => (
@@ -64,7 +64,7 @@ export function BrowseHomes() {
                 <p className="font-serif text-[26px] font-normal text-white leading-none mb-2 group-hover:text-gold-500 transition-colors duration-300">
                   {label}
                 </p>
-                <p className="text-[12px] font-light text-white/35">{range}</p>
+                <p className="text-[12px] font-light text-white/55">{range}</p>
               </a>
             </RevealWrapper>
           ))}
@@ -72,7 +72,7 @@ export function BrowseHomes() {
 
         {/* ── Neighbourhoods ── */}
         <RevealWrapper>
-          <p className="text-[10px] font-semibold tracking-[0.24em] uppercase text-white/30 mb-6">By Neighbourhood</p>
+          <p className="text-[10px] font-semibold tracking-[0.24em] uppercase text-white/55 mb-6">By Neighbourhood</p>
         </RevealWrapper>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.06]">
           {neighbourhoods.map(({ name, note }, i) => (
@@ -92,7 +92,7 @@ export function BrowseHomes() {
                     {name}
                   </p>
                 </div>
-                <p className="text-[11px] font-light text-white/30 pl-[22px]">{note}</p>
+                <p className="text-[11px] font-light text-white/55 pl-[22px]">{note}</p>
               </a>
             </RevealWrapper>
           ))}
@@ -100,7 +100,7 @@ export function BrowseHomes() {
 
         <RevealWrapper>
           <div className="mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            <p className="font-serif text-[20px] italic text-white/25">
+            <p className="font-serif text-[20px] italic text-white/55">
               Don&apos;t see your area or budget?
             </p>
             <a
