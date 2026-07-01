@@ -66,7 +66,7 @@ export default function HomeEvaluationPage() {
             <h2 className="font-serif text-[clamp(28px,3.5vw,44px)] font-normal text-ink-950 leading-tight">
               Want the accurate number?
             </h2>
-            <p className="text-ink-950/60 text-[14px] mt-2">A full HomeWorth report is free and built around your exact home.</p>
+            <p className="text-ink-950/80 text-[14px] mt-2">A full HomeWorth report is free and built around your exact home.</p>
           </div>
           <div className="flex gap-4 shrink-0">
             <Link href="/#contact" className="inline-flex items-center px-8 py-4 bg-ink-950 text-white text-[11px] font-semibold tracking-[0.14em] uppercase hover:bg-ink-800 transition-colors duration-300">

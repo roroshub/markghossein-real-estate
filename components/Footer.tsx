@@ -49,7 +49,7 @@ export function Footer() {
 
           {/* Quick links */}
           <div>
-            <h4 className="text-[9px] font-semibold tracking-[0.24em] uppercase text-white/55 mb-6">Quick Links</h4>
+            <h3 className="text-[9px] font-semibold tracking-[0.24em] uppercase text-white/55 mb-6">Quick Links</h3>
             <ul className="flex flex-col gap-3.5">
               {quickLinks.map(({ label, href }) => (
                 <li key={href}>
@@ -61,7 +61,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-[9px] font-semibold tracking-[0.24em] uppercase text-white/55 mb-6">Services</h4>
+            <h3 className="text-[9px] font-semibold tracking-[0.24em] uppercase text-white/55 mb-6">Services</h3>
             <ul className="flex flex-col gap-3.5">
               {serviceLinks.map(({ label, href }) => (
                 <li key={label}>
@@ -73,7 +73,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-[9px] font-semibold tracking-[0.24em] uppercase text-white/55 mb-6">Contact</h4>
+            <h3 className="text-[9px] font-semibold tracking-[0.24em] uppercase text-white/55 mb-6">Contact</h3>
             <a href="mailto:mark@markghossein.com" className="block text-[13px] font-light text-white/55 hover:text-gold-500 transition-colors duration-200 mb-2">
               mark@markghossein.com
             </a>

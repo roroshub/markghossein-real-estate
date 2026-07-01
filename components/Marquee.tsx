@@ -19,7 +19,7 @@ export function Marquee() {
             <span className="text-[9px] font-semibold tracking-[0.22em] uppercase text-ink-950">
               {item}
             </span>
-            <span className="text-ink-950/25 text-xs">·</span>
+            <span className="text-ink-950/80 text-xs">·</span>
           </span>
         ))}
       </div>

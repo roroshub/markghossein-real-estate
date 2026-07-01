@@ -81,7 +81,7 @@ export default function InvestmentPage() {
             <h2 className="font-serif text-[clamp(28px,3.5vw,44px)] font-normal text-ink-950 leading-tight">
               Ready to put your money to work?
             </h2>
-            <p className="text-ink-950/60 text-[14px] mt-2">Let&apos;s map out an investment strategy built around your goals.</p>
+            <p className="text-ink-950/80 text-[14px] mt-2">Let&apos;s map out an investment strategy built around your goals.</p>
           </div>
           <div className="flex gap-4 shrink-0">
             <Link href="/#contact" className="inline-flex items-center px-8 py-4 bg-ink-950 text-white text-[11px] font-semibold tracking-[0.14em] uppercase hover:bg-ink-800 transition-colors duration-300">

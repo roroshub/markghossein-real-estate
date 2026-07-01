@@ -209,7 +209,7 @@ export default function ProbatePage() {
             <h2 className="font-serif text-[clamp(28px,3.5vw,44px)] font-normal text-ink-950 leading-tight">
               Need help with an estate property?
             </h2>
-            <p className="text-ink-950/60 text-[14px] mt-2">
+            <p className="text-ink-950/80 text-[14px] mt-2">
               Reach out for a private, no-obligation conversation.
             </p>
           </div>

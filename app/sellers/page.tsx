@@ -105,13 +105,13 @@ export default function SellersPage() {
       <section className="bg-gold-500 py-16">
         <div className="max-w-[1320px] mx-auto px-8 md:px-12 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-ink-950/60 mb-3">
+            <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-ink-950/80 mb-3">
               Step One · Know Your Number
             </p>
             <h2 className="font-serif text-[clamp(28px,3.5vw,44px)] font-normal text-ink-950 leading-tight">
               What&apos;s your home worth today?
             </h2>
-            <p className="text-ink-950/60 text-[14px] mt-2 max-w-[460px]">
+            <p className="text-ink-950/80 text-[14px] mt-2 max-w-[460px]">
               Get a free, no-obligation HomeWorth valuation report tailored to your neighbourhood.
             </p>
           </div>
@@ -212,7 +212,7 @@ export default function SellersPage() {
             <h2 className="font-serif text-[clamp(28px,3.5vw,44px)] font-normal text-ink-950 leading-tight">
               Thinking of selling?
             </h2>
-            <p className="text-ink-950/60 text-[14px] mt-2">
+            <p className="text-ink-950/80 text-[14px] mt-2">
               Let&apos;s talk strategy, and what your Ottawa home could sell for.
             </p>
           </div>

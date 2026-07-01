@@ -188,7 +188,7 @@ export default function BuyersPage() {
             <h2 className="font-serif text-[clamp(28px,3.5vw,44px)] font-normal text-ink-950 leading-tight">
               Ready to start your search?
             </h2>
-            <p className="text-ink-950/60 text-[14px] mt-2">
+            <p className="text-ink-950/80 text-[14px] mt-2">
               Let's find you the right home in Ottawa, at the right price.
             </p>
           </div>

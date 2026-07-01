@@ -97,7 +97,7 @@ export default function MortgageCalculatorPage() {
             <h2 className="font-serif text-[clamp(28px,3.5vw,44px)] font-normal text-ink-950 leading-tight">
               Ready for a real pre-approval?
             </h2>
-            <p className="text-ink-950/60 text-[14px] mt-2">
+            <p className="text-ink-950/80 text-[14px] mt-2">
               I&apos;ll connect you with Ottawa&apos;s top mortgage brokers to lock in your budget.
             </p>
           </div>
