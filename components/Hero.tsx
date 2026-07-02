@@ -50,6 +50,7 @@ export function Hero() {
       {/* ── Video background (all devices; poster paints instantly) ── */}
       <video
         ref={videoRef}
+        autoPlay
         muted
         loop
         playsInline
