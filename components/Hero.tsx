@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState, useCallback } from 'react'
+import { useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import { Magnetic } from './Magnetic'
 import { PropertySearch } from './PropertySearch'
@@ -23,15 +23,6 @@ const trustSignals = ['5-Star Rated', 'eXp Realty', 'Ottawa & Area']
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null)
-  // The background video is decorative and heavy on mobile. Only load it on
-  // larger screens, after hydration, so it never blocks the mobile LCP / Speed Index.
-  const [showVideo, setShowVideo] = useState(false)
-
-  useEffect(() => {
-    const wideScreen = window.matchMedia('(min-width: 1024px)').matches
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (wideScreen && !reduceMotion) setShowVideo(true)
-  }, [])
 
   const tryPlay = useCallback(() => {
     const v = videoRef.current
@@ -41,36 +32,36 @@ export function Hero() {
   }, [])
 
   useEffect(() => {
-    if (!showVideo) return
+    // Respect reduced-motion: leave the video on its poster frame instead of playing.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     tryPlay()
+    // Mobile browsers often need a gesture before muted autoplay is allowed.
     document.addEventListener('touchstart', tryPlay, { once: true })
     document.addEventListener('click',      tryPlay, { once: true })
     return () => {
       document.removeEventListener('touchstart', tryPlay)
       document.removeEventListener('click',      tryPlay)
     }
-  }, [showVideo, tryPlay])
+  }, [tryPlay])
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-ink-950">
 
-      {/* ── Video background (desktop only, lazy) ── */}
-      {showVideo && (
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          disablePictureInPicture
-          aria-hidden="true"
-          tabIndex={-1}
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
-      )}
+      {/* ── Video background (all devices; poster paints instantly) ── */}
+      <video
+        ref={videoRef}
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/videos/hero-poster.jpg"
+        disablePictureInPicture
+        aria-hidden="true"
+        tabIndex={-1}
+        className="absolute inset-0 w-full h-full object-cover opacity-40"
+      >
+        <source src="/videos/hero.mp4" type="video/mp4" />
+      </video>
 
       {/* Base + gradient backdrop (also the full mobile background) */}
       <div
