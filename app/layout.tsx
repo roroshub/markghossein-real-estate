@@ -1,21 +1,23 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Hedvig_Letters_Serif } from 'next/font/google'
+import { Lato, Prata } from 'next/font/google'
 import { SmoothScroll } from '@/components/SmoothScroll'
 import { CustomCursor } from '@/components/CustomCursor'
 import { ScrollProgress } from '@/components/ScrollProgress'
 import './globals.css'
 
-const inter = Inter({
+// Lato — sub-headings & body
+const lato = Lato({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-inter',
+  weight: ['300', '400', '700'],
+  variable: '--font-lato',
   display: 'swap',
 })
 
-const hedvig = Hedvig_Letters_Serif({
+// Prata — main display headings (elegant high-contrast serif)
+const prata = Prata({
   subsets: ['latin'],
   weight: ['400'],
-  variable: '--font-hedvig',
+  variable: '--font-prata',
   display: 'swap',
 })
 
@@ -73,7 +75,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${hedvig.variable}`}>
+    <html lang="en" className={`${lato.variable} ${prata.variable}`}>
       <body>
         <CustomCursor />
         <SmoothScroll />

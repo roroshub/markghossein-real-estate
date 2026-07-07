@@ -26,7 +26,7 @@ const toolIcons: Record<string, React.ReactNode> = {
 
 export function Tools({ tools }: { tools: Tool[] }) {
   return (
-    <section id="tools" className="py-32 bg-white">
+    <section id="tools" className="py-32 bg-cream">
       <div className="mx-auto max-w-[1320px] px-8 md:px-12">
         <RevealWrapper className="mb-20">
           <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-gold-700 mb-5">
@@ -40,7 +40,7 @@ export function Tools({ tools }: { tools: Tool[] }) {
         <div className="grid grid-cols-1 md:grid-cols-3 divide-x divide-ink-100 border border-ink-100">
           {tools.map((tool, i) => (
             <RevealWrapper key={tool.id} delay={i * 70}>
-              <div className="group p-12 flex flex-col h-full hover:bg-ink-50 transition-colors duration-300">
+              <div className="group p-12 flex flex-col h-full hover:bg-cream-deep transition-colors duration-300">
                 <div className="text-ink-300 mb-8 group-hover:text-gold-500 transition-colors duration-300">
                   {toolIcons[tool.id] ?? toolIcons['homeworth']}
                 </div>
