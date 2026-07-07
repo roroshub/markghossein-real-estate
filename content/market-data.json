@@ -1,0 +1,23 @@
+{
+  "asOf": "May 2026",
+  "source": "Ottawa Real Estate Board (OREB) monthly statistics",
+  "sourceUrl": "https://www.oreb.ca/newsroom/",
+  "_note": "cityBasePerSqft is the one figure that moves month to month. Re-anchor it to the OREB single-family (detached) benchmark divided by a ~1,810 sqft reference home, rounded to the nearest 5. Neighbourhood multipliers are relative to the citywide average and change slowly.",
+  "benchmarks": {
+    "detached": 723800,
+    "townhouse": 557500,
+    "condo": 385500
+  },
+  "cityBasePerSqft": 400,
+  "neighbourhoodMultiplier": {
+    "Westboro": 1.35,
+    "The Glebe": 1.38,
+    "Hintonburg": 1.22,
+    "Centretown": 1.15,
+    "Kanata": 0.92,
+    "Barrhaven": 0.86,
+    "Orleans": 0.83,
+    "Stittsville": 0.9,
+    "Other Ottawa": 1.0
+  }
+}

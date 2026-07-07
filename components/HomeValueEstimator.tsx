@@ -2,20 +2,17 @@
 
 import { useMemo, useState } from 'react'
 import Link from 'next/link'
+import market from '@/content/market-data.json'
 
-// Rough Ottawa price-per-square-foot anchors by area. These are ballpark only.
-// A real valuation always comes from a full comparative market analysis.
-const areas: Record<string, number> = {
-  'Westboro':    520,
-  'The Glebe':   540,
-  'Hintonburg':  500,
-  'Centretown':  470,
-  'Kanata':      400,
-  'Barrhaven':   380,
-  'Orleans':     370,
-  'Stittsville': 390,
-  'Other Ottawa': 410,
-}
+// Neighbourhood $/sqft anchors are derived from a single citywide base (which
+// tracks the OREB monthly benchmark) times a slow-moving neighbourhood
+// multiplier. Update content/market-data.json to refresh — no code changes.
+// This is a ballpark only; a real valuation comes from a full CMA.
+const areas: Record<string, number> = Object.fromEntries(
+  Object.entries(market.neighbourhoodMultiplier).map(
+    ([name, mult]) => [name, Math.round(market.cityBasePerSqft * mult)],
+  ),
+)
 
 const typeFactor: Record<string, number> = {
   'Detached':      1.0,
@@ -124,9 +121,12 @@ export function HomeValueEstimator() {
           Midpoint estimate <span className="text-white/70">{fmt(mid)}</span>
         </p>
 
-        <p className="text-[12px] font-light text-white/55 leading-relaxed mb-8">
+        <p className="text-[12px] font-light text-white/55 leading-relaxed mb-3">
           This is a quick ballpark based on neighbourhood averages, not an appraisal. For an
           accurate, no-obligation HomeWorth valuation tailored to your exact home, let&apos;s talk.
+        </p>
+        <p className="text-[10px] font-medium tracking-[0.06em] uppercase text-white/35 mb-8">
+          Based on {market.source.split(' (')[0]} data · {market.asOf}
         </p>
 
         <Link
