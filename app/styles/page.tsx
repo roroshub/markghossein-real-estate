@@ -7,6 +7,11 @@ import {
   Marcellus,
   Space_Grotesk,
   Hedvig_Letters_Serif,
+  Bodoni_Moda,
+  Archivo,
+  Albert_Sans,
+  Hanken_Grotesk,
+  Jost,
   Inter,
   DM_Sans,
   Work_Sans,
@@ -26,12 +31,19 @@ const marcellus  = Marcellus({ subsets: ['latin'], weight: ['400'], variable: '-
 const spaceGro   = Space_Grotesk({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--f-space' })
 const hedvig     = Hedvig_Letters_Serif({ subsets: ['latin'], weight: ['400'], variable: '--f-hedvig' })
 
+const bodoni   = Bodoni_Moda({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--f-bodoni' })
+const archivo  = Archivo({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--f-archivo' })
+const albert   = Albert_Sans({ subsets: ['latin'], weight: ['300', '400', '500', '600'], variable: '--f-albert' })
+const hanken   = Hanken_Grotesk({ subsets: ['latin'], weight: ['300', '400', '500', '600'], variable: '--f-hanken' })
+const jost     = Jost({ subsets: ['latin'], weight: ['300', '400', '500'], variable: '--f-jost' })
+
 const inter    = Inter({ subsets: ['latin'], weight: ['300', '400', '500', '600'], variable: '--f-inter' })
 const dmSans   = DM_Sans({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--f-dmsans' })
 const workSans = Work_Sans({ subsets: ['latin'], weight: ['300', '400', '500', '600'], variable: '--f-work' })
 
 const fontVars = [
   fraunces, cormorant, playfair, dmSerif, marcellus, spaceGro, hedvig,
+  bodoni, archivo, albert, hanken, jost,
   inter, dmSans, workSans,
 ].map((f) => f.variable).join(' ')
 
@@ -107,6 +119,50 @@ const themes: Theme[] = [
     accent: '#9c7a3c', accentText: '#ffffff',
     displayFamily: 'var(--f-playfair)', bodyFamily: 'var(--f-inter)',
     displayName: 'Playfair Display', bodyName: 'Inter',
+  },
+]
+
+/* ── Flagship / fashion-house directions ──────────────────────────────────── */
+const flagshipThemes: Theme[] = [
+  {
+    name: 'Éditorial',
+    vibe: 'Vogue — black-on-cream Didone, high fashion',
+    bg: '#faf8f4', surface: '#ffffff', text: '#100f0d', muted: '#6e6a63',
+    accent: '#141414', accentText: '#ffffff',
+    displayFamily: 'var(--f-bodoni)', bodyFamily: 'var(--f-jost)',
+    displayName: 'Bodoni Moda', bodyName: 'Jost',
+  },
+  {
+    name: 'Noir Couture',
+    vibe: 'Runway black, Didone headlines, one bold red',
+    bg: '#0a0a0a', surface: '#141414', text: '#f4f1ea', muted: '#8f8a82',
+    accent: '#d5352b', accentText: '#ffffff',
+    displayFamily: 'var(--f-bodoni)', bodyFamily: 'var(--f-jost)',
+    displayName: 'Bodoni Moda', bodyName: 'Jost',
+  },
+  {
+    name: 'Precision',
+    vibe: 'Audi — engineered grayscale with a red edge',
+    bg: '#f1f1f2', surface: '#ffffff', text: '#19191b', muted: '#76777b',
+    accent: '#e40521', accentText: '#ffffff',
+    displayFamily: 'var(--f-archivo)', bodyFamily: 'var(--f-archivo)',
+    displayName: 'Archivo', bodyName: 'Archivo',
+  },
+  {
+    name: 'Cupertino',
+    vibe: 'Apple — ultra-minimal, soft grays, one clean sans',
+    bg: '#fbfbfd', surface: '#ffffff', text: '#1d1d1f', muted: '#86868b',
+    accent: '#0071e3', accentText: '#ffffff',
+    displayFamily: 'var(--f-albert)', bodyFamily: 'var(--f-albert)',
+    displayName: 'Albert Sans', bodyName: 'Albert Sans',
+  },
+  {
+    name: 'Anthracite',
+    vibe: 'Mercedes — understated dark luxury, platinum accent',
+    bg: '#101114', surface: '#17181c', text: '#eef0f3', muted: '#9aa0a8',
+    accent: '#c3c7cf', accentText: '#101114',
+    displayFamily: 'var(--f-hanken)', bodyFamily: 'var(--f-hanken)',
+    displayName: 'Hanken Grotesk', bodyName: 'Hanken Grotesk',
   },
 ]
 
@@ -215,6 +271,26 @@ export default function StylesPage() {
         {/* Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {themes.map((t) => (
+            <ThemeCard key={t.name} t={t} />
+          ))}
+        </div>
+
+        {/* Flagship / fashion-house set */}
+        <div className="mt-24 mb-10 max-w-[720px]">
+          <p className="text-[10px] font-semibold tracking-[0.3em] uppercase text-white/40 mb-4" style={{ fontFamily: 'var(--f-inter)' }}>
+            Editorial &amp; flagship-brand directions
+          </p>
+          <h2 className="text-[clamp(26px,3.6vw,40px)] leading-[1.05] tracking-tight mb-4" style={{ fontFamily: 'var(--f-bodoni)' }}>
+            The fashion-house tier
+          </h2>
+          <p className="text-[14px] text-white/50 leading-[1.8]" style={{ fontFamily: 'var(--f-inter)' }}>
+            Inspired by the design languages of Vogue, Audi, Apple, and Mercedes — pared back,
+            confident, and unmistakably premium. These lean harder into whitespace and a single
+            hero typeface than the palettes above.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {flagshipThemes.map((t) => (
             <ThemeCard key={t.name} t={t} />
           ))}
         </div>
