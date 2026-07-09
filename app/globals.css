@@ -107,7 +107,7 @@ body::after {
 
 /* ─── Hero word reveal ───────────────────────────────────────────────────── */
 @keyframes word-up { from { transform: translateY(110%); } to { transform: translateY(0); } }
-.word-reveal-wrap { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.18em; margin-bottom: -0.18em; }
+.word-reveal-wrap { display: inline-block; overflow: hidden; vertical-align: bottom; padding: 0.1em 0.06em 0.3em; margin: -0.1em -0.06em -0.3em; }
 .word-reveal-inner { display: inline-block; animation: word-up 0.62s var(--ease-out-expo) both; }
 @media (prefers-reduced-motion: reduce) {
   .word-reveal-inner { animation: none; }
