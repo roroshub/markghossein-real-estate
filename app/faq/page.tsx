@@ -32,6 +32,10 @@ const faqGroups = [
         q: 'How much does it cost to work with a real estate agent?',
         a: 'In Ontario the seller typically pays both the listing and buyer agent commissions out of the sale proceeds. For buyers, professional representation usually costs nothing out of pocket.',
       },
+      {
+        q: 'Is now a good time to buy or sell in Ottawa?',
+        a: 'The right time depends far more on your situation than on timing the market. I will walk you through current Ottawa conditions for your price range and neighbourhood so you can decide with real numbers, not headlines.',
+      },
     ],
   },
   {
@@ -48,6 +52,10 @@ const faqGroups = [
       {
         q: 'How long does it take to close on a home?',
         a: 'Most Ottawa purchases close within 30 to 90 days. The timeline is negotiable, shorter for competitive offers, longer when you need time to prepare or sell another property.',
+      },
+      {
+        q: 'Should I get a home inspection?',
+        a: 'Almost always, yes. A qualified inspection surfaces costly issues before you are committed, and it gives us leverage in negotiations. I coordinate trusted inspectors and review every report with you.',
       },
     ],
   },
@@ -66,6 +74,10 @@ const faqGroups = [
         q: 'Should I buy or sell first?',
         a: 'It depends on your finances, the market, and your comfort with risk. We map out a strategy, including bridge financing where needed, so you are never caught carrying two homes or scrambling for one.',
       },
+      {
+        q: 'How long does it take to sell a home in Ottawa?',
+        a: 'Well-priced, well-prepared homes often sell within one to three weeks, though it varies by neighbourhood, price point, and season. Pricing and presentation are the biggest levers on time-on-market.',
+      },
     ],
   },
   {
@@ -77,7 +89,15 @@ const faqGroups = [
       },
       {
         q: 'Do you handle estate and probate sales?',
-        a: 'Yes. I am a Certified Probate Specialist and guide executors and families through the sale of estate and inherited properties with patience and discretion.',
+        a: 'Yes. I am a Probate Specialist and guide executors and families through the sale of estate and inherited properties with patience and discretion.',
+      },
+      {
+        q: 'How do we get started?',
+        a: 'A quick, no-pressure conversation. We talk through your goals and timeline, and I lay out a clear plan and next steps. You are never obligated to anything by reaching out.',
+      },
+      {
+        q: 'Do you work with first-time buyers?',
+        a: 'Absolutely. First-time buyers are some of my favourite clients. I take extra time to explain every step so you feel informed and confident from pre-approval through closing day.',
       },
     ],
   },

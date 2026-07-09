@@ -59,7 +59,7 @@ export function Hero() {
         disablePictureInPicture
         aria-hidden="true"
         tabIndex={-1}
-        className="absolute inset-0 w-full h-full object-cover opacity-40"
+        className="absolute inset-0 w-full h-full object-cover opacity-60"
       >
         <source src="/videos/hero.mp4" type="video/mp4" />
       </video>
@@ -69,8 +69,8 @@ export function Hero() {
         className="absolute inset-0"
         style={{
           background: `
-            linear-gradient(to right, rgba(9,9,9,0.92) 0%, rgba(9,9,9,0.55) 60%, rgba(9,9,9,0.3) 100%),
-            linear-gradient(to top,   rgba(9,9,9,0.8)  0%, transparent 50%)
+            linear-gradient(to right, rgba(9,9,9,0.72) 0%, rgba(9,9,9,0.38) 60%, rgba(9,9,9,0.18) 100%),
+            linear-gradient(to top,   rgba(9,9,9,0.62) 0%, transparent 55%)
           `,
         }}
       />

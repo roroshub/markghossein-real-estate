@@ -3,6 +3,7 @@ import { Lato, Prata } from 'next/font/google'
 import { SmoothScroll } from '@/components/SmoothScroll'
 import { CustomCursor } from '@/components/CustomCursor'
 import { ScrollProgress } from '@/components/ScrollProgress'
+import { CallbackPopup } from '@/components/CallbackPopup'
 import './globals.css'
 
 // Lato — sub-headings & body
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SmoothScroll />
         <ScrollProgress />
         {children}
+        <CallbackPopup />
       </body>
     </html>
   )

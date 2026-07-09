@@ -13,7 +13,7 @@ const specializations = [
 
 const credentials = [
   { t: 'eXp Realty', d: 'Ottawa & surrounding area' },
-  { t: 'Certified Probate Specialist', d: 'Estate & inherited property sales' },
+  { t: 'Probate Specialist', d: 'Estate & inherited property sales' },
   { t: 'Data-Driven Strategy', d: 'Pricing and negotiation backed by numbers' },
 ]
 
@@ -46,7 +46,7 @@ export function About() {
               getting the details right.
             </p>
             <p className="text-[15px] font-light text-white/55 leading-[1.95] mb-12">
-              He is also a <span className="text-white/80">Certified Probate Specialist</span>, guiding
+              He is also a <span className="text-white/80">Probate Specialist</span>, guiding
               executors and families through the sale of estate and inherited properties with patience
               and discretion. Affiliated with eXp Realty, Mark has helped hundreds of Ottawa families
               navigate buying, selling, upsizing, and downsizing with clarity and confidence.

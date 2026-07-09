@@ -41,7 +41,7 @@ export function BrowseHomes() {
               href={COMMUNITIES_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[10px] font-semibold tracking-[0.18em] uppercase text-gold-500 hover:text-gold-300 transition-colors duration-200 shrink-0"
+              className="inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.14em] uppercase text-gold-500 border border-gold-500/40 px-7 py-4 hover:bg-gold-500 hover:text-ink-950 transition-all duration-300 shrink-0"
             >
               Explore all communities →
             </a>
@@ -105,7 +105,7 @@ export function BrowseHomes() {
             </p>
             <a
               href="#contact"
-              className="text-[10px] font-semibold tracking-[0.18em] uppercase text-white border border-white/15 px-7 py-3.5 hover:border-gold-500 hover:text-gold-500 transition-all duration-300"
+              className="text-[13px] font-semibold tracking-[0.14em] uppercase text-white border border-white/15 px-7 py-4 hover:border-gold-500 hover:text-gold-500 transition-all duration-300"
             >
               Tell Me What You Need
             </a>

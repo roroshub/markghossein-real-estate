@@ -92,7 +92,7 @@ export function Services({ services }: { services: Service[] }) {
 
                 <Link
                   href={svc.cta.href}
-                  className="text-[10px] font-semibold tracking-[0.18em] uppercase text-gold-500 hover:tracking-[0.26em] transition-all duration-300"
+                  className="text-[12px] font-semibold tracking-[0.16em] uppercase text-gold-500 hover:tracking-[0.24em] transition-all duration-300"
                 >
                   {svc.cta.label} →
                 </Link>

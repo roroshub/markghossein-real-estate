@@ -48,7 +48,7 @@ export function Tools({ tools }: { tools: Tool[] }) {
                 <p className="text-[14px] font-light text-ink-400 leading-[1.85] mb-10 flex-1">{tool.description}</p>
                 <Link
                   href="#contact"
-                  className="text-[10px] font-semibold tracking-[0.18em] uppercase text-ink-900 hover:text-gold-500 transition-colors duration-200"
+                  className="text-[12px] font-semibold tracking-[0.16em] uppercase text-ink-900 hover:text-gold-500 transition-colors duration-200"
                 >
                   {tool.cta} →
                 </Link>

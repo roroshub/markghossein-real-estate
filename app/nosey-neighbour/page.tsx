@@ -50,22 +50,22 @@ export default function NoseyNeighbourPage() {
         </div>
       </section>
 
-      <section className="bg-ink-900 py-24">
+      <section className="bg-cream py-24">
         <div className="max-w-[1320px] mx-auto px-8 md:px-12">
           <RevealWrapper>
             <div className="mb-14">
-              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-gold-500 mb-4">Why Sign Up</p>
-              <h2 className="font-serif text-[clamp(32px,4vw,52px)] font-normal text-white leading-tight">
+              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-gold-700 mb-4">Why Sign Up</p>
+              <h2 className="font-serif text-[clamp(32px,4vw,52px)] font-normal text-ink-900 leading-tight">
                 Your Street, In Real Time
               </h2>
             </div>
           </RevealWrapper>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/[0.05]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-black/[0.06]">
             {perks.map((p, i) => (
               <RevealWrapper key={p.t} delay={i * 70}>
-                <div className="bg-ink-900 p-10 h-full">
-                  <h3 className="text-[13px] font-semibold tracking-[0.1em] uppercase text-white mb-3">{p.t}</h3>
-                  <p className="text-[13px] text-white/55 leading-relaxed">{p.d}</p>
+                <div className="bg-white p-10 h-full">
+                  <h3 className="text-[13px] font-semibold tracking-[0.1em] uppercase text-ink-900 mb-3">{p.t}</h3>
+                  <p className="text-[13px] text-ink-500 leading-relaxed">{p.d}</p>
                 </div>
               </RevealWrapper>
             ))}

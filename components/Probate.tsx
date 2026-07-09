@@ -11,7 +11,7 @@ export function Probate() {
           <RevealWrapper>
             <div className="flex items-center gap-4 mb-6">
               <span className="block w-8 h-px bg-gold-500 shrink-0" />
-              <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-gold-500">Certified Probate Advisor</p>
+              <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-gold-500">Probate & Estate Advisor</p>
             </div>
             <h2 className="font-serif text-[clamp(32px,3.8vw,56px)] font-normal leading-[1.05] text-white mb-7">
               Selling an Estate or<br />
@@ -19,7 +19,7 @@ export function Probate() {
             </h2>
             <p className="text-[15px] font-light text-white/55 leading-[1.95] mb-5">
               Settling a loved one&apos;s estate is one of the hardest things a family can go through.
-              As a <span className="text-white/70">Certified Probate Real Estate Specialist</span>, I guide
+              As a <span className="text-white/70">Probate Real Estate Specialist</span>, I guide
               executors and beneficiaries through the sale of probate and inherited properties with
               patience, discretion, and a clear plan.
             </p>
@@ -39,7 +39,7 @@ export function Probate() {
           <RevealWrapper delay={120}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/[0.06] border border-white/[0.06]">
               {[
-                { t: 'Certified Specialist', d: 'Trained in the legal and financial nuances of probate & estate sales.' },
+                { t: 'Probate Specialist', d: 'Trained in the legal and financial nuances of probate & estate sales.' },
                 { t: 'Executor Support',     d: 'I work alongside your estate lawyer and coordinate every deadline.' },
                 { t: 'Discreet & Patient',   d: 'A compassionate, no-pressure process on your family’s timeline.' },
                 { t: 'Maximized Value',      d: 'Strategic prep and pricing to protect the estate’s proceeds.' },

@@ -57,27 +57,27 @@ export default function UpsizingPage() {
       </section>
 
       {/* ── Smooth Move System ── */}
-      <section className="bg-ink-900 py-24">
+      <section className="bg-cream py-24">
         <div className="max-w-[1320px] mx-auto px-8 md:px-12">
           <RevealWrapper>
             <div className="mb-14">
-              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-gold-500 mb-4">My Framework</p>
-              <h2 className="font-serif text-[clamp(32px,4vw,52px)] font-normal text-white leading-tight">
+              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-gold-700 mb-4">My Framework</p>
+              <h2 className="font-serif text-[clamp(32px,4vw,52px)] font-normal text-ink-900 leading-tight">
                 The Smooth Move System
               </h2>
-              <p className="text-[14px] text-white/55 mt-3 max-w-[520px] leading-relaxed">
+              <p className="text-[14px] text-ink-500 mt-3 max-w-[520px] leading-relaxed">
                 My proprietary process for selling and buying at the same time, so the transition
                 feels seamless instead of overwhelming.
               </p>
             </div>
           </RevealWrapper>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.05]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-black/[0.06]">
             {system.map((s, i) => (
               <RevealWrapper key={s.n} delay={i * 60}>
-                <div className="bg-ink-900 p-10 h-full group hover:bg-ink-850 transition-colors duration-300">
-                  <p className="font-serif text-[42px] text-white/[0.06] leading-none mb-6 group-hover:text-gold-500/20 transition-colors duration-300">{s.n}</p>
-                  <h3 className="text-[13px] font-semibold tracking-[0.1em] uppercase text-white mb-3">{s.t}</h3>
-                  <p className="text-[13px] text-white/55 leading-relaxed">{s.d}</p>
+                <div className="bg-white p-10 h-full group hover:bg-cream-deep transition-colors duration-300">
+                  <p className="font-serif text-[42px] text-black/[0.06] leading-none mb-6 group-hover:text-gold-500/25 transition-colors duration-300">{s.n}</p>
+                  <h3 className="text-[13px] font-semibold tracking-[0.1em] uppercase text-ink-900 mb-3">{s.t}</h3>
+                  <p className="text-[13px] text-ink-500 leading-relaxed">{s.d}</p>
                 </div>
               </RevealWrapper>
             ))}

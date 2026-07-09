@@ -7,12 +7,12 @@ import { RevealWrapper } from '@/components/RevealWrapper'
 export const metadata: Metadata = {
   title: 'Probate & Estate Real Estate',
   description:
-    'Certified Probate Real Estate Specialist in Ottawa. Compassionate, expert guidance for executors and families selling probate and inherited properties.',
+    'Probate Real Estate Specialist in Ottawa. Compassionate, expert guidance for executors and families selling probate and inherited properties.',
   alternates: { canonical: '/probate' },
   openGraph: {
     title: 'Probate & Estate Real Estate | Mark Ghossein',
     description:
-      'Certified Probate Real Estate Specialist in Ottawa, expert, compassionate guidance for executors and families selling estate or inherited property.',
+      'Probate Real Estate Specialist in Ottawa, expert, compassionate guidance for executors and families selling estate or inherited property.',
     url: '/probate',
   },
 }
@@ -60,7 +60,7 @@ const faqs = [
     a: 'In most Ontario cases the executor needs the Certificate of Appointment before transferring title. I work with your estate lawyer to time the listing and closing correctly so there are no surprises.',
   },
   {
-    q: 'What does “Certified Probate Specialist” mean?',
+    q: 'What does “Probate Specialist” mean?',
     a: 'It means I’ve completed dedicated training in the legal, financial, and emotional aspects of estate sales, so I can guide executors and beneficiaries through a process most agents rarely handle.',
   },
   {
@@ -101,7 +101,7 @@ export default function ProbatePage() {
           <div className="flex items-center gap-4 mb-8">
             <span className="block w-8 h-px bg-gold-500 shrink-0" />
             <p className="text-[10px] font-medium tracking-[0.3em] uppercase text-gold-500">
-              Certified Probate Real Estate Specialist
+              Probate Real Estate Specialist
             </p>
           </div>
           <h1 className="font-serif text-[clamp(44px,6.5vw,92px)] font-normal leading-[0.95] text-white tracking-tight mb-6">
