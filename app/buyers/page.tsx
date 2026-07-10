@@ -2,7 +2,9 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { MortgageCalculator } from '@/components/MortgageCalculator'
 import { Navbar } from '@/components/Navbar'
+import { Footer } from '@/components/Footer'
 import { RevealWrapper } from '@/components/RevealWrapper'
+import { RelatedBlogs } from '@/components/RelatedBlogs'
 
 export const metadata: Metadata = {
   title: "Buyer's Guide",
@@ -208,6 +210,9 @@ export default function BuyersPage() {
           </div>
         </div>
       </section>
+
+      <RelatedBlogs page="buyers" />
+      <Footer />
     </>
   )
 }

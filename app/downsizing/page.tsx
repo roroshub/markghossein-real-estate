@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { RevealWrapper } from '@/components/RevealWrapper'
+import { RelatedBlogs } from '@/components/RelatedBlogs'
 
 export const metadata: Metadata = {
   title: 'Downsizing Your Home',
@@ -96,6 +97,7 @@ export default function DownsizingPage() {
         </div>
       </section>
 
+      <RelatedBlogs page="downsizing" />
       <Footer />
     </>
   )

@@ -4,6 +4,7 @@ import { MortgageCalculator } from '@/components/MortgageCalculator'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { RevealWrapper } from '@/components/RevealWrapper'
+import { RelatedBlogs } from '@/components/RelatedBlogs'
 
 export const metadata: Metadata = {
   title: "Seller's Guide",
@@ -233,6 +234,7 @@ export default function SellersPage() {
         </div>
       </section>
 
+      <RelatedBlogs page="sellers" />
       <Footer />
     </>
   )

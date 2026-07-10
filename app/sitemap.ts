@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/downsizing', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/investment', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/mortgage-calculator', priority: 0.7, changeFrequency: 'monthly' },
+    { path: '/blog', priority: 0.7, changeFrequency: 'weekly' },
     { path: '/home-evaluation', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/nosey-neighbour', priority: 0.6, changeFrequency: 'monthly' },
     { path: '/faq', priority: 0.6, changeFrequency: 'monthly' },

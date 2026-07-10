@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { RevealWrapper } from '@/components/RevealWrapper'
+import { RelatedBlogs } from '@/components/RelatedBlogs'
 
 export const metadata: Metadata = {
   title: 'Probate & Estate Real Estate',
@@ -230,6 +231,7 @@ export default function ProbatePage() {
         </div>
       </section>
 
+      <RelatedBlogs page="probate" />
       <Footer />
     </>
   )

@@ -31,6 +31,7 @@ const navLinks: NavItem[] = [
       { label: 'Home Evaluation',          href: '/home-evaluation' },
       { label: 'Nosey Neighbour',          href: '/nosey-neighbour' },
       { label: 'Real Estate FAQ',          href: '/faq' },
+      { label: 'Blog',                     href: '/blog' },
     ],
   },
   { label: 'Reviews', href: '#testimonials' },

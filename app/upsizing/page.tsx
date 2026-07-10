@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { RevealWrapper } from '@/components/RevealWrapper'
+import { RelatedBlogs } from '@/components/RelatedBlogs'
 
 export const metadata: Metadata = {
   title: 'Upsizing & the Smooth Move System',
@@ -128,6 +129,7 @@ export default function UpsizingPage() {
         </div>
       </section>
 
+      <RelatedBlogs page="upsizing" />
       <Footer />
     </>
   )

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { RevealWrapper } from '@/components/RevealWrapper'
+import { RelatedBlogs } from '@/components/RelatedBlogs'
 
 export const metadata: Metadata = {
   title: 'Investment Strategy',
@@ -94,6 +95,7 @@ export default function InvestmentPage() {
         </div>
       </section>
 
+      <RelatedBlogs page="investment" />
       <Footer />
     </>
   )
