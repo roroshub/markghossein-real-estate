@@ -47,44 +47,44 @@ const icons: Record<string, React.ReactNode> = {
 
 export function Services({ services }: { services: Service[] }) {
   return (
-    <section id="services" className="relative py-32 bg-ink-950 overflow-hidden">
+    <section id="services" className="relative py-32 bg-cream overflow-hidden">
       {/* Ghost label */}
       <p
         aria-hidden="true"
         className="absolute -top-4 right-0 font-serif font-normal select-none pointer-events-none"
-        style={{ fontSize: 'clamp(80px,14vw,200px)', color: 'rgba(255,255,255,0.022)', lineHeight: 1, letterSpacing: '-0.02em' }}
+        style={{ fontSize: 'clamp(80px,14vw,200px)', color: 'rgba(0,0,0,0.03)', lineHeight: 1, letterSpacing: '-0.02em' }}
       >
         Services
       </p>
       <div className="mx-auto max-w-[1320px] px-8 md:px-12">
         <RevealWrapper className="mb-20">
-          <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-gold-500 mb-5">
+          <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-gold-700 mb-5">
             What I Offer
           </p>
-          <h2 className="font-serif text-[clamp(34px,3.5vw,52px)] font-normal leading-[1.1] text-white">
+          <h2 className="font-serif text-[clamp(34px,3.5vw,52px)] font-normal leading-[1.1] text-ink-900">
             Full-Service Real Estate,<br />Done Right.
           </h2>
         </RevealWrapper>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-x divide-y divide-white/[0.05] border border-white/[0.05]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-x divide-y divide-black/[0.06] border border-black/[0.06]">
           {services.map((svc, i) => (
             <RevealWrapper key={svc.id} delay={i * 60}>
-              <div className="group p-10 flex flex-col h-full hover:bg-ink-900 transition-colors duration-300">
-                <div className="text-gold-500 mb-8">
+              <div className="group p-10 flex flex-col h-full hover:bg-white transition-colors duration-300">
+                <div className="text-gold-600 mb-8">
                   {icons[svc.id] ?? icons['buyer']}
                 </div>
 
-                <h3 className="font-serif text-[22px] font-normal text-white mb-3 leading-tight">
+                <h3 className="font-serif text-[22px] font-normal text-ink-900 mb-3 leading-tight">
                   {svc.title}
                 </h3>
-                <p className="text-[13px] font-light text-white/55 leading-[1.85] mb-8 flex-1">
+                <p className="text-[13px] font-light text-ink-500 leading-[1.85] mb-8 flex-1">
                   {svc.description}
                 </p>
 
                 <ul className="flex flex-col gap-2.5 mb-9">
                   {svc.bullets.map((b) => (
-                    <li key={b} className="text-[12px] font-light text-white/55 pl-4 relative">
-                      <span className="absolute left-0 top-[9px] w-2 h-px bg-gold-500/60" />
+                    <li key={b} className="text-[12px] font-light text-ink-500 pl-4 relative">
+                      <span className="absolute left-0 top-[9px] w-2 h-px bg-gold-600" />
                       {b}
                     </li>
                   ))}
@@ -92,7 +92,7 @@ export function Services({ services }: { services: Service[] }) {
 
                 <Link
                   href={svc.cta.href}
-                  className="text-[12px] font-semibold tracking-[0.16em] uppercase text-gold-500 hover:tracking-[0.24em] transition-all duration-300"
+                  className="text-[12px] font-semibold tracking-[0.16em] uppercase text-gold-700 hover:tracking-[0.24em] transition-all duration-300"
                 >
                   {svc.cta.label} →
                 </Link>
