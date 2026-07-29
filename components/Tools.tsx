@@ -40,8 +40,9 @@ const toolIcons: Record<string, React.ReactNode> = {
 
 // Where each tool's CTA leads (defaults to the contact section).
 const toolLinks: Record<string, string> = {
+  homeworth: 'https://search.markghossein.com/homeworth',
+  'nosey-neighbour': 'https://search.markghossein.com/streetmatch',
   'mortgage-calculator': '/mortgage-calculator',
-  homeworth: '/home-evaluation',
 }
 
 export function Tools({ tools }: { tools: Tool[] }) {
@@ -58,23 +59,31 @@ export function Tools({ tools }: { tools: Tool[] }) {
         </RevealWrapper>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-ink-100 border border-ink-100">
-          {tools.map((tool, i) => (
-            <RevealWrapper key={tool.id} delay={i * 70}>
-              <div className="group h-full bg-cream p-12 flex flex-col hover:bg-white transition-colors duration-300">
-                <div className="text-ink-300 mb-8 group-hover:text-gold-600 transition-colors duration-300">
-                  {toolIcons[tool.id] ?? toolIcons['homeworth']}
+          {tools.map((tool, i) => {
+            const href = toolLinks[tool.id] ?? '#contact'
+            const external = href.startsWith('http')
+            const ctaClass = 'text-[12px] font-semibold tracking-[0.16em] uppercase text-ink-900 hover:text-gold-600 transition-colors duration-200'
+            return (
+              <RevealWrapper key={tool.id} delay={i * 70}>
+                <div className="group h-full bg-cream p-12 flex flex-col hover:bg-white transition-colors duration-300">
+                  <div className="text-ink-300 mb-8 group-hover:text-gold-600 transition-colors duration-300">
+                    {toolIcons[tool.id] ?? toolIcons['homeworth']}
+                  </div>
+                  <h3 className="font-serif text-[24px] font-normal text-ink-900 mb-3">{tool.title}</h3>
+                  <p className="text-[14px] font-light text-ink-500 leading-[1.85] mb-10 flex-1">{tool.description}</p>
+                  {external ? (
+                    <a href={href} target="_blank" rel="noopener noreferrer" className={ctaClass}>
+                      {tool.cta} →
+                    </a>
+                  ) : (
+                    <Link href={href} className={ctaClass}>
+                      {tool.cta} →
+                    </Link>
+                  )}
                 </div>
-                <h3 className="font-serif text-[24px] font-normal text-ink-900 mb-3">{tool.title}</h3>
-                <p className="text-[14px] font-light text-ink-500 leading-[1.85] mb-10 flex-1">{tool.description}</p>
-                <Link
-                  href={toolLinks[tool.id] ?? '#contact'}
-                  className="text-[12px] font-semibold tracking-[0.16em] uppercase text-ink-900 hover:text-gold-600 transition-colors duration-200"
-                >
-                  {tool.cta} →
-                </Link>
-              </div>
-            </RevealWrapper>
-          ))}
+              </RevealWrapper>
+            )
+          })}
         </div>
       </div>
     </section>
