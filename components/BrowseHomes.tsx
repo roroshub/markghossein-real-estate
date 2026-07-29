@@ -1,26 +1,28 @@
 import { RevealWrapper } from './RevealWrapper'
 
-const SEARCH_PORTAL    = 'https://search.markghossein.com'
+const SEARCH_URL       = 'https://search.markghossein.com/search'
 const COMMUNITIES_URL  = 'https://search.markghossein.com/communities'
 
+// Price tiles open the Agent Locator search; refine price there.
 const priceRanges = [
-  { label: 'Under $500K',    range: 'Condos & starter homes', href: `${SEARCH_PORTAL}/?price=Under%20%24500K` },
-  { label: '$500K to $750K', range: 'Townhomes & semis',      href: `${SEARCH_PORTAL}/?price=%24500K%20to%20%24750K` },
-  { label: '$750K to $1M',   range: 'Family detached',        href: `${SEARCH_PORTAL}/?price=%24750K%20to%20%241M` },
-  { label: '$1M to $1.5M',   range: 'Premium detached',       href: `${SEARCH_PORTAL}/?price=%241M%20to%20%241.5M` },
-  { label: '$1.5M to $2M',   range: 'Executive homes',        href: `${SEARCH_PORTAL}/?price=%241.5M%20to%20%242M` },
-  { label: '$2M+',           range: 'Luxury estates',         href: `${SEARCH_PORTAL}/?price=%242M%2B` },
+  { label: 'Under $500K',    range: 'Condos & starter homes', href: SEARCH_URL },
+  { label: '$500K to $750K', range: 'Townhomes & semis',      href: SEARCH_URL },
+  { label: '$750K to $1M',   range: 'Family detached',        href: SEARCH_URL },
+  { label: '$1M to $1.5M',   range: 'Premium detached',       href: SEARCH_URL },
+  { label: '$1.5M to $2M',   range: 'Executive homes',        href: SEARCH_URL },
+  { label: '$2M+',           range: 'Luxury estates',         href: SEARCH_URL },
 ]
 
+// slug = real Agent Locator community page: /communities/<slug>
 const neighbourhoods = [
-  { name: 'Westboro',    note: 'Boutique village living' },
-  { name: 'The Glebe',   note: 'Historic & walkable' },
-  { name: 'Kanata',      note: 'Tech-corridor family hub' },
-  { name: 'Barrhaven',   note: 'Fast-growing suburb' },
-  { name: 'Centretown',  note: 'Downtown condos' },
-  { name: 'Orleans',     note: 'East-end value' },
-  { name: 'Hintonburg',  note: 'Arts & dining district' },
-  { name: 'Stittsville', note: 'Small-town charm' },
+  { name: 'Westboro',            slug: 'westboro',           note: 'Boutique village living' },
+  { name: 'The Glebe',           slug: 'glebe',              note: 'Historic & walkable' },
+  { name: 'Kanata & Stittsville', slug: 'kanata-stittsville', note: 'Tech-corridor family hub' },
+  { name: 'Barrhaven',           slug: 'barrhaven',          note: 'Fast-growing suburb' },
+  { name: 'Downtown',            slug: 'downtown',           note: 'Urban condos & lofts' },
+  { name: 'Orleans',             slug: 'orleans',            note: 'East-end value' },
+  { name: 'Nepean',              slug: 'nepean',             note: 'Established & central' },
+  { name: 'Manotick & Greely',   slug: 'manotick-greely',    note: 'Village & estate living' },
 ]
 
 export function BrowseHomes() {
@@ -75,10 +77,10 @@ export function BrowseHomes() {
           <p className="text-[10px] font-semibold tracking-[0.24em] uppercase text-white/55 mb-6">By Neighbourhood</p>
         </RevealWrapper>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/[0.06]">
-          {neighbourhoods.map(({ name, note }, i) => (
+          {neighbourhoods.map(({ name, slug, note }, i) => (
             <RevealWrapper key={name} delay={i * 40}>
               <a
-                href={`${COMMUNITIES_URL}`}
+                href={`${COMMUNITIES_URL}/${slug}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block bg-ink-900 p-7 hover:bg-ink-850 transition-colors duration-300 h-full"

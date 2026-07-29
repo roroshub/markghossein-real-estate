@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-const SEARCH_PORTAL = 'https://search.markghossein.com'
+const SEARCH_URL = 'https://search.markghossein.com/search'
 
 const propertyTypes  = ['Any Type', 'House', 'Condo', 'Townhouse', 'Semi-Detached', 'Land']
 const priceRanges    = ['Any Price', 'Under $500K', '$500K to $750K', '$750K to $1M', '$1M to $1.5M', '$1.5M+']
@@ -17,17 +17,11 @@ export function PropertySearch() {
   const [beds,  setBeds]  = useState('Beds')
   const [baths, setBaths] = useState('Baths')
 
-  // Hand off to Mark's IDX search portal (agent locator) with the chosen filters.
+  // Hand off to Mark's Agent Locator IDX search. The portal has its own
+  // filters; we send the visitor straight there rather than guess its params.
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const params = new URLSearchParams()
-    if (query.trim())        params.set('q', query.trim())
-    if (type  !== 'Any Type')  params.set('type', type)
-    if (price !== 'Any Price') params.set('price', price)
-    if (beds  !== 'Beds')      params.set('beds', beds)
-    if (baths !== 'Baths')     params.set('baths', baths)
-    const qs = params.toString()
-    window.open(qs ? `${SEARCH_PORTAL}/?${qs}` : SEARCH_PORTAL, '_blank', 'noopener,noreferrer')
+    window.open(SEARCH_URL, '_blank', 'noopener,noreferrer')
   }
 
   const selectClass = 'search-select text-[13px] pr-4'
