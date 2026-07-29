@@ -2,72 +2,72 @@
   {
     "id": "buyer",
     "title": "Buyer Representation",
-    "description": "I guide you through every step, from pre-approval to closing day, so you can buy with confidence, clarity, and zero regrets.",
+    "description": "We guide you through every step, from pre-approval to closing day, so you can buy with confidence, clarity, and zero regrets.",
     "bullets": [
-      "Personalized property search",
-      "Offer strategy & negotiation",
-      "Inspection coordination",
-      "Closing day support"
+      "Curated property search matched to your criteria",
+      "Skilled offer strategy in competitive situations",
+      "Trusted inspector and lender network",
+      "Support through closing and beyond"
     ],
     "cta": { "label": "For buyers", "href": "/buyers" }
   },
   {
     "id": "seller",
     "title": "Seller Representation",
-    "description": "Your property deserves top dollar and a strategic plan to get it. I bring expert staging guidance, data-backed pricing, and maximum market exposure.",
+    "description": "Your property deserves top dollar and a strategic plan to get it. We bring expert staging guidance, data-backed pricing, and maximum market exposure.",
     "bullets": [
-      "Professional staging consultation",
-      "Targeted marketing campaign",
-      "Strategic pricing analysis",
-      "Offer review & negotiation"
+      "Data-backed pricing to maximize your sale price",
+      "Professional staging and listing photography",
+      "Multi-channel marketing to qualified buyers",
+      "Skilled offer negotiation on your behalf"
     ],
     "cta": { "label": "For sellers", "href": "/sellers" }
   },
   {
     "id": "upsizing",
     "title": "Upsizing",
-    "description": "Making room for the life you've grown into. My Smooth Move System keeps selling and buying at once seamless, financially optimized, and stress-free.",
+    "description": "Making room for the life you've grown into. Our Smooth Move System keeps selling and buying at once seamless, financially optimized, and stress-free.",
     "bullets": [
-      "Timeline synchronization",
-      "Budget planning beyond pre-approval",
-      "Bridge financing guidance",
-      "Dual negotiation strategy"
+      "Sell and buy timed to avoid double moves",
+      "Financing options for buying before you sell",
+      "Budgeting for your true next-home costs",
+      "Priority search for move-up inventory"
     ],
     "cta": { "label": "Explore upsizing", "href": "/upsizing" }
   },
   {
     "id": "downsizing",
     "title": "Downsizing",
-    "description": "Less house, more life. I help you right-size into a home that fits your next chapter, unlock your equity, and simplify the move from start to finish.",
+    "description": "Less house, more life. We help you right-size into a home that fits your next chapter, unlock your equity, and simplify the move from start to finish.",
     "bullets": [
-      "Equity & lifestyle planning",
-      "Decluttering & staging support",
-      "Condo & bungalow expertise",
-      "Coordinated buy and sell timing"
+      "Equity unlocked to fund your next chapter",
+      "Decluttering and staging support included",
+      "Condo, bungalow, and 55+ community expertise",
+      "Sale and purchase timed to minimize stress"
     ],
     "cta": { "label": "Explore downsizing", "href": "/downsizing" }
   },
   {
     "id": "investment",
     "title": "Investment Strategy",
-    "description": "Real estate is one of the most powerful wealth-building tools available. I help investors spot opportunities, analyze returns, and grow their portfolios.",
+    "description": "Real estate is one of the most powerful wealth-building tools available. We help investors spot opportunities, analyze returns, and grow their portfolios.",
     "bullets": [
-      "ROI & cap rate analysis",
-      "Market opportunity spotting",
-      "Multi-property planning",
-      "Long-term equity roadmap"
+      "ROI and cap rate analysis on every property",
+      "Off-market and emerging-area opportunities",
+      "Portfolio planning across multiple properties",
+      "Guidance built around your long-term goals"
     ],
     "cta": { "label": "For investors", "href": "/investment" }
   },
   {
     "id": "probate",
     "title": "Probate & Estate Sales",
-    "description": "Selling an estate or inherited property carries legal deadlines and emotional weight. As a Probate Specialist, I guide executors and families through every step.",
+    "description": "Selling an estate or inherited property carries legal deadlines and emotional weight. As a Probate Specialist, we guide executors and families through every step.",
     "bullets": [
-      "Probate Specialist",
-      "Coordination with estate counsel",
-      "Property cleanout & staging",
-      "Compassionate, discreet process"
+      "Deadline and legal requirement guidance",
+      "Direct coordination with estate lawyers",
+      "Concierge service through a trusted vendor network",
+      "Pricing strategy and clear guidance for smart estate decisions"
     ],
     "cta": { "label": "Learn about probate", "href": "/probate" }
   }

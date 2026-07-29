@@ -40,16 +40,20 @@ export function About() {
             </h2>
 
             <p className="text-[15px] font-light text-white/55 leading-[1.95] mb-5">
-              Mark Ghossein is an Ottawa real estate advisor who brings a strategic, data-driven
-              approach to every move. From first-time buyers to families upsizing or downsizing,
-              he pairs deep local market knowledge with a genuine, client-first commitment to
-              getting the details right.
+              Mark Ghossein is an Ottawa real estate advisor known for a strategic, data-driven
+              approach and a genuine commitment to getting the details right. He works with clients
+              at every stage, from sellers looking to maximize their return to families upsizing,
+              downsizing, or buying their first home, pairing deep local market knowledge with a
+              client-first approach.
             </p>
             <p className="text-[15px] font-light text-white/55 leading-[1.95] mb-12">
-              He is also a <span className="text-white/80">Probate Specialist</span>, guiding
-              executors and families through the sale of estate and inherited properties with patience
-              and discretion. Affiliated with eXp Realty, Mark has helped hundreds of Ottawa families
-              navigate buying, selling, upsizing, and downsizing with clarity and confidence.
+              Specializing in probate-related sales, Mark takes the weight of the property off
+              executors&apos; and families&apos; shoulders. Through his <span className="text-white/80">Estate
+              Property Concierge Service</span>, his team coordinates cleanouts, repairs, and staging with a
+              trusted vendor network, guiding families through the sale with patience and discretion so the
+              process feels as smooth as possible during an already difficult time. Partnered with eXp Realty,
+              he&apos;s helped Ottawa families move forward with clarity and confidence, no matter where they
+              are in life.
             </p>
 
             {/* Specialization chips */}

@@ -39,7 +39,7 @@ export function Probate() {
           <RevealWrapper delay={120}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-white/[0.06] border border-white/[0.06]">
               {[
-                { t: 'Probate Specialist', d: 'Trained in the legal and financial nuances of probate & estate sales.' },
+                { t: 'Probate Specialist', d: 'Experienced in the legal and financial nuances of probate & estate sales.' },
                 { t: 'Executor Support',     d: 'I work alongside your estate lawyer and coordinate every deadline.' },
                 { t: 'Discreet & Patient',   d: 'A compassionate, no-pressure process on your family’s timeline.' },
                 { t: 'Maximized Value',      d: 'Strategic prep and pricing to protect the estate’s proceeds.' },

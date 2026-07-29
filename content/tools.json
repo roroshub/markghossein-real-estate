@@ -16,5 +16,17 @@
     "title": "Buyer Checklist",
     "description": "The complete step-by-step checklist every first-time and move-up buyer needs before making an offer. Free download.",
     "cta": "Download Free"
+  },
+  {
+    "id": "seller-checklist",
+    "title": "Seller Checklist",
+    "description": "Every step to prep, price, and present your home for a top-dollar sale, in one free download.",
+    "cta": "Download Free"
+  },
+  {
+    "id": "mortgage-calculator",
+    "title": "Mortgage Calculator",
+    "description": "Estimate your monthly payment with Canadian semi-annual compounding, and model any scenario before you buy.",
+    "cta": "Open Calculator"
   }
 ]

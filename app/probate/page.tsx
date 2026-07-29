@@ -22,32 +22,32 @@ const steps = [
   {
     num: '01',
     title: 'Initial Consultation',
-    body: "We meet to understand the estate, the property, and your family's wishes, no pressure, no obligation. I explain the probate process in plain language.",
+    body: "We sit down, walk through the estate and the property, and answer whatever questions you've got about probate and the real estate side of things. Nothing gets decided here, it's just a chance to figure out where things stand.",
   },
   {
     num: '02',
     title: 'Coordinate With Counsel',
-    body: 'I work directly with the estate lawyer to confirm the executor’s authority to sell and align on timelines, the Certificate of Appointment, and any court requirements.',
+    body: 'We get in touch with the estate lawyer directly, confirm the executor has the authority to sell, and sort out timelines, the Certificate of Appointment, and whatever else the court needs.',
   },
   {
     num: '03',
     title: 'Prepare the Property',
-    body: 'Cleanouts, repairs, staging, and valuation, I manage trusted vendors to present the home at its best while respecting the estate’s budget.',
+    body: "Cleanouts, repairs, staging, valuation, our Estate Property Concierge handles the vendors so the home shows well without blowing through the estate's budget.",
   },
   {
     num: '04',
     title: 'Strategic Pricing',
-    body: 'A data-driven market valuation ensures the property sells for its true worth, protecting the proceeds owed to every beneficiary.',
+    body: 'We price it based on real market data, not guesswork, so the estate gets what the property is actually worth and every beneficiary gets their fair share.',
   },
   {
     num: '05',
     title: 'Market & Negotiate',
-    body: 'Full marketing exposure, qualified buyers, and assertive negotiation, with every offer reviewed against the estate’s best interest.',
+    body: "We put the listing in front of the right buyers, then negotiate hard on every offer with the estate's interest front and center.",
   },
   {
     num: '06',
     title: 'Close With Care',
-    body: 'I coordinate lawyers, lenders, and movers through closing so the estate is settled smoothly and your family can move forward.',
+    body: 'We keep the lawyers, lenders, and movers on the same page through closing, so the estate wraps up clean and your family can move on.',
   },
 ]
 
@@ -58,15 +58,31 @@ const faqs = [
   },
   {
     q: 'Do I need probate before I can sell?',
-    a: 'In most Ontario cases the executor needs the Certificate of Appointment before transferring title. I work with your estate lawyer to time the listing and closing correctly so there are no surprises.',
+    a: 'In most Ontario cases the executor needs the Certificate of Appointment before transferring title. We work with your estate lawyer to time the listing and closing correctly so there are no surprises.',
   },
   {
-    q: 'What does “Probate Specialist” mean?',
-    a: 'It means I’ve completed dedicated training in the legal, financial, and emotional aspects of estate sales, so I can guide executors and beneficiaries through a process most agents rarely handle.',
+    q: 'How long does the probate process take in Ontario?',
+    a: 'It varies by estate, but most straightforward files take a few months to get the Certificate of Appointment from the court. Complex estates, disputes among beneficiaries, or a backlog at the courthouse can push that out further. We can usually give you a realistic timeline once we know the details of the estate.',
+  },
+  {
+    q: 'Can I list the property before probate is granted?',
+    a: 'In many cases, yes. We can prepare, list, and market the property while probate is in progress, then close once the Certificate of Appointment comes through. It depends on the estate and what the lawyer advises, so we always coordinate with counsel before moving forward.',
+  },
+  {
+    q: "What happens if the beneficiaries don't agree on selling?",
+    a: "This comes up more than you'd think. We stay neutral and focus on the facts, market value, timelines, and what's realistic, so the executor and beneficiaries have solid information to work from. Any disagreements on legal authority get handled by the estate lawyer, we just make sure everyone has the same picture of the property side.",
+  },
+  {
+    q: 'Who pays for repairs, cleanout, and staging before the sale?',
+    a: "These costs typically come out of the estate before the proceeds are distributed. We work within the estate's budget and can bring in our Estate Property Concierge to manage vendors at fair, reasonable pricing, so you're not overspending on a property the family may never have lived in.",
+  },
+  {
+    q: 'Do I need to be local to Ottawa to sell an inherited property here?',
+    a: 'No. Many executors and beneficiaries live out of town or out of province. We handle showings, coordination, and updates remotely, so you are not stuck flying in for every step of the process.',
   },
   {
     q: 'How are the proceeds handled?',
-    a: 'Net proceeds flow to the estate and are distributed to beneficiaries per the will, after debts and expenses. I focus on maximizing the sale price; your estate lawyer handles distribution.',
+    a: 'Net proceeds flow to the estate and are distributed to beneficiaries per the will, after debts and expenses. We focus on maximizing the sale price; your estate lawyer handles distribution.',
   },
 ]
 
@@ -122,21 +138,29 @@ export default function ProbatePage() {
             <h2 className="font-serif text-[clamp(28px,3.2vw,44px)] font-normal text-white leading-tight mb-6">
               You don&apos;t have to navigate this alone.
             </h2>
-            <p className="text-[15px] font-light text-white/55 leading-[1.95] mb-5">
-              Selling an estate property comes with legal deadlines, family dynamics, and emotional
-              weight that an ordinary sale never carries. As a <span className="text-white/70">Certified
-              Probate Real Estate Specialist</span>, I&apos;ve been trained specifically to manage this,
-              working hand-in-hand with your estate lawyer every step of the way.
+            <p className="text-[15px] font-light text-white/55 leading-[1.95] mb-7">
+              Selling an estate or inherited property carries legal deadlines and emotional weight. We
+              guide executors and families through every step, from pricing and paperwork to concierge
+              support with our trusted vendor network.
             </p>
-            <p className="text-[15px] font-light text-white/55 leading-[1.95]">
-              Whether the home needs a full cleanout and renovation or is ready to list tomorrow, I take
-              the real estate burden off your shoulders so your family can focus on what matters.
-            </p>
+            <ul className="flex flex-col gap-3.5">
+              {[
+                'Deadline and legal requirement guidance',
+                'Direct coordination with estate lawyers',
+                'Concierge service through a trusted vendor network',
+                'Pricing strategy and clear guidance for smart estate decisions',
+              ].map((b) => (
+                <li key={b} className="flex items-start gap-3 text-[14px] font-light text-white/70">
+                  <span className="mt-[9px] block w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0" />
+                  {b}
+                </li>
+              ))}
+            </ul>
           </RevealWrapper>
           <RevealWrapper delay={100}>
             <div className="border border-gold-500/20 bg-gold-500/[0.04] p-10">
               <p className="font-serif text-[20px] italic text-white/80 leading-relaxed mb-6">
-                &ldquo;My job is to make the hardest sale you&apos;ll ever make feel as light as possible.&rdquo;
+                &ldquo;A difficult time deserves a steady hand. That&apos;s what we bring to every estate sale.&rdquo;
               </p>
               <p className="text-[11px] font-semibold tracking-[0.16em] uppercase text-gold-500">Mark Ghossein</p>
             </div>

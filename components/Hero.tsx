@@ -112,8 +112,8 @@ export function Hero() {
           className="text-[16px] font-light text-white/55 max-w-[460px] mx-auto leading-[1.9] mb-10 tracking-wide"
           style={{ animation: 'word-up 0.7s cubic-bezier(0.16,1,0.3,1) 300ms both' }}
         >
-          Whether you&apos;re buying, selling, upsizing, or downsizing, I help Ottawa
-          families make confident, well-advised moves in any market.
+          We help Ottawa families make confident, well-advised real estate moves,
+          no matter what stage of life they&apos;re in.
         </p>
 
         {/* Property search bar */}

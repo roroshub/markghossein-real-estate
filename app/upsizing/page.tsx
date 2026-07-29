@@ -26,10 +26,11 @@ const points = [
 ]
 
 const system = [
-  { n: '01', t: 'Plan', d: 'We map your timeline, budget, and must-haves before anything goes on the market.' },
+  { n: '01', t: 'Understanding Your Vision', d: 'We map your timeline, budget, and must-haves before anything goes on the market.' },
   { n: '02', t: 'Prepare', d: 'Your current home gets prepped and priced to sell strong and fund the next purchase.' },
-  { n: '03', t: 'Sync', d: 'We coordinate sale and purchase closings so you move once, not twice.' },
-  { n: '04', t: 'Settle', d: 'Keys to your bigger home in hand, with the financing and logistics handled.' },
+  { n: '03', t: 'Execute', d: 'Your property hits the market and we secure your new home.' },
+  { n: '04', t: 'Transition', d: 'We coordinate sale and purchase closings so you move once, not twice.' },
+  { n: '05', t: 'Celebrate', d: 'Keys to your bigger home in hand, with the financing and logistics handled.' },
 ]
 
 export default function UpsizingPage() {
@@ -72,7 +73,7 @@ export default function UpsizingPage() {
               </p>
             </div>
           </RevealWrapper>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-black/[0.06]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-px bg-black/[0.06]">
             {system.map((s, i) => (
               <RevealWrapper key={s.n} delay={i * 60}>
                 <div className="bg-white p-10 h-full group hover:bg-cream-deep transition-colors duration-300">
