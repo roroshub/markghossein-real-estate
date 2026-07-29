@@ -1,16 +1,16 @@
 import { RevealWrapper } from './RevealWrapper'
+import { buildSearchUrl, AL_COMMUNITIES } from '@/lib/al-search'
 
-const SEARCH_URL       = 'https://search.markghossein.com/search'
-const COMMUNITIES_URL  = 'https://search.markghossein.com/communities'
+const COMMUNITIES_URL = AL_COMMUNITIES
 
-// Price tiles open the Agent Locator search; refine price there.
+// Each price tile is a real price-filtered Agent Locator search.
 const priceRanges = [
-  { label: 'Under $500K',    range: 'Condos & starter homes', href: SEARCH_URL },
-  { label: '$500K to $750K', range: 'Townhomes & semis',      href: SEARCH_URL },
-  { label: '$750K to $1M',   range: 'Family detached',        href: SEARCH_URL },
-  { label: '$1M to $1.5M',   range: 'Premium detached',       href: SEARCH_URL },
-  { label: '$1.5M to $2M',   range: 'Executive homes',        href: SEARCH_URL },
-  { label: '$2M+',           range: 'Luxury estates',         href: SEARCH_URL },
+  { label: 'Under $500K',    range: 'Condos & starter homes', href: buildSearchUrl({ priceMax: 500000 }) },
+  { label: '$500K to $750K', range: 'Townhomes & semis',      href: buildSearchUrl({ priceMin: 500000, priceMax: 750000 }) },
+  { label: '$750K to $1M',   range: 'Family detached',        href: buildSearchUrl({ priceMin: 750000, priceMax: 1000000 }) },
+  { label: '$1M to $1.5M',   range: 'Premium detached',       href: buildSearchUrl({ priceMin: 1000000, priceMax: 1500000 }) },
+  { label: '$1.5M to $2M',   range: 'Executive homes',        href: buildSearchUrl({ priceMin: 1500000, priceMax: 2000000 }) },
+  { label: '$2M+',           range: 'Luxury estates',         href: buildSearchUrl({ priceMin: 2000000 }) },
 ]
 
 // slug = real Agent Locator community page: /communities/<slug>

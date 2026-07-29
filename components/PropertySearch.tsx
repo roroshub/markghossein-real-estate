@@ -1,14 +1,24 @@
 'use client'
 
 import { useState } from 'react'
+import { buildSearchUrl, communitySlug, communityUrl } from '@/lib/al-search'
 
-const SEARCH_URL = 'https://search.markghossein.com/search'
-
-const propertyTypes  = ['Any Type', 'House', 'Condo', 'Townhouse', 'Semi-Detached', 'Land']
+const propertyTypes  = ['Any Type', 'House', 'Condo', 'Townhome', 'Apartment']
 const priceRanges    = ['Any Price', 'Under $500K', '$500K to $750K', '$750K to $1M', '$1M to $1.5M', '$1.5M+']
 const bedOptions     = ['Beds', '1+ Bed', '2+ Beds', '3+ Beds', '4+ Beds', '5+ Beds']
 const bathOptions    = ['Baths', '1+ Bath', '2+ Baths', '3+ Baths', '4+ Baths']
-const neighbourhoods = ['Glebe', 'Westboro', 'Kanata', 'Barrhaven', 'Centretown', 'Orleans', 'Hintonburg', 'Stittsville']
+const neighbourhoods = ['Westboro', 'The Glebe', 'Kanata/Stittsville', 'Barrhaven', 'Downtown', 'Orleans', 'Nepean', 'Manotick/Greely']
+
+const TYPE: Record<string, string> = { House: 'House', Condo: 'Condo', Townhome: 'Townhome', Apartment: 'Apartment' }
+const PRICE: Record<string, { min?: number; max?: number }> = {
+  'Under $500K':    { max: 500000 },
+  '$500K to $750K': { min: 500000, max: 750000 },
+  '$750K to $1M':   { min: 750000, max: 1000000 },
+  '$1M to $1.5M':   { min: 1000000, max: 1500000 },
+  '$1.5M+':         { min: 1500000 },
+}
+const BEDS: Record<string, number>  = { '1+ Bed': 1, '2+ Beds': 2, '3+ Beds': 3, '4+ Beds': 4, '5+ Beds': 5 }
+const BATHS: Record<string, number> = { '1+ Bath': 1, '2+ Baths': 2, '3+ Baths': 3, '4+ Baths': 4 }
 
 export function PropertySearch() {
   const [query, setQuery] = useState('')
@@ -17,11 +27,24 @@ export function PropertySearch() {
   const [beds,  setBeds]  = useState('Beds')
   const [baths, setBaths] = useState('Baths')
 
-  // Hand off to Mark's Agent Locator IDX search. The portal has its own
-  // filters; we send the visitor straight there rather than guess its params.
+  // Hand off to Mark's Agent Locator IDX search with real filters. A recognized
+  // community name jumps straight to that community's page.
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    window.open(SEARCH_URL, '_blank', 'noopener,noreferrer')
+    const q = query.trim()
+    if (q) {
+      const slug = communitySlug(q)
+      if (slug) { window.open(communityUrl(slug), '_blank', 'noopener,noreferrer'); return }
+    }
+    const p = PRICE[price]
+    const url = buildSearchUrl({
+      type: TYPE[type],
+      priceMin: p?.min,
+      priceMax: p?.max,
+      beds: BEDS[beds],
+      baths: BATHS[baths],
+    })
+    window.open(url, '_blank', 'noopener,noreferrer')
   }
 
   const selectClass = 'search-select text-[13px] pr-4'
@@ -43,10 +66,14 @@ export function PropertySearch() {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Neighbourhood, address, or MLS#"
-            aria-label="Search by neighbourhood, address, or MLS number"
-            className="flex-1 bg-transparent text-white placeholder:text-white/55 text-[13px] outline-none min-w-0"
+            placeholder="Community — e.g. Westboro, Barrhaven, Kanata"
+            aria-label="Search by community"
+            list="mg-communities"
+            className="flex-1 bg-transparent text-white placeholder:text-white/45 text-[13px] outline-none min-w-0"
           />
+          <datalist id="mg-communities">
+            {neighbourhoods.map((n) => <option key={n} value={n} />)}
+          </datalist>
         </div>
 
         {/* Type select */}
@@ -106,8 +133,8 @@ export function PropertySearch() {
           <button
             key={n}
             type="button"
-            onClick={() => setQuery(n)}
-            className="text-[10px] font-medium tracking-[0.1em] text-white/55 hover:text-white border border-white/[0.08] hover:border-white/25 px-3 py-1.5 transition-all duration-200"
+            onClick={() => { const s = communitySlug(n); if (s) window.open(communityUrl(s), '_blank', 'noopener,noreferrer') }}
+            className="text-[10px] font-medium tracking-[0.1em] text-white/40 hover:text-white border border-white/[0.08] hover:border-white/25 px-3 py-1.5 transition-all duration-200"
           >
             {n}
           </button>
