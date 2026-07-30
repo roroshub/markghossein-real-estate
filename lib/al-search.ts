@@ -8,9 +8,11 @@ export const AL_COMMUNITIES = 'https://search.markghossein.com/communities'
 type Filter = { FilterName: string; FilterOperator: string; FilterValues: string }
 
 export function buildSearchUrl(
-  opts: { type?: string; priceMin?: number; priceMax?: number; beds?: number; baths?: number } = {},
+  opts: { q?: string; type?: string; priceMin?: number; priceMax?: number; beds?: number; baths?: number } = {},
 ): string {
   const filters: Filter[] = [{ FilterName: 'Sale_Lease', FilterOperator: '=', FilterValues: 'Sale' }]
+  // "Common" is AL's keyword filter — address, MLS#, community, or location text.
+  if (opts.q)        filters.push({ FilterName: 'Common',     FilterOperator: '=',  FilterValues: opts.q })
   if (opts.type)     filters.push({ FilterName: 'ALHomeType', FilterOperator: '=',  FilterValues: opts.type })
   if (opts.priceMin) filters.push({ FilterName: 'List_Price', FilterOperator: '>=', FilterValues: String(opts.priceMin) })
   if (opts.priceMax) filters.push({ FilterName: 'List_Price', FilterOperator: '<=', FilterValues: String(opts.priceMax) })

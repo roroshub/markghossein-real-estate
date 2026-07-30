@@ -4,6 +4,7 @@ import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { RevealWrapper } from '@/components/RevealWrapper'
 import { RelatedBlogs } from '@/components/RelatedBlogs'
+import { GuideDownload } from '@/components/GuideDownload'
 
 export const metadata: Metadata = {
   title: 'Upsizing & the Smooth Move System',
@@ -84,6 +85,20 @@ export default function UpsizingPage() {
               </RevealWrapper>
             ))}
           </div>
+
+          <RevealWrapper>
+            <div className="mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-t border-black/[0.06] pt-10">
+              <p className="font-serif text-[20px] italic text-ink-500">
+                Get the full playbook, free.
+              </p>
+              <GuideDownload
+                title="The Smooth Move Process"
+                file="/guides/smooth-move-process.pdf"
+                label="Download the Smooth Move Guide →"
+                className="inline-flex items-center text-[13px] font-semibold tracking-[0.14em] uppercase text-ink-900 border border-ink-900/20 px-7 py-4 hover:bg-gold-500 hover:border-gold-500 hover:text-ink-950 transition-all duration-300"
+              />
+            </div>
+          </RevealWrapper>
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { RevealWrapper } from './RevealWrapper'
+import { GuideDownload } from './GuideDownload'
 import type { Tool } from '@/lib/schemas'
 
 const toolIcons: Record<string, React.ReactNode> = {
@@ -45,6 +46,12 @@ const toolLinks: Record<string, string> = {
   'mortgage-calculator': '/mortgage-calculator',
 }
 
+// Tools whose CTA is a gated PDF download (sign up first).
+const toolGuides: Record<string, { title: string; file: string }> = {
+  'buyer-checklist':  { title: 'Home Buying Checklist',  file: '/guides/home-buying-checklist.pdf' },
+  'seller-checklist': { title: 'Home Selling Checklist', file: '/guides/home-selling-checklist.pdf' },
+}
+
 export function Tools({ tools }: { tools: Tool[] }) {
   return (
     <section id="tools" className="py-32 bg-cream">
@@ -62,6 +69,7 @@ export function Tools({ tools }: { tools: Tool[] }) {
           {tools.map((tool, i) => {
             const href = toolLinks[tool.id] ?? '#contact'
             const external = href.startsWith('http')
+            const guide = toolGuides[tool.id]
             const ctaClass = 'text-[12px] font-semibold tracking-[0.16em] uppercase text-ink-900 hover:text-gold-600 transition-colors duration-200'
             return (
               <RevealWrapper key={tool.id} delay={i * 70}>
@@ -71,7 +79,14 @@ export function Tools({ tools }: { tools: Tool[] }) {
                   </div>
                   <h3 className="font-serif text-[24px] font-normal text-ink-900 mb-3">{tool.title}</h3>
                   <p className="text-[14px] font-light text-ink-500 leading-[1.85] mb-10 flex-1">{tool.description}</p>
-                  {external ? (
+                  {guide ? (
+                    <GuideDownload
+                      title={guide.title}
+                      file={guide.file}
+                      label={`${tool.cta} →`}
+                      className={ctaClass}
+                    />
+                  ) : external ? (
                     <a href={href} target="_blank" rel="noopener noreferrer" className={ctaClass}>
                       {tool.cta} →
                     </a>

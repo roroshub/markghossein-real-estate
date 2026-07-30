@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 type NavChild = { label: string; href: string }
@@ -72,14 +73,15 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-[1320px] items-center justify-between px-8 md:px-12 h-[76px]">
         {/* Logo */}
-        <Link href="/" onClick={closeMenu} className="flex items-center gap-4 shrink-0">
-          <div className="w-10 h-10 bg-gold-500 flex items-center justify-center shrink-0">
-            <span className="font-serif text-ink-950 text-base font-semibold tracking-wider">MG</span>
-          </div>
-          <div className="text-white">
-            <p className="text-[13px] font-medium tracking-[0.08em] uppercase leading-none">Mark Ghossein</p>
-            <p className="text-[10px] tracking-[0.16em] opacity-40 uppercase mt-1">Real Estate Advisors</p>
-          </div>
+        <Link href="/" onClick={closeMenu} className="flex items-center shrink-0">
+          <Image
+            src="/images/logo.png"
+            alt="Mark Ghossein Real Estate"
+            width={768}
+            height={623}
+            priority
+            className="h-14 w-auto"
+          />
         </Link>
 
         {/* Desktop links */}

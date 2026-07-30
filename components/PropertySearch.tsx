@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { buildSearchUrl, communitySlug, communityUrl } from '@/lib/al-search'
+import { buildSearchUrl } from '@/lib/al-search'
 
 const propertyTypes  = ['Any Type', 'House', 'Condo', 'Townhome', 'Apartment']
 const priceRanges    = ['Any Price', 'Under $500K', '$500K to $750K', '$750K to $1M', '$1M to $1.5M', '$1.5M+']
@@ -27,17 +27,13 @@ export function PropertySearch() {
   const [beds,  setBeds]  = useState('Beds')
   const [baths, setBaths] = useState('Baths')
 
-  // Hand off to Mark's Agent Locator IDX search with real filters. A recognized
-  // community name jumps straight to that community's page.
+  // Hand off to Mark's Agent Locator IDX search with real filters. The location
+  // box is AL's keyword search (address, MLS#, community, or area).
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const q = query.trim()
-    if (q) {
-      const slug = communitySlug(q)
-      if (slug) { window.open(communityUrl(slug), '_blank', 'noopener,noreferrer'); return }
-    }
     const p = PRICE[price]
     const url = buildSearchUrl({
+      q: query.trim() || undefined,
       type: TYPE[type],
       priceMin: p?.min,
       priceMax: p?.max,
@@ -66,8 +62,8 @@ export function PropertySearch() {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Community — e.g. Westboro, Barrhaven, Kanata"
-            aria-label="Search by community"
+            placeholder="Address, MLS #, or location"
+            aria-label="Search by address, MLS number, or location"
             list="mg-communities"
             className="flex-1 bg-transparent text-white placeholder:text-white/45 text-[13px] outline-none min-w-0"
           />
@@ -133,7 +129,7 @@ export function PropertySearch() {
           <button
             key={n}
             type="button"
-            onClick={() => { const s = communitySlug(n); if (s) window.open(communityUrl(s), '_blank', 'noopener,noreferrer') }}
+            onClick={() => setQuery(n)}
             className="text-[10px] font-medium tracking-[0.1em] text-white/40 hover:text-white border border-white/[0.08] hover:border-white/25 px-3 py-1.5 transition-all duration-200"
           >
             {n}

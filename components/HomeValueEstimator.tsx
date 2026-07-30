@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo, useState, type FormEvent } from 'react'
 import Link from 'next/link'
 import market from '@/content/market-data.json'
 
@@ -37,6 +37,31 @@ export function HomeValueEstimator() {
   const [sqft, setSqft]   = useState(1800)
   const [beds, setBeds]   = useState(3)
   const [baths, setBaths] = useState(2)
+
+  // The estimate is gated behind a quick sign-up.
+  const [unlocked, setUnlocked]     = useState(false)
+  const [lead, setLead]             = useState({ firstName: '', lastName: '', email: '' })
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError]           = useState('')
+
+  async function unlock(e: FormEvent) {
+    e.preventDefault()
+    setError('')
+    setSubmitting(true)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...lead, message: 'Home evaluation estimate requested' }),
+      })
+      if (!res.ok) throw new Error()
+      setUnlocked(true)
+    } catch {
+      setError('Something went wrong. Please try again.')
+    } finally {
+      setSubmitting(false)
+    }
+  }
 
   const { low, mid, high } = useMemo(() => {
     const base = (areas[area] ?? 410) * sqft
@@ -109,32 +134,64 @@ export function HomeValueEstimator() {
         </div>
       </div>
 
-      {/* ── Result ── */}
+      {/* ── Result (gated behind sign-up) ── */}
       <div className="bg-ink-900 p-8 md:p-10 flex flex-col justify-center">
-        <p className="text-[10px] font-semibold tracking-[0.22em] uppercase text-gold-500 mb-4">
-          Estimated Value Range
-        </p>
-        <p className="font-serif text-[clamp(34px,4vw,52px)] font-normal text-white leading-none mb-2 tabular-nums">
-          {fmt(low)} <span className="text-white/55">to</span> {fmt(high)}
-        </p>
-        <p className="text-[13px] font-light text-white/55 mb-8">
-          Midpoint estimate <span className="text-white/70">{fmt(mid)}</span>
-        </p>
+        {unlocked ? (
+          <>
+            <p className="text-[10px] font-semibold tracking-[0.22em] uppercase text-gold-500 mb-4">
+              Estimated Value Range
+            </p>
+            <p className="font-serif text-[clamp(34px,4vw,52px)] font-normal text-white leading-none mb-2 tabular-nums">
+              {fmt(low)} <span className="text-white/55">to</span> {fmt(high)}
+            </p>
+            <p className="text-[13px] font-light text-white/55 mb-8">
+              Midpoint estimate <span className="text-white/70">{fmt(mid)}</span>
+            </p>
 
-        <p className="text-[12px] font-light text-white/55 leading-relaxed mb-3">
-          This is a quick ballpark based on neighbourhood averages, not an appraisal. For an
-          accurate, no-obligation HomeWorth valuation tailored to your exact home, let&apos;s talk.
-        </p>
-        <p className="text-[10px] font-medium tracking-[0.06em] uppercase text-white/35 mb-8">
-          Based on {market.source.split(' (')[0]} data · {market.asOf}
-        </p>
+            <p className="text-[12px] font-light text-white/55 leading-relaxed mb-3">
+              This is a quick ballpark based on neighbourhood averages, not an appraisal. For an
+              accurate, no-obligation HomeWorth valuation tailored to your exact home, let&apos;s talk.
+            </p>
+            <p className="text-[10px] font-medium tracking-[0.06em] uppercase text-white/35 mb-8">
+              Based on {market.source.split(' (')[0]} data · {market.asOf}
+            </p>
 
-        <Link
-          href="/#contact"
-          className="inline-flex items-center justify-center px-8 py-4 bg-gold-500 text-ink-950 text-[11px] font-semibold tracking-[0.14em] uppercase hover:bg-gold-300 transition-colors duration-300"
-        >
-          Get My Real HomeWorth Report
-        </Link>
+            <Link
+              href="/#contact"
+              className="inline-flex items-center justify-center px-8 py-4 bg-gold-500 text-ink-950 text-[11px] font-semibold tracking-[0.14em] uppercase hover:bg-gold-300 transition-colors duration-300"
+            >
+              Get My Real HomeWorth Report
+            </Link>
+          </>
+        ) : (
+          <>
+            <p className="text-[10px] font-semibold tracking-[0.22em] uppercase text-gold-500 mb-4">
+              Your Estimate
+            </p>
+            <h3 className="font-serif text-[clamp(24px,3vw,34px)] font-normal text-white leading-tight mb-3">
+              See what your home could be worth.
+            </h3>
+            <p className="text-[13px] font-light text-white/55 leading-relaxed mb-6">
+              Enter your details to unlock your instant estimate range. No obligation.
+            </p>
+            <form onSubmit={unlock} className="flex flex-col gap-3">
+              <div className="grid grid-cols-2 gap-3">
+                <input aria-label="First name" placeholder="First name" required value={lead.firstName}
+                  onChange={(e) => setLead((p) => ({ ...p, firstName: e.target.value }))} className="field-input" />
+                <input aria-label="Last name" placeholder="Last name" required value={lead.lastName}
+                  onChange={(e) => setLead((p) => ({ ...p, lastName: e.target.value }))} className="field-input" />
+              </div>
+              <input aria-label="Email address" type="email" placeholder="Email address" required value={lead.email}
+                onChange={(e) => setLead((p) => ({ ...p, email: e.target.value }))} className="field-input" />
+              {error && <p className="text-[12px] text-red-400">{error}</p>}
+              <button type="submit" disabled={submitting}
+                className="mt-2 bg-gold-500 text-ink-950 py-4 text-[12px] font-semibold tracking-[0.14em] uppercase hover:bg-gold-300 transition-colors duration-300 disabled:opacity-60">
+                {submitting ? 'Calculating…' : 'See My Estimate'}
+              </button>
+              <p className="text-[10px] text-white/35 text-center leading-relaxed">Your details stay private. No spam.</p>
+            </form>
+          </>
+        )}
       </div>
     </div>
   )

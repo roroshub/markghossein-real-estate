@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const quickLinks = [
   { label: 'Services',       href: '/#services' },
@@ -32,15 +33,13 @@ export function Footer() {
 
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3.5 mb-6">
-              <div className="w-10 h-10 bg-gold-500 flex items-center justify-center shrink-0">
-                <span className="font-serif text-ink-950 text-sm font-semibold tracking-wider">MG</span>
-              </div>
-              <div className="text-white">
-                <p className="text-[12px] font-medium tracking-[0.1em] uppercase">Mark Ghossein</p>
-                <p className="text-[9px] tracking-[0.2em] opacity-35 uppercase mt-1">Real Estate Advisors</p>
-              </div>
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="Mark Ghossein Real Estate"
+              width={768}
+              height={623}
+              className="h-16 w-auto mb-6"
+            />
             <p className="font-serif text-[20px] italic text-white/55 mb-3">Make the right move.</p>
             <p className="text-[11px] font-light text-white/55 leading-relaxed">
               Affiliated with eXp Realty<br />Ottawa, Ontario, Canada
