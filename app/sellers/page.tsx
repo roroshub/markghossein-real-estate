@@ -5,6 +5,7 @@ import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { RevealWrapper } from '@/components/RevealWrapper'
 import { RelatedBlogs } from '@/components/RelatedBlogs'
+import { GuideDownload } from '@/components/GuideDownload'
 
 export const metadata: Metadata = {
   title: "Seller's Guide",
@@ -99,6 +100,15 @@ export default function SellersPage() {
           <p className="text-[16px] font-light text-white/55 max-w-[500px] leading-[1.9]">
             Strategic pricing, standout marketing, and assertive negotiation, a proven process that sells Ottawa homes faster and for more.
           </p>
+          <div className="mt-9">
+            <GuideDownload
+              title="Home Selling Checklist"
+              file="/guides/home-selling-checklist.pdf"
+              label="Download the Seller's Guide →"
+              blurb="Every step to prep, price, and present your home for a top-dollar sale."
+              className="inline-flex items-center px-8 py-4 bg-gold-500 text-ink-950 text-[11px] font-semibold tracking-[0.14em] uppercase hover:bg-gold-300 transition-colors duration-300"
+            />
+          </div>
         </div>
       </section>
 
