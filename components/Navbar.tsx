@@ -75,12 +75,12 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" onClick={closeMenu} className="flex items-center shrink-0">
           <Image
-            src="/images/logo.png"
+            src="/images/logo-mark.png"
             alt="Mark Ghossein Real Estate"
-            width={768}
-            height={623}
+            width={336}
+            height={307}
             priority
-            className="h-14 w-auto"
+            className="h-12 w-auto"
           />
         </Link>
 
