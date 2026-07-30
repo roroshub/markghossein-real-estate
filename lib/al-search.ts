@@ -18,8 +18,8 @@ export function buildSearchUrl(
   if (opts.priceMax) filters.push({ FilterName: 'List_Price', FilterOperator: '<=', FilterValues: String(opts.priceMax) })
   if (opts.beds)     filters.push({ FilterName: 'Bedrooms',   FilterOperator: '>=', FilterValues: String(opts.beds) })
   if (opts.baths)    filters.push({ FilterName: 'Bathrooms',  FilterOperator: '>=', FilterValues: String(opts.baths) })
-  const params = new URLSearchParams({ FilterItems: JSON.stringify(filters), viewType: '0', orderBy: '0' })
-  return `${AL_SEARCH}?${params.toString()}`
+  // encodeURIComponent (not URLSearchParams) so spaces are %20, matching AL.
+  return `${AL_SEARCH}?FilterItems=${encodeURIComponent(JSON.stringify(filters))}&viewType=0&orderBy=0`
 }
 
 // Real Agent Locator community slugs, keyed by the ways a visitor might type them.
