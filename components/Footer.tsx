@@ -19,10 +19,10 @@ const serviceLinks = [
 ]
 
 const socialLinks = [
-  { label: 'Instagram', abbr: 'IG', href: '#' },
-  { label: 'Facebook',  abbr: 'FB', href: '#' },
-  { label: 'LinkedIn',  abbr: 'LI', href: '#' },
-  { label: 'YouTube',   abbr: 'YT', href: '#' },
+  { label: 'Instagram', abbr: 'IG', href: 'https://www.instagram.com/markghossein/' },
+  { label: 'Facebook',  abbr: 'FB', href: 'https://www.facebook.com/ghosseinmark/' },
+  { label: 'LinkedIn',  abbr: 'LI', href: 'https://www.linkedin.com/in/mark-ghossein-4a219a284/' },
+  { label: 'YouTube',   abbr: 'YT', href: 'https://www.youtube.com/@markghossein1697' },
 ]
 
 export function Footer() {
@@ -84,6 +84,8 @@ export function Footer() {
                 <a
                   key={abbr}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="w-9 h-9 border border-white/[0.07] text-[9px] font-bold tracking-wider text-white/55 flex items-center justify-center hover:border-gold-500/60 hover:text-gold-500 transition-all duration-200"
                 >

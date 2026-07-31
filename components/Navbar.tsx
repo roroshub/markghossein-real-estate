@@ -39,10 +39,10 @@ const navLinks: NavItem[] = [
 ]
 
 const socialLinks = [
-  { label: 'Instagram', abbr: 'IG', href: 'https://instagram.com' },
-  { label: 'Facebook',  abbr: 'FB', href: 'https://facebook.com' },
-  { label: 'LinkedIn',  abbr: 'LI', href: 'https://linkedin.com' },
-  { label: 'YouTube',   abbr: 'YT', href: 'https://youtube.com' },
+  { label: 'Instagram', abbr: 'IG', href: 'https://www.instagram.com/markghossein/' },
+  { label: 'Facebook',  abbr: 'FB', href: 'https://www.facebook.com/ghosseinmark/' },
+  { label: 'LinkedIn',  abbr: 'LI', href: 'https://www.linkedin.com/in/mark-ghossein-4a219a284/' },
+  { label: 'YouTube',   abbr: 'YT', href: 'https://www.youtube.com/@markghossein1697' },
 ]
 
 export function Navbar() {
