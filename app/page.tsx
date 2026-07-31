@@ -12,9 +12,12 @@ import { Contact } from '@/components/Contact'
 import { Footer } from '@/components/Footer'
 import {
   getServices,
-  getTestimonials,
   getTools,
 } from '@/lib/content'
+import { getReviews } from '@/lib/reviews'
+
+// Render on the Worker at request time so runtime secrets (Featurable reviews) are available.
+export const dynamic = 'force-dynamic'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://markghossein-next.vercel.app'
 
@@ -77,7 +80,7 @@ const jsonLd = {
 export default async function HomePage() {
   const [services, testimonials, tools] = await Promise.all([
     getServices(),
-    getTestimonials(),
+    getReviews(),
     getTools(),
   ])
 

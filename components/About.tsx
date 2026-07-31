@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { RevealWrapper } from './RevealWrapper'
 import { Magnetic } from './Magnetic'
 
@@ -84,14 +85,18 @@ export function About() {
               {/* Portrait card */}
               <div
                 className="relative bg-ink-950 overflow-hidden mb-px"
-                style={{ aspectRatio: '4/3' }}
+                style={{ aspectRatio: '3/4' }}
               >
-                <div className="absolute inset-0 flex items-center justify-center select-none">
-                  <span className="font-serif text-[120px] font-normal text-ink-800 leading-none">MG</span>
-                </div>
+                <Image
+                  src="/images/mark-ghossein.jpg"
+                  alt="Mark Ghossein, Ottawa real estate advisor with eXp Realty"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover object-center"
+                />
                 <div
                   className="absolute inset-0 pointer-events-none"
-                  style={{ background: 'radial-gradient(80% 80% at 70% 20%, rgba(201,169,110,0.10) 0%, transparent 65%)' }}
+                  style={{ background: 'radial-gradient(90% 70% at 70% 10%, rgba(201,169,110,0.14) 0%, transparent 60%)' }}
                 />
               </div>
 

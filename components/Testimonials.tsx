@@ -1,8 +1,12 @@
 import { RevealWrapper } from './RevealWrapper'
 import type { Testimonial } from '@/lib/schemas'
 
+// Direct deep-link to Mark's Google reviews panel (place id 0x4cce0f1b62009a2d:0x4640c654053e5e98)
+const GOOGLE_REVIEWS_URL =
+  'https://www.google.com/search?q=Mark+Ghossein+Real+Estate+Ottawa#lrd=0x4cce0f1b62009a2d:0x4640c654053e5e98,1,,,,'
+
 const reviewBadges = [
-  { score: '5.0',  source: 'Google Reviews' },
+  { score: '5.0',  source: '60+ Google Reviews', href: GOOGLE_REVIEWS_URL },
   { score: '4.9',  source: 'Realtor.ca' },
   { score: '100%', source: 'Recommendation Rate' },
 ]
@@ -55,13 +59,31 @@ export function Testimonials({ testimonials }: { testimonials: Testimonial[] }) 
         {/* Rating badges */}
         <RevealWrapper>
           <div className="border-t border-black/[0.08] pt-12 flex flex-wrap items-center justify-center gap-20">
-            {reviewBadges.map(({ score, source }) => (
-              <div key={source} className="flex flex-col items-center gap-2">
-                <span className="font-serif text-[42px] font-normal text-ink-900 leading-none">{score}</span>
-                <div className="text-gold-600 tracking-[3px] text-[11px]">★★★★★</div>
-                <span className="text-[9px] tracking-[0.2em] uppercase text-ink-500">{source}</span>
-              </div>
-            ))}
+            {reviewBadges.map(({ score, source, href }) => {
+              const inner = (
+                <>
+                  <span className="font-serif text-[42px] font-normal text-ink-900 leading-none">{score}</span>
+                  <div className="text-gold-600 tracking-[3px] text-[11px]">★★★★★</div>
+                  <span className="text-[9px] tracking-[0.2em] uppercase text-ink-500 group-hover/badge:text-gold-700 transition-colors">{source}</span>
+                </>
+              )
+              return href ? (
+                <a
+                  key={source}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Read Mark Ghossein's Google reviews"
+                  className="group/badge flex flex-col items-center gap-2 transition-transform duration-300 hover:-translate-y-1"
+                >
+                  {inner}
+                </a>
+              ) : (
+                <div key={source} className="flex flex-col items-center gap-2">
+                  {inner}
+                </div>
+              )
+            })}
           </div>
         </RevealWrapper>
       </div>
