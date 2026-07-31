@@ -22,7 +22,7 @@ const socialLinks = [
   { label: 'Instagram', abbr: 'IG', href: 'https://www.instagram.com/markghossein/' },
   { label: 'Facebook',  abbr: 'FB', href: 'https://www.facebook.com/ghosseinmark/' },
   { label: 'LinkedIn',  abbr: 'LI', href: 'https://www.linkedin.com/in/mark-ghossein-4a219a284/' },
-  { label: 'YouTube',   abbr: 'YT', href: 'https://www.youtube.com/@markghossein1697' },
+  { label: 'YouTube',   abbr: 'YT', href: 'https://www.youtube.com/@markghossein' },
 ]
 
 export function Footer() {
@@ -77,6 +77,9 @@ export function Footer() {
             <h3 className="text-[9px] font-semibold tracking-[0.24em] uppercase text-white/55 mb-6">Contact</h3>
             <a href="mailto:mark@markghossein.com" className="block text-[13px] font-light text-white/55 hover:text-gold-500 transition-colors duration-200 mb-2">
               mark@markghossein.com
+            </a>
+            <a href="tel:+16137897653" className="block text-[13px] font-light text-white/55 hover:text-gold-500 transition-colors duration-200 mb-2">
+              (613) 789-7653
             </a>
             <p className="text-[13px] font-light text-white/55 mb-7">Ontario, Canada</p>
             <div className="flex gap-2.5 flex-wrap">

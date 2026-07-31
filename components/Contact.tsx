@@ -6,10 +6,10 @@ import { RevealWrapper } from './RevealWrapper'
 import { interestValues, type ContactForm } from '@/lib/schemas'
 
 const socialLinks = [
-  { label: 'Instagram', abbr: 'IG', href: '#' },
-  { label: 'Facebook',  abbr: 'FB', href: '#' },
-  { label: 'LinkedIn',  abbr: 'LI', href: '#' },
-  { label: 'YouTube',   abbr: 'YT', href: '#' },
+  { label: 'Instagram', abbr: 'IG', href: 'https://www.instagram.com/markghossein/' },
+  { label: 'Facebook',  abbr: 'FB', href: 'https://www.facebook.com/ghosseinmark/' },
+  { label: 'LinkedIn',  abbr: 'LI', href: 'https://www.linkedin.com/in/mark-ghossein-4a219a284/' },
+  { label: 'YouTube',   abbr: 'YT', href: 'https://www.youtube.com/@markghossein' },
 ]
 
 export function Contact() {
@@ -50,11 +50,11 @@ export function Contact() {
                 </div>
                 <span className="text-[14px] text-ink-600 group-hover:text-ink-900 transition-colors duration-200">mark@markghossein.com</span>
               </a>
-              <a href="#contact" className="flex items-center gap-5 group">
+              <a href="tel:+16137897653" className="flex items-center gap-5 group">
                 <div className="w-10 h-10 border border-ink-200 flex items-center justify-center text-ink-500 text-sm group-hover:border-gold-500 group-hover:text-gold-500 transition-all duration-200">
                   ✆
                 </div>
-                <span className="text-[14px] text-ink-600 group-hover:text-ink-900 transition-colors duration-200">Book a Call</span>
+                <span className="text-[14px] text-ink-600 group-hover:text-ink-900 transition-colors duration-200">(613) 789-7653</span>
               </a>
               <div className="flex items-center gap-5">
                 <div className="w-10 h-10 border border-ink-200 flex items-center justify-center text-ink-500 text-sm">◉</div>
@@ -67,6 +67,8 @@ export function Contact() {
                 <a
                   key={abbr}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="w-10 h-10 border border-ink-200 text-[10px] font-bold tracking-wider text-ink-400 flex items-center justify-center hover:border-ink-900 hover:text-ink-900 transition-all duration-200"
                 >

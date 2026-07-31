@@ -42,7 +42,7 @@ const socialLinks = [
   { label: 'Instagram', abbr: 'IG', href: 'https://www.instagram.com/markghossein/' },
   { label: 'Facebook',  abbr: 'FB', href: 'https://www.facebook.com/ghosseinmark/' },
   { label: 'LinkedIn',  abbr: 'LI', href: 'https://www.linkedin.com/in/mark-ghossein-4a219a284/' },
-  { label: 'YouTube',   abbr: 'YT', href: 'https://www.youtube.com/@markghossein1697' },
+  { label: 'YouTube',   abbr: 'YT', href: 'https://www.youtube.com/@markghossein' },
 ]
 
 export function Navbar() {
@@ -146,6 +146,12 @@ export function Navbar() {
               </a>
             ))}
           </div>
+          <a
+            href="tel:+16137897653"
+            className="text-[11px] font-medium tracking-[0.08em] text-white/70 hover:text-gold-500 transition-colors duration-200 whitespace-nowrap"
+          >
+            (613)&nbsp;789-7653
+          </a>
           <Link
             href={resolveHref('#contact')}
             className="text-[11px] font-medium tracking-[0.14em] uppercase text-gold-500 border border-gold-500/60 px-5 py-2.5 hover:bg-gold-500 hover:text-ink-950 transition-all duration-200"
@@ -200,6 +206,12 @@ export function Navbar() {
             </Link>
           ),
         )}
+        <a
+          href="tel:+16137897653"
+          className="block px-8 py-4 text-[11px] font-medium tracking-[0.14em] uppercase text-white/55 hover:text-gold-500 border-b border-white/[0.04] transition-colors duration-200"
+        >
+          Call (613) 789-7653
+        </a>
         <Link
           href={resolveHref('#contact')}
           onClick={closeMenu}
