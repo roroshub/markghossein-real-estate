@@ -21,6 +21,11 @@ dist/
 # Vercel
 .vercel
 
+# Cloudflare / OpenNext
+.open-next/
+.wrangler/
+cloudflare-env.d.ts
+
 # Testing
 coverage/
 playwright-report/
