@@ -7,7 +7,6 @@ const GOOGLE_REVIEWS_URL =
 
 const reviewBadges = [
   { score: '5.0',  source: '60+ Google Reviews', href: GOOGLE_REVIEWS_URL },
-  { score: '4.9',  source: 'Realtor.ca' },
   { score: '100%', source: 'Recommendation Rate' },
 ]
 

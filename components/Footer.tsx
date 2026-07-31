@@ -42,7 +42,9 @@ export function Footer() {
             />
             <p className="font-serif text-[20px] italic text-white/55 mb-3">Make the right move.</p>
             <p className="text-[11px] font-light text-white/55 leading-relaxed">
-              Affiliated with eXp Realty<br />Ottawa, Ontario, Canada
+              Mark Ghossein, Salesperson<br />
+              eXp Realty, Brokerage<br />
+              Ottawa, Ontario, Canada
             </p>
           </div>
 
@@ -92,13 +94,26 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Compliance disclosure */}
+        <div className="border-t border-white/[0.05] pt-8 pb-2">
+          <p className="text-[10px] font-light text-white/40 leading-[1.7] max-w-[980px]">
+            Mark Ghossein is a licensed real estate Salesperson with eXp Realty, Brokerage, serving
+            Ottawa and the surrounding area. The trademarks REALTOR®, REALTORS®, and the REALTOR® logo
+            are controlled by The Canadian Real Estate Association (CREA) and identify real estate
+            professionals who are members of CREA. The trademarks MLS®, Multiple Listing Service®, and
+            the associated logos identify professional services rendered by REALTOR® members of CREA to
+            effect the purchase, sale, and lease of real estate as part of a cooperative selling system.
+            Not intended to solicit buyers or sellers currently under contract with a brokerage.
+          </p>
+        </div>
+
         {/* Bottom */}
         <div className="border-t border-white/[0.05] py-7 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-[11px] font-light text-white/55">
             © {new Date().getFullYear()} Mark Ghossein Real Estate Advisors. All rights reserved.
           </p>
           <p className="text-[11px] font-light text-white/55">
-            Not intended to solicit buyers or sellers currently under contract.
+            eXp Realty, Brokerage
           </p>
         </div>
       </div>
