@@ -178,3 +178,10 @@ body::after {
   cursor: pointer;
 }
 .search-select option { background: #1a1a1a; color: #fff; }
+
+/* ─── Hide the widgetbe CTA widget (keep its analytics/tracking) ──────────── */
+/* The tracker script still loads and sends pageviews; only the visible
+   floating CTA iframe(s) are hidden, on desktop and mobile. */
+iframe[name^="widget"] {
+  display: none !important;
+}
