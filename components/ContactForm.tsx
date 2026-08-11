@@ -30,7 +30,7 @@ export default function ContactForm() {
         return;
       }
       setStatus("sent");
-      setMessage("Grazie! Your message is on its way. We will be in touch shortly.");
+      setMessage("Thank you! Your message is on its way. We will be in touch shortly.");
       form.reset();
     } catch {
       setStatus("error");
@@ -43,7 +43,7 @@ export default function ContactForm() {
       <div className="grid gap-8 sm:grid-cols-2">
         <label className="block">
           <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-stone">Your name</span>
-          <input name="name" type="text" required maxLength={120} placeholder="Marco Aurelio" className={inputClasses} />
+          <input name="name" type="text" required maxLength={120} placeholder="Your full name" className={inputClasses} />
         </label>
         <label className="block">
           <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-stone">Email</span>

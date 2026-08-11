@@ -14,7 +14,15 @@ await page.screenshot({ path: `${outDir}/01-hero.png` });
 
 const sections = ["#studio", "#services", "#works", "#process", "#testimonials", "#contact"];
 for (const [i, sel] of sections.entries()) {
-  await page.locator(sel).scrollIntoViewIfNeeded();
+  if (sel === "#works") {
+    // Scroll into the pinned horizontal gallery, partway through
+    await page.evaluate(() => {
+      const el = document.querySelector("#works");
+      window.scrollTo(0, el.offsetTop + window.innerHeight * 2.2);
+    });
+  } else {
+    await page.locator(sel).scrollIntoViewIfNeeded();
+  }
   await page.waitForTimeout(1600);
   await page.screenshot({ path: `${outDir}/0${i + 2}-${sel.slice(1)}.png` });
 }

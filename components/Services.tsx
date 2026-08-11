@@ -19,12 +19,13 @@ export default function Services() {
             <Reveal
               key={service.title}
               delay={i * 90}
+              variant="tilt"
               className="group grid gap-6 border-t border-cream/15 py-12 last:border-b md:grid-cols-12 md:items-baseline md:py-14"
             >
               <div className="md:col-span-2">
                 <span className="font-display text-xl italic text-gold-bright">{service.numeral}.</span>
                 <span className="ml-3 text-[11px] font-medium uppercase tracking-[0.3em] text-cream/50">
-                  {service.italian}
+                  {service.label}
                 </span>
               </div>
               <h3 className="font-display text-3xl font-medium leading-tight transition-transform duration-700 group-hover:translate-x-3 md:col-span-4 md:text-4xl">

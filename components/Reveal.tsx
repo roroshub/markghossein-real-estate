@@ -17,10 +17,11 @@ type RevealProps = {
   delay?: number;
   /**
    * Which primitive to use. "fade" translates the block up,
-   * "none" only toggles data-visible so nested .reveal-line /
-   * .reveal-rule elements can animate on their own.
+   * "tilt" swings it in from a 3D tip, and "none" only toggles
+   * data-visible so nested .reveal-line / .reveal-rule elements
+   * can animate on their own.
    */
-  variant?: "fade" | "none";
+  variant?: "fade" | "tilt" | "none";
   style?: CSSProperties;
 };
 
@@ -53,7 +54,7 @@ export default function Reveal({
     return () => observer.disconnect();
   }, []);
 
-  const base = variant === "fade" ? "reveal" : "";
+  const base = variant === "fade" ? "reveal" : variant === "tilt" ? "reveal-tilt" : "";
 
   return (
     <Tag

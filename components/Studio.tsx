@@ -44,14 +44,11 @@ export default function Studio() {
           </div>
 
           <div className="relative md:col-span-5">
-            <Reveal delay={200} className="relative">
+            <Reveal delay={200} variant="tilt" className="relative">
               <div className="arch relative overflow-hidden border border-ink/20 bg-cream px-10 pb-12 pt-24 text-center">
                 <ColumnCapital className="mx-auto h-28 text-terracotta" />
-                <p className="mt-10 font-display text-2xl italic leading-snug text-ink">
-                  &ldquo;La bellezza &egrave; funzione.&rdquo;
-                </p>
-                <p className="mt-4 text-[11px] font-medium uppercase tracking-[0.3em] text-stone">
-                  Beauty is function
+                <p className="mt-10 font-display text-3xl italic leading-snug text-ink">
+                  &ldquo;Beauty is function.&rdquo;
                 </p>
                 <p className="mx-auto mt-8 max-w-xs text-sm leading-relaxed text-stone">
                   Our founding belief. A website should be beautiful the way a well built

@@ -19,7 +19,7 @@ export const site = {
 
 export type Service = {
   numeral: string;
-  italian: string;
+  label: string;
   title: string;
   description: string;
   details: string[];
@@ -28,7 +28,7 @@ export type Service = {
 export const services: Service[] = [
   {
     numeral: "I",
-    italian: "Progettazione",
+    label: "Design",
     title: "Custom Website Design",
     description:
       "Every site begins as a blank canvas. We design custom websites that reflect your brand, engage your audience, and never come off a template shelf.",
@@ -36,7 +36,7 @@ export const services: Service[] = [
   },
   {
     numeral: "II",
-    italian: "Commercio",
+    label: "Commerce",
     title: "E-Commerce",
     description:
       "Online stores built to convert visitors into customers. From the first product page to the payment gateway, we make selling online feel effortless.",
@@ -44,7 +44,7 @@ export const services: Service[] = [
   },
   {
     numeral: "III",
-    italian: "Visibilità",
+    label: "Visibility",
     title: "Search Optimization",
     description:
       "A beautiful site nobody finds is a fresco in a locked room. We optimize your site to rank higher, load faster, and draw the traffic it deserves.",
@@ -52,7 +52,7 @@ export const services: Service[] = [
   },
   {
     numeral: "IV",
-    italian: "Racconto",
+    label: "Story",
     title: "Content Creation",
     description:
       "Words and imagery that captivate. We craft the story your website tells, so every page speaks clearly and persuades quietly.",
@@ -141,37 +141,32 @@ export const works: Work[] = [
 
 export type Step = {
   numeral: string;
-  italian: string;
-  english: string;
+  title: string;
   description: string;
 };
 
 export const process: Step[] = [
   {
     numeral: "I",
-    italian: "Ascolto",
-    english: "We listen",
+    title: "Listen",
     description:
       "Every project begins with your story. We learn your business, your audience, and your goals before a single pixel is placed.",
   },
   {
     numeral: "II",
-    italian: "Disegno",
-    english: "We design",
+    title: "Design",
     description:
       "Sketches become compositions. You see the direction early and often, and nothing moves forward without your blessing.",
   },
   {
     numeral: "III",
-    italian: "Costruzione",
-    english: "We build",
+    title: "Build",
     description:
       "Clean, modern code on a foundation built to last. Fast to load, easy to maintain, ready to grow with you.",
   },
   {
     numeral: "IV",
-    italian: "Lancio",
-    english: "We launch",
+    title: "Launch",
     description:
       "Deployment, domains, and search visibility handled with care. And we stay close after launch, because good work deserves a good steward.",
   },

@@ -8,10 +8,10 @@ export default function Contact() {
   return (
     <section id="contact" className="relative bg-parchment py-28 md:py-40">
       <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-        <SectionHeading numeral="VI" label="Get in touch" title="Parliamo" titleItalic="del tuo progetto." />
+        <SectionHeading numeral="VI" label="Get in touch" title="Let&rsquo;s talk" titleItalic="about your project." />
         <Reveal delay={150} className="mt-6 max-w-xl text-base leading-relaxed text-stone">
-          Let&rsquo;s talk about your project. If you would like to work with us, or just want
-          to reach out, we would love to hear from you.
+          If you would like to work with us, or just want to reach out, we would love
+          to hear from you.
         </Reveal>
 
         <div className="mt-16 grid gap-16 md:mt-24 md:grid-cols-12">
@@ -40,7 +40,7 @@ export default function Contact() {
                 <p className="mt-2 text-sm leading-relaxed text-stone">
                   Monday to Friday, 9 to 5.
                   <br />
-                  Espresso is always on.
+                  The coffee is always on.
                 </p>
               </div>
               <OliveBranch className="h-32 text-olive/70" />

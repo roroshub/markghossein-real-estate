@@ -29,7 +29,7 @@ export default function Footer() {
           <p>
             &copy; {year} {site.legalName}. All rights reserved.
           </p>
-          <p className="font-display text-sm italic tracking-wide">Fatto a mano a Ottawa.</p>
+          <p className="font-display text-sm italic tracking-wide">Handmade in Ottawa.</p>
         </div>
       </div>
     </footer>

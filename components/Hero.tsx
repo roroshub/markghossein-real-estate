@@ -1,34 +1,78 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import GoldShader from "./GoldShader";
 import { OliveBranch } from "./Ornaments";
 
 const brand = ["S", "A", "R", "O"];
 
 export default function Hero() {
+  const sunRef = useRef<HTMLDivElement>(null);
+  const branchRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const letterRefs = useRef<(HTMLSpanElement | null)[]>([]);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const y = window.scrollY;
+      const vh = window.innerHeight;
+      if (y > vh * 1.4) return;
+
+      if (sunRef.current) sunRef.current.style.transform = `translateY(${y * 0.42}px)`;
+      if (branchRef.current) branchRef.current.style.transform = `translateY(${y * 0.22}px) rotate(${y * 0.02}deg)`;
+      if (contentRef.current) {
+        contentRef.current.style.transform = `translateY(${y * 0.16}px)`;
+        contentRef.current.style.opacity = `${Math.max(0, 1 - y / (vh * 0.7))}`;
+      }
+      letterRefs.current.forEach((el, i) => {
+        if (!el) return;
+        const speed = 0.06 + i * 0.05;
+        el.style.transform = `translateY(${-y * speed}px) rotate(${(i - 1.5) * y * 0.004}deg)`;
+      });
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, []);
+
   return (
     <section id="top" className="relative flex min-h-screen flex-col overflow-hidden bg-parchment">
-      {/* Aegean sun, rising behind the horizon */}
+      {/* Molten gold sun, rising behind the horizon */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="hero-sun absolute left-1/2 top-[16%] h-[34vmin] w-[34vmin] -translate-x-1/2 rounded-full bg-gold-bright/80" />
-        <div className="absolute left-1/2 top-[16%] h-[34vmin] w-[34vmin] -translate-x-1/2 rounded-full bg-gold/20 blur-3xl" />
-        {/* Horizon rules */}
-        <div className="absolute left-0 right-0 top-[calc(16%+17vmin)] h-px bg-ink/15" />
-        <div className="absolute left-[8%] right-[8%] top-[calc(16%+17vmin+10px)] h-px bg-ink/10" />
-        {/* Olive branch, right margin */}
-        <OliveBranch className="float-slow absolute right-[6%] top-[22%] hidden h-56 text-olive md:block" />
+        <div ref={sunRef} className="absolute left-[72%] top-[9%] -translate-x-1/2 md:left-[63%]">
+          <div className="hero-sun h-[38vmin] w-[38vmin] overflow-hidden rounded-full shadow-[0_40px_120px_-20px_rgba(168,132,44,0.55)]">
+            <GoldShader />
+          </div>
+        </div>
+        <div className="absolute left-0 right-0 top-[calc(9%+19vmin)] h-px bg-ink/15" />
+        <div className="absolute left-[8%] right-[8%] top-[calc(9%+19vmin+10px)] h-px bg-ink/10" />
+        <div ref={branchRef} className="absolute right-[6%] top-[20%] hidden md:block">
+          <OliveBranch className="float-slow h-56 text-olive" />
+        </div>
       </div>
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[1600px] flex-1 flex-col justify-center px-6 pt-32 md:px-12">
+      <div
+        ref={contentRef}
+        className="relative z-10 mx-auto flex w-full max-w-[1600px] flex-1 flex-col justify-center px-6 pt-32 md:px-12"
+      >
         <p
           className="hero-fade text-[11px] font-medium uppercase tracking-[0.4em] text-ink-soft"
           style={{ "--d": "300ms" } as React.CSSProperties}
         >
-          Studio di sviluppo web &middot; Ottawa, Canada
+          Web design and development studio &middot; Ottawa, Canada
         </p>
 
         <h1 className="mt-8 max-w-5xl font-display text-[clamp(3rem,8.5vw,8rem)] font-medium leading-[0.95] tracking-tight text-ink">
-          <span
-            className="hero-fade block"
-            style={{ "--d": "450ms" } as React.CSSProperties}
-          >
+          <span className="hero-fade block" style={{ "--d": "450ms" } as React.CSSProperties}>
             Websites built
           </span>
           <span
@@ -40,7 +84,7 @@ export default function Hero() {
         </h1>
 
         <div
-          className="hero-fade mt-10 flex max-w-xl flex-col gap-8 md:flex-row md:items-end md:justify-between md:max-w-none"
+          className="hero-fade mt-10 flex max-w-xl flex-col gap-8 md:max-w-none md:flex-row md:items-end md:justify-between"
           style={{ "--d": "850ms" } as React.CSSProperties}
         >
           <p className="max-w-md text-base leading-relaxed text-stone md:text-lg">
@@ -62,16 +106,23 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Monumental wordmark on the hero's plinth */}
+      {/* Monumental wordmark, letters drift apart as you scroll */}
       <div className="relative z-10 mx-auto w-full max-w-[1600px] px-6 md:px-12" aria-hidden="true">
-        <div className="flex items-end justify-between border-t border-ink/15 pt-4 pb-2 font-display text-[clamp(6rem,21vw,22rem)] font-semibold leading-[0.8] text-ink">
+        <div className="flex items-end justify-between border-t border-ink/15 pb-2 pt-4 font-display text-[clamp(6rem,21vw,22rem)] font-semibold leading-[0.8] text-ink">
           {brand.map((letter, i) => (
             <span
               key={letter}
-              className="hero-letter"
-              style={{ "--d": `${1000 + i * 120}ms` } as React.CSSProperties}
+              ref={(el) => {
+                letterRefs.current[i] = el;
+              }}
+              className="inline-block will-change-transform"
             >
-              {letter}
+              <span
+                className="hero-letter"
+                style={{ "--d": `${1000 + i * 120}ms` } as React.CSSProperties}
+              >
+                {letter}
+              </span>
             </span>
           ))}
         </div>
