@@ -117,9 +117,20 @@ export function Footer() {
           <p className="text-[11px] font-light text-white/55">
             © {new Date().getFullYear()} Mark Ghossein Real Estate Advisors. All rights reserved.
           </p>
-          <p className="text-[11px] font-light text-white/55">
-            eXp Realty, Brokerage
-          </p>
+          <div className="flex items-center gap-3">
+            <span className="text-[11px] font-light text-white/55">Brokered by</span>
+            <svg
+              viewBox="0 0 240 90"
+              fill="currentColor"
+              role="img"
+              aria-label="eXp Realty"
+              className="h-8 w-auto text-white/70"
+            >
+              <title>eXp Realty</title>
+              <text x="0" y="52" fontFamily="Arial, Helvetica, sans-serif" fontWeight="800" fontSize="58" letterSpacing="-3">eXp</text>
+              <text x="3" y="80" fontFamily="Arial, Helvetica, sans-serif" fontWeight="600" fontSize="17" letterSpacing="10.5">REALTY</text>
+            </svg>
+          </div>
         </div>
       </div>
     </footer>
