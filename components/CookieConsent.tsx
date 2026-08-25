@@ -26,9 +26,9 @@ function writeConsent(value: Consent) {
 }
 
 /**
- * Cookie consent banner that gates the Follow Up Boss (widgetbe.com) tracking
- * pixel. The pixel — which sets cookies to attribute leads — only loads once
- * the visitor has explicitly accepted.
+ * Cookie consent banner that gates the analytics tracking pixel. The pixel —
+ * which sets cookies to attribute leads — only loads once the visitor has
+ * explicitly accepted.
  */
 export function CookieConsent() {
   // choice: the stored decision (null until read/made). visible: whether to
@@ -53,9 +53,9 @@ export function CookieConsent() {
 
   return (
     <>
-      {/* Follow Up Boss Pixel — loads only after cookie acceptance */}
+      {/* Analytics pixel — loads only after cookie acceptance */}
       {choice === 'accepted' && (
-        <Script id="fub-widget-tracker" strategy="afterInteractive">
+        <Script id="analytics-tracker" strategy="afterInteractive">
           {`(function(w,i,d,g,e,t){w["WidgetTrackerObject"]=g;(w[g]=w[g]||function()
 {(w[g].q=w[g].q||[]).push(arguments);}),(w[g].ds=1*new Date());(e="script"),
 (t=d.createElement(e)),(e=d.getElementsByTagName(e)[0]);t.async=1;t.src=i;
@@ -76,7 +76,7 @@ window.widgetTracker("send", "pageview");`}
           <div className="mx-auto max-w-[1320px] px-6 sm:px-8 md:px-12 py-5 flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
             <p className="text-[12.5px] font-light leading-relaxed text-white/70 flex-1">
               We use cookies to understand how visitors find us and to connect enquiries with our
-              client follow-up system (Follow Up Boss). Accept to help Mark follow up with you
+              client follow-up system. Accept to help Mark follow up with you
               personally, or decline to browse without tracking. See our{' '}
               <Link href="/privacy" className="text-gold-500 hover:text-gold-300 underline underline-offset-2 transition-colors">
                 privacy policy

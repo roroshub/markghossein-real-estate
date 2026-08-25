@@ -84,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ScrollProgress />
         {children}
         <CallbackPopup />
-        {/* Cookie consent — gates the Follow Up Boss (widgetbe.com) tracking pixel */}
+        {/* Cookie consent — gates the analytics tracking pixel */}
         <CookieConsent />
       </body>
     </html>

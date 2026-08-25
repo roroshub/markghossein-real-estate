@@ -7,7 +7,7 @@ import { RevealWrapper } from '@/components/RevealWrapper'
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'How Mark Ghossein Real Estate Advisors collects, uses, and protects your personal information, including cookies and the Follow Up Boss client system.',
+    'How Mark Ghossein Real Estate Advisors collects, uses, and protects your personal information, including cookies and our client follow-up system.',
   alternates: { canonical: '/privacy' },
   robots: { index: true, follow: true },
   openGraph: {
@@ -46,7 +46,7 @@ const sections: Section[] = [
     heading: 'Cookies and tracking',
     paras: [
       'When you first visit the site you are asked to accept or decline cookies. If you decline, no analytics or lead-tracking cookies are set and the tracking pixel described below does not load — the site remains fully usable.',
-      'If you accept, we use the Follow Up Boss Pixel (provided through widgetbe.com) to understand how visitors find and move through our site and to connect your enquiries with our client follow-up system. This helps Mark respond to you personally and in context.',
+      'If you accept, we use an analytics and tracking pixel to understand how visitors find and move through our site and to connect your enquiries with our client follow-up system. This helps Mark respond to you personally and in context.',
       'You can change your choice at any time by clearing this site’s cookies and stored data in your browser, which will bring the consent banner back on your next visit. Most browsers also let you block or delete cookies through their settings.',
     ],
   },
@@ -68,7 +68,7 @@ const sections: Section[] = [
     ],
     bullets: [
       'eXp Realty, Brokerage, the brokerage under which Mark is licensed, where required to facilitate a transaction or meet regulatory obligations;',
-      'Follow Up Boss, our client relationship management and follow-up system, which stores enquiry and contact details;',
+      'Our client relationship management and follow-up system, which stores enquiry and contact details;',
       'Service providers that help us operate the site and communicate with you, such as our email delivery provider (Resend) and hosting infrastructure;',
       'Authorities or regulators where required by law or by real estate industry rules.',
     ],
