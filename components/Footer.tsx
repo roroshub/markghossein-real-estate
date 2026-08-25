@@ -114,9 +114,14 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="border-t border-white/[0.05] py-7 flex flex-col sm:flex-row justify-between items-center gap-3">
-          <p className="text-[11px] font-light text-white/55">
-            © {new Date().getFullYear()} Mark Ghossein Real Estate Advisors. All rights reserved.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-x-5 gap-y-2">
+            <p className="text-[11px] font-light text-white/55">
+              © {new Date().getFullYear()} Mark Ghossein Real Estate Advisors. All rights reserved.
+            </p>
+            <Link href="/privacy" className="text-[11px] font-light text-white/55 hover:text-gold-500 transition-colors duration-200">
+              Privacy Policy
+            </Link>
+          </div>
           <div className="flex items-center gap-3">
             <span className="text-[11px] font-light text-white/55">Brokered by</span>
             <svg

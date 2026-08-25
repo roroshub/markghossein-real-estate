@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 import Script from 'next/script'
 
 const STORAGE_KEY = 'mg-cookie-consent'
@@ -76,7 +77,11 @@ window.widgetTracker("send", "pageview");`}
             <p className="text-[12.5px] font-light leading-relaxed text-white/70 flex-1">
               We use cookies to understand how visitors find us and to connect enquiries with our
               client follow-up system (Follow Up Boss). Accept to help Mark follow up with you
-              personally, or decline to browse without tracking.
+              personally, or decline to browse without tracking. See our{' '}
+              <Link href="/privacy" className="text-gold-500 hover:text-gold-300 underline underline-offset-2 transition-colors">
+                privacy policy
+              </Link>
+              .
             </p>
             <div className="flex items-center gap-3 shrink-0">
               <button

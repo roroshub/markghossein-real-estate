@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/home-evaluation', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/nosey-neighbour', priority: 0.6, changeFrequency: 'monthly' },
     { path: '/faq', priority: 0.6, changeFrequency: 'monthly' },
+    { path: '/privacy', priority: 0.3, changeFrequency: 'monthly' },
   ]
 
   return routes.map(({ path, priority, changeFrequency }) => ({
