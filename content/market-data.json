@@ -1,12 +1,12 @@
 {
-  "asOf": "May 2026",
+  "asOf": "August 2026",
   "source": "Ottawa Real Estate Board (OREB) monthly statistics",
   "sourceUrl": "https://www.oreb.ca/newsroom/",
   "_note": "cityBasePerSqft is the one figure that moves month to month. Re-anchor it to the OREB single-family (detached) benchmark divided by a ~1,810 sqft reference home, rounded to the nearest 5. Neighbourhood multipliers are relative to the citywide average and change slowly.",
   "benchmarks": {
-    "detached": 723800,
-    "townhouse": 557500,
-    "condo": 385500
+    "detached": 726700,
+    "townhouse": 547300,
+    "condo": 392900
   },
   "cityBasePerSqft": 400,
   "neighbourhoodMultiplier": {
