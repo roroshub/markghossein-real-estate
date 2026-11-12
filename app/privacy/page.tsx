@@ -18,9 +18,10 @@ export const metadata: Metadata = {
   },
 }
 
-const LAST_UPDATED = 'August 25, 2026'
+const LAST_UPDATED = 'November 12, 2026'
 
 type Section = {
+  id?: string
   heading: string
   paras?: string[]
   bullets?: string[]
@@ -87,6 +88,21 @@ const sections: Section[] = [
     ],
   },
   {
+    id: 'sms-terms',
+    heading: 'SMS Terms and Conditions',
+    paras: [
+      'By submitting a form on this website you agree to be contacted by Mark Ghossein Realty Inc. via call, email, and text for real estate services.',
+    ],
+    bullets: [
+      'We use SMS to confirm appointments, send reminders, and notify clients of schedule updates or important changes.',
+      'You can cancel the SMS service at any time. Just text "STOP". After you send the SMS message "STOP" to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join again, just sign up as you did the first time, and we will start sending SMS messages to you again.',
+      'If you are experiencing issues with the messaging program, you can reply with the keyword "HELP" for more assistance, or you can get help directly at mark@markghossein.com.',
+      'Carriers are not liable for delayed or undelivered messages.',
+      'As always, message and data rates may apply for any messages sent to you from us and to us from you. Message frequency may vary. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.',
+      'If you have any questions regarding privacy, please read this privacy policy.',
+    ],
+  },
+  {
     heading: 'Third-party links',
     paras: [
       'Our site may link to third-party websites and services, including social media and property search platforms. This policy does not apply to those sites, and we are not responsible for their privacy practices. We encourage you to review the privacy policy of any site you visit.',
@@ -135,7 +151,7 @@ export default function PrivacyPage() {
           <div className="flex flex-col gap-14">
             {sections.map((section, i) => (
               <RevealWrapper key={section.heading} delay={i * 40}>
-                <div>
+                <div id={section.id} className="scroll-mt-28">
                   <h2 className="font-serif text-[clamp(24px,2.6vw,34px)] font-normal text-white leading-tight mb-5">
                     {section.heading}
                   </h2>

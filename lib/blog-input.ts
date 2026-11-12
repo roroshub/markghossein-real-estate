@@ -1,5 +1,6 @@
 import { TARGET_PAGES } from './blog-pages'
 import type { PostInput } from './blog'
+import { parseSchemaInput } from './post-html'
 
 const VALID_PAGES = new Set(TARGET_PAGES.map((p) => p.key))
 
@@ -19,6 +20,9 @@ export function parseInput(body: Record<string, unknown>): PostInput | { error: 
   if (!slug) return { error: 'Could not derive a slug from the title' }
   const pagesRaw = Array.isArray(body.pages) ? body.pages.map(String) : []
   const pages = pagesRaw.filter((p) => VALID_PAGES.has(p))
+  const schemaRaw = String(body.schema_jsonld ?? '').trim()
+  const schema = parseSchemaInput(schemaRaw)
+  if (!schema.ok) return { error: schema.error }
   return {
     slug,
     title,
@@ -26,6 +30,11 @@ export function parseInput(body: Record<string, unknown>): PostInput | { error: 
     body_html: String(body.body_html ?? ''),
     pages,
     cover_image: body.cover_image ? String(body.cover_image).trim() : null,
+    cover_alt: String(body.cover_alt ?? '').trim() || null,
+    // Stored as normalised JSON (script tags stripped); rendered on the post page.
+    schema_jsonld: schema.value.length ? JSON.stringify(schema.value.length === 1 ? schema.value[0] : schema.value, null, 2) : null,
+    seo_title: String(body.seo_title ?? '').trim() || null,
+    meta_description: String(body.meta_description ?? '').trim() || null,
     published: body.published !== false,
   }
 }

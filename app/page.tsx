@@ -15,11 +15,12 @@ import {
   getTools,
 } from '@/lib/content'
 import { getReviews } from '@/lib/reviews'
+import { SITE_URL, PHONE, SOCIAL_PROFILES } from '@/lib/site'
 
 // Render on the Worker at request time so runtime secrets (Featurable reviews) are available.
 export const dynamic = 'force-dynamic'
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://markghossein-next.vercel.app'
+const siteUrl = SITE_URL
 
 export const metadata: Metadata = {
   alternates: { canonical: siteUrl },
@@ -33,7 +34,14 @@ const jsonLd = {
   description:
     'Ottawa real estate advisor specializing in buying, selling, upsizing, downsizing, investment, and probate & estate sales. eXp Realty agent serving Ottawa, Kanata, Barrhaven, Westboro, Orleans and surrounding communities.',
   url: siteUrl,
+  telephone: PHONE,
   email: 'mark@markghossein.com',
+  image: `${siteUrl}/images/mark-ghossein.jpg`,
+  logo: `${siteUrl}/images/logo.png`,
+  // TODO: add the Google Business Profile URL here once confirmed.
+  sameAs: SOCIAL_PROFILES,
+  // TODO: add streetAddress + postalCode once Mark confirms which office
+  // (343 Preston St or 2733 Lancaster Rd).
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Ottawa',

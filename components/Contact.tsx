@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useForm } from '@/lib/useForm'
 import { RevealWrapper } from './RevealWrapper'
+import { SmsConsent } from '@/components/SmsConsent'
 import { interestValues, type ContactForm } from '@/lib/schemas'
 
 const socialLinks = [
@@ -112,6 +113,8 @@ export function Contact() {
                   <Field label="Message" htmlFor="message" error={errors.message} className="mb-8">
                     <textarea id="message" name="message" rows={4} placeholder="Tell me a bit about what you're looking for…" value={fields.message} onChange={handleChange} className="field-input resize-y" />
                   </Field>
+
+                  <SmsConsent className="mb-6" />
 
                   <button
                     type="submit"

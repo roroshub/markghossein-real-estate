@@ -6,6 +6,7 @@ import { ScrollProgress } from '@/components/ScrollProgress'
 import { CallbackPopup } from '@/components/CallbackPopup'
 import { CookieConsent } from '@/components/CookieConsent'
 import './globals.css'
+import { SITE_URL } from '@/lib/site'
 
 // Lato — sub-headings & body
 const lato = Lato({
@@ -23,7 +24,7 @@ const prata = Prata({
   display: 'swap',
 })
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://markghossein-next.vercel.app'
+const siteUrl = SITE_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -61,11 +62,9 @@ export const metadata: Metadata = {
     description: 'Make the right move. Expert real estate guidance for Ottawa families, buying, selling, and upsizing with eXp Realty.',
     siteName: 'Mark Ghossein Real Estate Advisors',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Mark Ghossein | Ottawa Real Estate Advisor',
-    description: 'Make the right move. Expert real estate guidance for Ottawa families.',
-  },
+  // Only the card type here: Next fills twitter title/description/image from each
+  // page's own openGraph, so inner pages no longer inherit the homepage text.
+  twitter: { card: 'summary_large_image' },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
 }
 

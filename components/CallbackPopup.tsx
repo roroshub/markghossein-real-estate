@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { SmsConsent } from '@/components/SmsConsent'
 import { usePathname } from 'next/navigation'
 
 // Resource & guide routes where the callback CTA should appear.
@@ -126,6 +127,8 @@ export function CallbackPopup() {
                   <select aria-label="Best time to call" value={f.time} onChange={set('time')} className={`${field} cursor-pointer`}>
                     {times.map((t) => <option key={t}>{t}</option>)}
                   </select>
+
+                  <SmsConsent tone="light" className="mt-1" />
 
                   {error && <p className="text-[12px] text-red-500">{error}</p>}
 

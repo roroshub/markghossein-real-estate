@@ -9,6 +9,7 @@ type Item = {
   title: string
   excerpt: string
   cover_image: string | null
+  cover_alt?: string | null
   created_at: string
 }
 
@@ -44,7 +45,7 @@ export function RelatedBlogs({ page, heading = 'From the Blog' }: { page: string
               className="group flex flex-col bg-white border border-black/[0.06] hover:border-gold-500/40 hover:-translate-y-1 transition-all duration-300">
               {p.cover_image && (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={p.cover_image} alt="" className="w-full aspect-[16/10] object-cover" />
+                <img src={p.cover_image} alt={p.cover_alt ?? ""} loading="lazy" decoding="async" className="w-full aspect-[16/10] object-cover" />
               )}
               <div className="p-8 flex flex-col flex-1">
                 <p className="text-[10px] tracking-[0.18em] uppercase text-gold-700 mb-3">{fmtDate(p.created_at)}</p>
